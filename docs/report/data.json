@@ -1,0 +1,3464 @@
+{
+  "schema_version": 1,
+  "run": {
+    "id": "real-small-v1-run01",
+    "date": "2026-09-19",
+    "status": "complete",
+    "originals": 40,
+    "packets": 8,
+    "unique_pages": 116,
+    "categories": 5,
+    "documents_per_category": 8,
+    "measured_calls": 96,
+    "warmup_calls": 4,
+    "seed": 20260919
+  },
+  "categories": [
+    {
+      "id": "tax_form",
+      "label": "Tax forms",
+      "count": 8
+    },
+    {
+      "id": "financial_report",
+      "label": "Financial reports",
+      "count": 8
+    },
+    {
+      "id": "press_release",
+      "label": "Press releases",
+      "count": 8
+    },
+    {
+      "id": "legal_notice",
+      "label": "Legal notices",
+      "count": 8
+    },
+    {
+      "id": "other",
+      "label": "Other",
+      "count": 8
+    }
+  ],
+  "engines": {
+    "jev": {
+      "label": "Jev",
+      "model": "jev-1.13.0"
+    },
+    "openai": {
+      "label": "GPT-5.6 Luna",
+      "model": "gpt-5.6-luna"
+    }
+  },
+  "tasks": {
+    "classify": {
+      "jev": {
+        "model": "jev-1.13.0",
+        "successful_calls": 40,
+        "failed_calls": 0,
+        "skipped_calls": 0,
+        "latency_samples": 40,
+        "decision_p50_ms": 138.565,
+        "decision_p95_ms": 184.54974999999996,
+        "wall_p50_ms": 138.86691629886627,
+        "wall_p95_ms": 184.82249404769388,
+        "decision_cost_usd_known": 0.005028114,
+        "unknown_cost_calls": 0,
+        "request_count": 40,
+        "correct_count": 40,
+        "total_count": 40,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "needs_review_rate": 0.2
+      },
+      "openai": {
+        "model": "gpt-5.6-luna",
+        "successful_calls": 40,
+        "failed_calls": 0,
+        "skipped_calls": 0,
+        "latency_samples": 40,
+        "decision_p50_ms": 794.309,
+        "decision_p95_ms": 1208.7996999999998,
+        "wall_p50_ms": 794.5054790470749,
+        "wall_p95_ms": 1208.9875228237358,
+        "decision_cost_usd_known": 0.02440605,
+        "unknown_cost_calls": 0,
+        "request_count": 40,
+        "correct_count": 40,
+        "total_count": 40,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "needs_review_rate": 0.2
+      },
+      "ratio_of_medians": 5.7323927398693755,
+      "paired_median_speedup": 5.866902419893268,
+      "paired_count": 40
+    },
+    "split": {
+      "jev": {
+        "model": "jev-1.13.0",
+        "successful_calls": 8,
+        "failed_calls": 0,
+        "skipped_calls": 0,
+        "latency_samples": 8,
+        "decision_p50_ms": 209.578,
+        "decision_p95_ms": 289.98035,
+        "wall_p50_ms": 210.2170626167208,
+        "wall_p95_ms": 290.3458559885621,
+        "decision_cost_usd_known": 0.0066345300000000005,
+        "unknown_cost_calls": 0,
+        "request_count": 8,
+        "packet_exact_match": 0.875,
+        "exact_packets": 7,
+        "total_packets": 8,
+        "coverage_validity": 1.0,
+        "page_correct_count": 116,
+        "page_total_count": 116,
+        "page_accuracy": 1.0,
+        "boundary": {
+          "precision": 0.9696969696969697,
+          "recall": 1.0,
+          "f1": 0.9846153846153847,
+          "true_positive": 32,
+          "predicted": 33,
+          "actual": 32
+        },
+        "segment": {
+          "precision": 0.9512195121951219,
+          "recall": 0.975,
+          "f1": 0.9629629629629629,
+          "true_positive": 39,
+          "predicted": 41,
+          "actual": 40
+        },
+        "same_category_boundaries_found": 4,
+        "same_category_boundaries_actual": 4
+      },
+      "openai": {
+        "model": "gpt-5.6-luna",
+        "successful_calls": 8,
+        "failed_calls": 0,
+        "skipped_calls": 0,
+        "latency_samples": 8,
+        "decision_p50_ms": 1352.3175,
+        "decision_p95_ms": 1862.7393,
+        "wall_p50_ms": 1352.6357288938016,
+        "wall_p95_ms": 1863.4103753836825,
+        "decision_cost_usd_known": 0.022487649999999998,
+        "unknown_cost_calls": 0,
+        "request_count": 8,
+        "packet_exact_match": 1.0,
+        "exact_packets": 8,
+        "total_packets": 8,
+        "coverage_validity": 1.0,
+        "page_correct_count": 116,
+        "page_total_count": 116,
+        "page_accuracy": 1.0,
+        "boundary": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 32,
+          "predicted": 32,
+          "actual": 32
+        },
+        "segment": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 40,
+          "predicted": 40,
+          "actual": 40
+        },
+        "same_category_boundaries_found": 4,
+        "same_category_boundaries_actual": 4
+      },
+      "ratio_of_medians": 6.452573743427268,
+      "paired_median_speedup": 5.911834818485785,
+      "paired_count": 8
+    }
+  },
+  "classifications": [
+    {
+      "id": "e001",
+      "title": "U.S. Individual Income Tax Return (Form 1040), 2025",
+      "issuer": "Internal Revenue Service",
+      "category": "tax_form",
+      "pages": 2,
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f1040.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e001.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e001.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e001.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 119.248,
+          "wall_ms": 119.68341702595353,
+          "cost_usd": 0.000161742,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 668.985,
+          "wall_ms": 669.2462917417288,
+          "cost_usd": 0.0008549,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e002",
+      "title": "Employer Annual Federal Unemployment Tax Return (Form 940), 2025",
+      "issuer": "Internal Revenue Service",
+      "category": "tax_form",
+      "pages": 3,
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f940.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e002.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e002.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e002.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 115.628,
+          "wall_ms": 115.83179235458374,
+          "cost_usd": 0.000143178,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 838.058,
+          "wall_ms": 838.4870840236545,
+          "cost_usd": 0.0007651499999999999,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e003",
+      "title": "Election by a Small Business Corporation (Form 2553)",
+      "issuer": "Internal Revenue Service",
+      "category": "tax_form",
+      "pages": 4,
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f2553.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e003.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e003.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e003.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 196.496,
+          "wall_ms": 196.81137520819902,
+          "cost_usd": 0.000160902,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1046.274,
+          "wall_ms": 1046.509750187397,
+          "cost_usd": 0.00087765,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e004",
+      "title": "Application for Automatic Extension of Time to File U.S. Individual Income Tax Return (Form 4868), 2025",
+      "issuer": "Internal Revenue Service",
+      "category": "tax_form",
+      "pages": 4,
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f4868.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e004.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e004.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e004.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 143.004,
+          "wall_ms": 143.39979086071253,
+          "cost_usd": 0.000279762,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 745.306,
+          "wall_ms": 745.6128750927746,
+          "cost_usd": 0.0015068999999999998,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e005",
+      "title": "Employee Withholding Certificate (Form W-4), 2026",
+      "issuer": "Internal Revenue Service",
+      "category": "tax_form",
+      "pages": 5,
+      "source_url": "https://www.irs.gov/pub/irs-pdf/fw4.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e005.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e005.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e005.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 157.888,
+          "wall_ms": 158.1215001642704,
+          "cost_usd": 0.00048161400000000005,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 836.001,
+          "wall_ms": 836.2747500650585,
+          "cost_usd": 0.00233015,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e006",
+      "title": "Information To Claim Certain Credits After Disallowance (Form 8862)",
+      "issuer": "Internal Revenue Service",
+      "category": "tax_form",
+      "pages": 3,
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f8862.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e006.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e006.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e006.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 96.955,
+          "wall_ms": 97.16320782899857,
+          "cost_usd": 0.00013704600000000002,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 596.501,
+          "wall_ms": 596.7318341135979,
+          "cost_usd": 0.0007434,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e007",
+      "title": "Sales and Other Dispositions of Capital Assets (Form 8949), 2025",
+      "issuer": "Internal Revenue Service",
+      "category": "tax_form",
+      "pages": 2,
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f8949.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e007.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e007.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e007.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 111.354,
+          "wall_ms": 111.55245872214437,
+          "cost_usd": 0.00011256,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 901.656,
+          "wall_ms": 902.8820828534663,
+          "cost_usd": 0.0006026499999999999,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e008",
+      "title": "Premium Tax Credit (Form 8962), 2025",
+      "issuer": "Internal Revenue Service",
+      "category": "tax_form",
+      "pages": 2,
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f8962.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e008.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e008.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e008.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 167.439,
+          "wall_ms": 167.64666698873043,
+          "cost_usd": 0.00011961600000000001,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 902.465,
+          "wall_ms": 902.6879998855293,
+          "cost_usd": 0.0006249,
+          "request_count": 1,
+          "category": "tax_form",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e009",
+      "title": "29-Year 6-Month TIPS Auction Results, August 21, 2025",
+      "issuer": "U.S. Department of the Treasury",
+      "category": "financial_report",
+      "pages": 1,
+      "source_url": "https://www.treasurydirect.gov/instit/annceresult/press/preanre/2025/R_20250821_3.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e009.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e009.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e009.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 149.701,
+          "wall_ms": 149.92491714656353,
+          "cost_usd": 6.4512e-05,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 689.302,
+          "wall_ms": 689.5602908916771,
+          "cost_usd": 0.00028690000000000003,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e010",
+      "title": "30-Year Bond Auction Results, August 7, 2025",
+      "issuer": "U.S. Department of the Treasury",
+      "category": "financial_report",
+      "pages": 1,
+      "source_url": "https://www.treasurydirect.gov/instit/annceresult/press/preanre/2025/R_20250807_3.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e010.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e010.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e010.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 152.025,
+          "wall_ms": 152.21858257427812,
+          "cost_usd": 5.9892e-05,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 922.043,
+          "wall_ms": 922.2705001011491,
+          "cost_usd": 0.00021280000000000002,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e011",
+      "title": "2-Year Floating Rate Note Auction Results, August 27, 2025",
+      "issuer": "U.S. Department of the Treasury",
+      "category": "financial_report",
+      "pages": 1,
+      "source_url": "https://www.treasurydirect.gov/instit/annceresult/press/preanre/2025/R_20250827_2.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e011.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e011.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e011.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 101.743,
+          "wall_ms": 101.93520784378052,
+          "cost_usd": 6.09e-05,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 654.924,
+          "wall_ms": 655.304083134979,
+          "cost_usd": 0.00021700000000000002,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e012",
+      "title": "Daily Treasury Statement, March 25, 2025",
+      "issuer": "Bureau of the Fiscal Service",
+      "category": "financial_report",
+      "pages": 4,
+      "source_url": "https://fiscaldata.treasury.gov/static-data/published-reports/dts/DailyTreasuryStatement_20250325.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e012.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e012.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e012.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 159.773,
+          "wall_ms": 159.97312497347593,
+          "cost_usd": 0.000349482,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 848.474,
+          "wall_ms": 849.1686251945794,
+          "cost_usd": 0.0016491499999999998,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e013",
+      "title": "Share Insurance Fund Preliminary and Unaudited Financial Highlights, July 31, 2023",
+      "issuer": "National Credit Union Administration",
+      "category": "financial_report",
+      "pages": 7,
+      "source_url": "https://ncua.gov/files/publications/share-insurance-fund-financial-highlights-2023-july.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e013.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e013.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e013.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 166.624,
+          "wall_ms": 170.0826669111848,
+          "cost_usd": 0.000184758,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 699.492,
+          "wall_ms": 699.7947092168033,
+          "cost_usd": 0.0008771499999999999,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e014",
+      "title": "Operating Fund Preliminary and Unaudited Financial Highlights, July 31, 2023",
+      "issuer": "National Credit Union Administration",
+      "category": "financial_report",
+      "pages": 5,
+      "source_url": "https://ncua.gov/files/operating-fund-financial-highlights/operating-fund-financial-highlights-july-2023.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e014.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e014.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e014.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 179.389,
+          "wall_ms": 179.60795806720853,
+          "cost_usd": 0.000149688,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 674.929,
+          "wall_ms": 675.3668747842312,
+          "cost_usd": 0.0007234,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e015",
+      "title": "Central Liquidity Facility Preliminary and Unaudited Financial Highlights, July 31, 2023",
+      "issuer": "National Credit Union Administration",
+      "category": "financial_report",
+      "pages": 5,
+      "source_url": "https://ncua.gov/files/publications/central-liquidity-facility/central-liquidity-facility-july-2023.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e015.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e015.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e015.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 158.818,
+          "wall_ms": 159.6102500334382,
+          "cost_usd": 0.00011256,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1096.398,
+          "wall_ms": 1097.4675412289798,
+          "cost_usd": 0.00053665,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e016",
+      "title": "Community Development Revolving Loan Fund Preliminary and Unaudited Financial Highlights, July 31, 2023",
+      "issuer": "National Credit Union Administration",
+      "category": "financial_report",
+      "pages": 6,
+      "source_url": "https://ncua.gov/files/community-development-revolving-loan-fund-reports/july-2023-financial-statements.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e016.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e016.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e016.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 200.375,
+          "wall_ms": 200.6241660565138,
+          "cost_usd": 0.00012062400000000002,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1284.49,
+          "wall_ms": 1284.7813330590725,
+          "cost_usd": 0.00058215,
+          "request_count": 1,
+          "category": "financial_report",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e017",
+      "title": "Federal Reserve issues FOMC statement",
+      "issuer": "Board of Governors of the Federal Reserve System",
+      "category": "press_release",
+      "pages": 4,
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20250730a1.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e017.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e017.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e017.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 144.017,
+          "wall_ms": 144.22966679558158,
+          "cost_usd": 7.702800000000001e-05,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 918.811,
+          "wall_ms": 919.0229172818363,
+          "cost_usd": 0.00040290000000000004,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e018",
+      "title": "New Residential Sales, January 2026",
+      "issuer": "U.S. Census Bureau and Department of Housing and Urban Development",
+      "category": "press_release",
+      "pages": 5,
+      "source_url": "https://www.census.gov/construction/nrs/pdf/newressales_202601.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e018.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e018.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e018.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 182.231,
+          "wall_ms": 182.5109999626875,
+          "cost_usd": 0.000349608,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 703.044,
+          "wall_ms": 703.3518338575959,
+          "cost_usd": 0.00168415,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e019",
+      "title": "Monthly Construction Spending, March 2025",
+      "issuer": "U.S. Census Bureau",
+      "category": "press_release",
+      "pages": 5,
+      "source_url": "https://www.census.gov/construction/c30/pdf/pr202503.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e019.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e019.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e019.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 163.063,
+          "wall_ms": 163.29016722738743,
+          "cost_usd": 0.00046998,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 859.472,
+          "wall_ms": 859.7349999472499,
+          "cost_usd": 0.0021584,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e020",
+      "title": "NASS Southern Plains Region announces 2024 Supervisor of the Year",
+      "issuer": "USDA National Agricultural Statistics Service, Southern Plains Regional Field Office",
+      "category": "press_release",
+      "pages": 1,
+      "source_url": "https://data.nass.usda.gov/Statistics_by_State/Oklahoma/Publications/Recent_Reports/2024/2024_NASDA_Supervisor_Award_FO_News_Release_Vaughn.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e020.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e020.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e020.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 120.755,
+          "wall_ms": 120.99912529811263,
+          "cost_usd": 5.5188e-05,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1096.101,
+          "wall_ms": 1096.4817912317812,
+          "cost_usd": 0.00021740000000000003,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e021",
+      "title": "New Foreign Direct Investment in the United States, 2024",
+      "issuer": "Bureau of Economic Analysis",
+      "category": "press_release",
+      "pages": 4,
+      "source_url": "https://www.bea.gov/sites/default/files/2025-07/fdi0725.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e021.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e021.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e021.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 150.715,
+          "wall_ms": 151.01979207247496,
+          "cost_usd": 0.000117138,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 844.788,
+          "wall_ms": 845.0953331775963,
+          "cost_usd": 0.0005999,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e022",
+      "title": "United States Cattle Inventory Report",
+      "issuer": "USDA National Agricultural Statistics Service",
+      "category": "press_release",
+      "pages": 2,
+      "source_url": "https://www.nass.usda.gov/Newsroom/printable/2025/07-25-2025.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e022.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e022.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e022.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 154.396,
+          "wall_ms": 154.62212497368455,
+          "cost_usd": 4.771200000000001e-05,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 807.756,
+          "wall_ms": 807.967625092715,
+          "cost_usd": 0.00018380000000000002,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e023",
+      "title": "USDA seeks feedback from producers about 2025 crops, stocks, inventories, and values",
+      "issuer": "USDA National Agricultural Statistics Service",
+      "category": "press_release",
+      "pages": 2,
+      "source_url": "https://www.nass.usda.gov/Newsroom/printable/2025/05-19-2025.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e023.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e023.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e023.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 129.552,
+          "wall_ms": 129.88645816221833,
+          "cost_usd": 5.3172000000000005e-05,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 895.597,
+          "wall_ms": 895.7990841008723,
+          "cost_usd": 0.0002098,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e024",
+      "title": "USDA to Gather Data About Farm Labor",
+      "issuer": "USDA National Agricultural Statistics Service, Southern Plains Regional Field Office",
+      "category": "press_release",
+      "pages": 1,
+      "source_url": "https://data.nass.usda.gov/Statistics_by_State/Oklahoma/Publications/News_Releases/2025%20AG%20LABOR%20SURVEY%20NEWS%20RELEASE.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e024.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e024.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e024.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 134.126,
+          "wall_ms": 134.33404173702002,
+          "cost_usd": 5.1576e-05,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 780.862,
+          "wall_ms": 781.0433330014348,
+          "cost_usd": 0.00020280000000000002,
+          "request_count": 1,
+          "category": "press_release",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e025",
+      "title": "Notice of meeting on Section 1115 of the FAA Reauthorization Act of 2024",
+      "issuer": "Federal Aviation Administration",
+      "category": "legal_notice",
+      "pages": 3,
+      "source_url": "https://public-inspection.federalregister.gov/2025-09450.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e025.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e025.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e025.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 114.911,
+          "wall_ms": 115.22099981084466,
+          "cost_usd": 7.7322e-05,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 832.681,
+          "wall_ms": 832.8730408102274,
+          "cost_usd": 0.00039490000000000006,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e026",
+      "title": "1,3-Butadiene; Draft Risk Evaluation Under TSCA; Rescheduled SACC Meetings",
+      "issuer": "Environmental Protection Agency",
+      "category": "legal_notice",
+      "pages": 4,
+      "source_url": "https://public-inspection.federalregister.gov/2025-03798.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e026.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e026.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e026.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 145.712,
+          "wall_ms": 145.90654196217656,
+          "cost_usd": 9.7398e-05,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 682.42,
+          "wall_ms": 682.7391250990331,
+          "cost_usd": 0.00050865,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e027",
+      "title": "Virgil C. Summer Nuclear Station, Unit 1; Subsequent License Renewal; Final Supplemental Environmental Impact Statement",
+      "issuer": "Nuclear Regulatory Commission",
+      "category": "legal_notice",
+      "pages": 3,
+      "source_url": "https://public-inspection.federalregister.gov/2025-08802.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e027.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e027.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e027.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 104.783,
+          "wall_ms": 105.00754183158278,
+          "cost_usd": 9.941400000000001e-05,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1558.254,
+          "wall_ms": 1558.5002088919282,
+          "cost_usd": 0.00050765,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e028",
+      "title": "Advisory Committee for Technology, Innovation and Partnerships; Notice of Meeting",
+      "issuer": "National Science Foundation",
+      "category": "legal_notice",
+      "pages": 2,
+      "source_url": "https://public-inspection.federalregister.gov/2025-01780.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e028.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e028.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e028.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 116.821,
+          "wall_ms": 117.46491678059101,
+          "cost_usd": 5.283600000000001e-05,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 690.64,
+          "wall_ms": 691.0387077368796,
+          "cost_usd": 0.00020340000000000004,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e029",
+      "title": "Records Schedules; Availability and Request for Comments",
+      "issuer": "National Archives and Records Administration",
+      "category": "legal_notice",
+      "pages": 5,
+      "source_url": "https://public-inspection.federalregister.gov/2025-14904.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e029.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e029.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e029.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 96.116,
+          "wall_ms": 96.4257912710309,
+          "cost_usd": 0.00011692800000000002,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 698.018,
+          "wall_ms": 698.2447090558708,
+          "cost_usd": 0.0006209,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e030",
+      "title": "Fisheries of the Exclusive Economic Zone Off Alaska; Pacific Ocean Perch in the Western Regulatory Area of the Gulf of Alaska",
+      "issuer": "National Marine Fisheries Service",
+      "category": "legal_notice",
+      "pages": 3,
+      "source_url": "https://public-inspection.federalregister.gov/2025-17867.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e030.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e030.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e030.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 183.921,
+          "wall_ms": 184.19150030240417,
+          "cost_usd": 7.896e-05,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 677.605,
+          "wall_ms": 678.094791714102,
+          "cost_usd": 0.00039465,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e031",
+      "title": "Information Collections Being Submitted for Review and Approval to OMB; Correction",
+      "issuer": "Federal Communications Commission",
+      "category": "legal_notice",
+      "pages": 3,
+      "source_url": "https://public-inspection.federalregister.gov/2025-12393.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e031.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e031.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e031.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 95.546,
+          "wall_ms": 95.76887497678399,
+          "cost_usd": 8.169000000000001e-05,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1204.816,
+          "wall_ms": 1204.998374916613,
+          "cost_usd": 0.0004219,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e032",
+      "title": "Approval of a Test Marketing Exemption for a New Chemical under the Toxic Substances Control Act",
+      "issuer": "Environmental Protection Agency",
+      "category": "legal_notice",
+      "pages": 4,
+      "source_url": "https://public-inspection.federalregister.gov/2025-13908.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e032.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e032.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e032.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 100.898,
+          "wall_ms": 101.12024983391166,
+          "cost_usd": 0.000104412,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 849.989,
+          "wall_ms": 850.4129587672651,
+          "cost_usd": 0.0005559,
+          "request_count": 1,
+          "category": "legal_notice",
+          "correct": true,
+          "needs_review": false
+        }
+      }
+    },
+    {
+      "id": "e033",
+      "title": "Tips for preventing Listeria food poisoning",
+      "issuer": "Centers for Disease Control and Prevention",
+      "category": "other",
+      "pages": 2,
+      "source_url": "https://stacks.cdc.gov/view/cdc/36072/cdc_36072_DS1.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e033.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e033.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e033.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 147.603,
+          "wall_ms": 147.81533367931843,
+          "cost_usd": 7.492800000000001e-05,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 672.067,
+          "wall_ms": 672.3481668159366,
+          "cost_usd": 0.00039270000000000006,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        }
+      }
+    },
+    {
+      "id": "e034",
+      "title": "Refrigerator & Freezer Storage Chart",
+      "issuer": "Food and Drug Administration",
+      "category": "other",
+      "pages": 1,
+      "source_url": "https://www.fda.gov/media/74435/download",
+      "repo_path": "datasets/real-small/v1/originals/e034.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e034.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e034.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 108.316,
+          "wall_ms": 108.51416736841202,
+          "cost_usd": 8.0556e-05,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 735.02,
+          "wall_ms": 735.347124747932,
+          "cost_usd": 0.00041695,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        }
+      }
+    },
+    {
+      "id": "e035",
+      "title": "Stop Germs! Wash Your Hands",
+      "issuer": "Centers for Disease Control and Prevention",
+      "category": "other",
+      "pages": 1,
+      "source_url": "https://www.cdc.gov/clean-hands/media/pdfs/2024/05/329459-A-p.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e035.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e035.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e035.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 87.873,
+          "wall_ms": 88.04741688072681,
+          "cost_usd": 3.3558e-05,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 688.508,
+          "wall_ms": 688.7778746895492,
+          "cost_usd": 0.0001208,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        }
+      }
+    },
+    {
+      "id": "e036",
+      "title": "Don't Wait — Check the Date! Replace Smoke Alarms Every 10 Years",
+      "issuer": "U.S. Fire Administration",
+      "category": "other",
+      "pages": 1,
+      "source_url": "https://www.usfa.fema.gov/downloads/pdf/publications/infographic_2016_fpw_custom.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e036.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e036.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e036.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 104.92,
+          "wall_ms": 105.13816587626934,
+          "cost_usd": 4.2630000000000004e-05,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 530.085,
+          "wall_ms": 530.2962497808039,
+          "cost_usd": 0.0001654,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        }
+      }
+    },
+    {
+      "id": "e037",
+      "title": "Every Second Counts: Plan 2 Ways Out!",
+      "issuer": "U.S. Fire Administration",
+      "category": "other",
+      "pages": 1,
+      "source_url": "https://www.usfa.fema.gov/downloads/pdf/publications/two_ways_out_infographic.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e037.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e037.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e037.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 118.515,
+          "wall_ms": 118.71108412742615,
+          "cost_usd": 3.6162e-05,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 670.461,
+          "wall_ms": 670.6579588353634,
+          "cost_usd": 0.0001388,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        }
+      }
+    },
+    {
+      "id": "e038",
+      "title": "Our Home Fire Escape Plan",
+      "issuer": "U.S. Fire Administration",
+      "category": "other",
+      "pages": 1,
+      "source_url": "https://www.usfa.fema.gov/downloads/pdf/publications/escape_grid.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e038.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e038.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e038.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 111.439,
+          "wall_ms": 111.62883415818214,
+          "cost_usd": 3.3978e-05,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 854.128,
+          "wall_ms": 854.396958835423,
+          "cost_usd": 0.0001272,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        }
+      }
+    },
+    {
+      "id": "e039",
+      "title": "Emergency Supply List",
+      "issuer": "Federal Emergency Management Agency",
+      "category": "other",
+      "pages": 2,
+      "source_url": "https://www.ready.gov/sites/default/files/2021-02/ready_checklist.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e039.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e039.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e039.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 172.982,
+          "wall_ms": 173.34791598841548,
+          "cost_usd": 5.4180000000000006e-05,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 660.832,
+          "wall_ms": 661.1183327622712,
+          "cost_usd": 0.0002174,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        }
+      }
+    },
+    {
+      "id": "e040",
+      "title": "High-Rise Apartment and Condominium Fire Safety",
+      "issuer": "U.S. Fire Administration",
+      "category": "other",
+      "pages": 1,
+      "source_url": "https://www.usfa.fema.gov/downloads/pdf/publications/high-rise-fire-safety-infographic.pdf",
+      "repo_path": "datasets/real-small/v1/originals/e040.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/originals/e040.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e040.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 116.232,
+          "wall_ms": 116.41804222017527,
+          "cost_usd": 4.2924e-05,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 769.575,
+          "wall_ms": 770.3964998945594,
+          "cost_usd": 0.0001688,
+          "request_count": 1,
+          "category": "other",
+          "correct": true,
+          "needs_review": true
+        }
+      }
+    }
+  ],
+  "packets": [
+    {
+      "id": "p001",
+      "pages": 12,
+      "source_ids": [
+        "e001",
+        "e002",
+        "e009",
+        "e017",
+        "e033"
+      ],
+      "truth": [
+        {
+          "category": "tax_form",
+          "pages": [
+            1,
+            2
+          ],
+          "source_id": "e001",
+          "title": "U.S. Individual Income Tax Return (Form 1040), 2025"
+        },
+        {
+          "category": "tax_form",
+          "pages": [
+            3,
+            4,
+            5
+          ],
+          "source_id": "e002",
+          "title": "Employer Annual Federal Unemployment Tax Return (Form 940), 2025"
+        },
+        {
+          "category": "financial_report",
+          "pages": [
+            6
+          ],
+          "source_id": "e009",
+          "title": "29-Year 6-Month TIPS Auction Results, August 21, 2025"
+        },
+        {
+          "category": "press_release",
+          "pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "source_id": "e017",
+          "title": "Federal Reserve issues FOMC statement"
+        },
+        {
+          "category": "other",
+          "pages": [
+            11,
+            12
+          ],
+          "source_id": "e033",
+          "title": "Tips for preventing Listeria food poisoning"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "e001",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            1,
+            2
+          ]
+        },
+        {
+          "source_id": "e002",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e009",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            6
+          ]
+        },
+        {
+          "source_id": "e017",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "source_id": "e033",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            11,
+            12
+          ]
+        }
+      ],
+      "repo_path": "datasets/real-small/v1/packets/p001.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/packets/p001.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/packets/p001.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 213.288,
+          "wall_ms": 213.7519591487944,
+          "cost_usd": 0.00066507,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "tax_form",
+              "pages": [
+                1,
+                2
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                6
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                7,
+                8
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                9,
+                10
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                11,
+                12
+              ]
+            }
+          ],
+          "exact": false
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1176.505,
+          "wall_ms": 1176.9851669669151,
+          "cost_usd": 0.0023950499999999997,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "tax_form",
+              "pages": [
+                1,
+                2
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                6
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                11,
+                12
+              ]
+            }
+          ],
+          "exact": true
+        }
+      }
+    },
+    {
+      "id": "p002",
+      "pages": 10,
+      "source_ids": [
+        "e010",
+        "e011",
+        "e025",
+        "e003",
+        "e034"
+      ],
+      "truth": [
+        {
+          "category": "financial_report",
+          "pages": [
+            1
+          ],
+          "source_id": "e010",
+          "title": "30-Year Bond Auction Results, August 7, 2025"
+        },
+        {
+          "category": "financial_report",
+          "pages": [
+            2
+          ],
+          "source_id": "e011",
+          "title": "2-Year Floating Rate Note Auction Results, August 27, 2025"
+        },
+        {
+          "category": "legal_notice",
+          "pages": [
+            3,
+            4,
+            5
+          ],
+          "source_id": "e025",
+          "title": "Notice of meeting on Section 1115 of the FAA Reauthorization Act of 2024"
+        },
+        {
+          "category": "tax_form",
+          "pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "source_id": "e003",
+          "title": "Election by a Small Business Corporation (Form 2553)"
+        },
+        {
+          "category": "other",
+          "pages": [
+            10
+          ],
+          "source_id": "e034",
+          "title": "Refrigerator & Freezer Storage Chart"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "e010",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            1
+          ]
+        },
+        {
+          "source_id": "e011",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            2
+          ]
+        },
+        {
+          "source_id": "e025",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e003",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "source_id": "e034",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            10
+          ]
+        }
+      ],
+      "repo_path": "datasets/real-small/v1/packets/p002.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/packets/p002.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/packets/p002.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 198.911,
+          "wall_ms": 199.20687470585108,
+          "cost_usd": 0.000537558,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "financial_report",
+              "pages": [
+                1
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                2
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                10
+              ]
+            }
+          ],
+          "exact": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1063.751,
+          "wall_ms": 1064.0735840424895,
+          "cost_usd": 0.00191055,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "financial_report",
+              "pages": [
+                1
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                2
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                10
+              ]
+            }
+          ],
+          "exact": true
+        }
+      }
+    },
+    {
+      "id": "p003",
+      "pages": 15,
+      "source_ids": [
+        "e018",
+        "e020",
+        "e004",
+        "e026",
+        "e035"
+      ],
+      "truth": [
+        {
+          "category": "press_release",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_id": "e018",
+          "title": "New Residential Sales, January 2026"
+        },
+        {
+          "category": "press_release",
+          "pages": [
+            6
+          ],
+          "source_id": "e020",
+          "title": "NASS Southern Plains Region announces 2024 Supervisor of the Year"
+        },
+        {
+          "category": "tax_form",
+          "pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "source_id": "e004",
+          "title": "Application for Automatic Extension of Time to File U.S. Individual Income Tax Return (Form 4868), 2025"
+        },
+        {
+          "category": "legal_notice",
+          "pages": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "source_id": "e026",
+          "title": "1,3-Butadiene; Draft Risk Evaluation Under TSCA; Rescheduled SACC Meetings"
+        },
+        {
+          "category": "other",
+          "pages": [
+            15
+          ],
+          "source_id": "e035",
+          "title": "Stop Germs! Wash Your Hands"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "e018",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e020",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            6
+          ]
+        },
+        {
+          "source_id": "e004",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "source_id": "e026",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            11,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "source_id": "e035",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            15
+          ]
+        }
+      ],
+      "repo_path": "datasets/real-small/v1/packets/p003.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/packets/p003.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/packets/p003.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 245.398,
+          "wall_ms": 245.76583271846175,
+          "cost_usd": 0.00102774,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "press_release",
+              "pages": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                6
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                11,
+                12,
+                13,
+                14
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                15
+              ]
+            }
+          ],
+          "exact": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1276.245,
+          "wall_ms": 1276.5382081270218,
+          "cost_usd": 0.0038065499999999997,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "press_release",
+              "pages": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                6
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                11,
+                12,
+                13,
+                14
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                15
+              ]
+            }
+          ],
+          "exact": true
+        }
+      }
+    },
+    {
+      "id": "p004",
+      "pages": 12,
+      "source_ids": [
+        "e027",
+        "e028",
+        "e012",
+        "e022",
+        "e036"
+      ],
+      "truth": [
+        {
+          "category": "legal_notice",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "source_id": "e027",
+          "title": "Virgil C. Summer Nuclear Station, Unit 1; Subsequent License Renewal; Final Supplemental Environmental Impact Statement"
+        },
+        {
+          "category": "legal_notice",
+          "pages": [
+            4,
+            5
+          ],
+          "source_id": "e028",
+          "title": "Advisory Committee for Technology, Innovation and Partnerships; Notice of Meeting"
+        },
+        {
+          "category": "financial_report",
+          "pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "source_id": "e012",
+          "title": "Daily Treasury Statement, March 25, 2025"
+        },
+        {
+          "category": "press_release",
+          "pages": [
+            10,
+            11
+          ],
+          "source_id": "e022",
+          "title": "United States Cattle Inventory Report"
+        },
+        {
+          "category": "other",
+          "pages": [
+            12
+          ],
+          "source_id": "e036",
+          "title": "Don't Wait — Check the Date! Replace Smoke Alarms Every 10 Years"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "e027",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "e028",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e012",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "source_id": "e022",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "source_id": "e036",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            12
+          ]
+        }
+      ],
+      "repo_path": "datasets/real-small/v1/packets/p004.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/packets/p004.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/packets/p004.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 203.471,
+          "wall_ms": 204.99516697600484,
+          "cost_usd": 0.0007357560000000001,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "legal_notice",
+              "pages": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                4,
+                5
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                10,
+                11
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                12
+              ]
+            }
+          ],
+          "exact": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1784.454,
+          "wall_ms": 1784.806916024536,
+          "cost_usd": 0.0025272999999999997,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "legal_notice",
+              "pages": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                4,
+                5
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                10,
+                11
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                12
+              ]
+            }
+          ],
+          "exact": true
+        }
+      }
+    },
+    {
+      "id": "p005",
+      "pages": 20,
+      "source_ids": [
+        "e005",
+        "e013",
+        "e023",
+        "e029",
+        "e037"
+      ],
+      "truth": [
+        {
+          "category": "tax_form",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_id": "e005",
+          "title": "Employee Withholding Certificate (Form W-4), 2026"
+        },
+        {
+          "category": "financial_report",
+          "pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "source_id": "e013",
+          "title": "Share Insurance Fund Preliminary and Unaudited Financial Highlights, July 31, 2023"
+        },
+        {
+          "category": "press_release",
+          "pages": [
+            13,
+            14
+          ],
+          "source_id": "e023",
+          "title": "USDA seeks feedback from producers about 2025 crops, stocks, inventories, and values"
+        },
+        {
+          "category": "legal_notice",
+          "pages": [
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "source_id": "e029",
+          "title": "Records Schedules; Availability and Request for Comments"
+        },
+        {
+          "category": "other",
+          "pages": [
+            20
+          ],
+          "source_id": "e037",
+          "title": "Every Second Counts: Plan 2 Ways Out!"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "e005",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e013",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "packet_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "source_id": "e023",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "source_id": "e029",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "source_id": "e037",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            20
+          ]
+        }
+      ],
+      "repo_path": "datasets/real-small/v1/packets/p005.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/packets/p005.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/packets/p005.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 277.605,
+          "wall_ms": 278.05199986323714,
+          "cost_usd": 0.0011991,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "tax_form",
+              "pages": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                13,
+                14
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                15,
+                16,
+                17,
+                18,
+                19
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                20
+              ]
+            }
+          ],
+          "exact": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1789.6,
+          "wall_ms": 1790.424041915685,
+          "cost_usd": 0.00394805,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "tax_form",
+              "pages": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                13,
+                14
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                15,
+                16,
+                17,
+                18,
+                19
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                20
+              ]
+            }
+          ],
+          "exact": true
+        }
+      }
+    },
+    {
+      "id": "p006",
+      "pages": 13,
+      "source_ids": [
+        "e014",
+        "e024",
+        "e030",
+        "e038",
+        "e006"
+      ],
+      "truth": [
+        {
+          "category": "financial_report",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_id": "e014",
+          "title": "Operating Fund Preliminary and Unaudited Financial Highlights, July 31, 2023"
+        },
+        {
+          "category": "press_release",
+          "pages": [
+            6
+          ],
+          "source_id": "e024",
+          "title": "USDA to Gather Data About Farm Labor"
+        },
+        {
+          "category": "legal_notice",
+          "pages": [
+            7,
+            8,
+            9
+          ],
+          "source_id": "e030",
+          "title": "Fisheries of the Exclusive Economic Zone Off Alaska; Pacific Ocean Perch in the Western Regulatory Area of the Gulf of Alaska"
+        },
+        {
+          "category": "other",
+          "pages": [
+            10
+          ],
+          "source_id": "e038",
+          "title": "Our Home Fire Escape Plan"
+        },
+        {
+          "category": "tax_form",
+          "pages": [
+            11,
+            12,
+            13
+          ],
+          "source_id": "e006",
+          "title": "Information To Claim Certain Credits After Disallowance (Form 8862)"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "e014",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e024",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            6
+          ]
+        },
+        {
+          "source_id": "e030",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "source_id": "e038",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            10
+          ]
+        },
+        {
+          "source_id": "e006",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "repo_path": "datasets/real-small/v1/packets/p006.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/packets/p006.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/packets/p006.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 194.737,
+          "wall_ms": 195.00591699033976,
+          "cost_usd": 0.000617778,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "financial_report",
+              "pages": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                6
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                10
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                11,
+                12,
+                13
+              ]
+            }
+          ],
+          "exact": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1228.329,
+          "wall_ms": 1228.6373330280185,
+          "cost_usd": 0.00195805,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "financial_report",
+              "pages": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                6
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                10
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                11,
+                12,
+                13
+              ]
+            }
+          ],
+          "exact": true
+        }
+      }
+    },
+    {
+      "id": "p007",
+      "pages": 16,
+      "source_ids": [
+        "e021",
+        "e031",
+        "e039",
+        "e007",
+        "e015"
+      ],
+      "truth": [
+        {
+          "category": "press_release",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_id": "e021",
+          "title": "New Foreign Direct Investment in the United States, 2024"
+        },
+        {
+          "category": "legal_notice",
+          "pages": [
+            5,
+            6,
+            7
+          ],
+          "source_id": "e031",
+          "title": "Information Collections Being Submitted for Review and Approval to OMB; Correction"
+        },
+        {
+          "category": "other",
+          "pages": [
+            8,
+            9
+          ],
+          "source_id": "e039",
+          "title": "Emergency Supply List"
+        },
+        {
+          "category": "tax_form",
+          "pages": [
+            10,
+            11
+          ],
+          "source_id": "e007",
+          "title": "Sales and Other Dispositions of Capital Assets (Form 8949), 2025"
+        },
+        {
+          "category": "financial_report",
+          "pages": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "source_id": "e015",
+          "title": "Central Liquidity Facility Preliminary and Unaudited Financial Highlights, July 31, 2023"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "e021",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "e031",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "source_id": "e039",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "source_id": "e007",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "source_id": "e015",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ],
+      "repo_path": "datasets/real-small/v1/packets/p007.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/packets/p007.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/packets/p007.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 205.868,
+          "wall_ms": 206.68216608464718,
+          "cost_usd": 0.000713202,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "press_release",
+              "pages": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                5,
+                6,
+                7
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                8,
+                9
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                10,
+                11
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            }
+          ],
+          "exact": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1902.122,
+          "wall_ms": 1902.7107087895274,
+          "cost_usd": 0.0021212999999999996,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "press_release",
+              "pages": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "category": "legal_notice",
+              "pages": [
+                5,
+                6,
+                7
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                8,
+                9
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                10,
+                11
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            }
+          ],
+          "exact": true
+        }
+      }
+    },
+    {
+      "id": "p008",
+      "pages": 18,
+      "source_ids": [
+        "e032",
+        "e040",
+        "e008",
+        "e016",
+        "e019"
+      ],
+      "truth": [
+        {
+          "category": "legal_notice",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_id": "e032",
+          "title": "Approval of a Test Marketing Exemption for a New Chemical under the Toxic Substances Control Act"
+        },
+        {
+          "category": "other",
+          "pages": [
+            5
+          ],
+          "source_id": "e040",
+          "title": "High-Rise Apartment and Condominium Fire Safety"
+        },
+        {
+          "category": "tax_form",
+          "pages": [
+            6,
+            7
+          ],
+          "source_id": "e008",
+          "title": "Premium Tax Credit (Form 8962), 2025"
+        },
+        {
+          "category": "financial_report",
+          "pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "source_id": "e016",
+          "title": "Community Development Revolving Loan Fund Preliminary and Unaudited Financial Highlights, July 31, 2023"
+        },
+        {
+          "category": "press_release",
+          "pages": [
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "source_id": "e019",
+          "title": "Monthly Construction Spending, March 2025"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "e032",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "e040",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            5
+          ]
+        },
+        {
+          "source_id": "e008",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            6,
+            7
+          ]
+        },
+        {
+          "source_id": "e016",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "packet_pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "source_id": "e019",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            14,
+            15,
+            16,
+            17,
+            18
+          ]
+        }
+      ],
+      "repo_path": "datasets/real-small/v1/packets/p008.pdf",
+      "repo_relative_url": "../../datasets/real-small/v1/packets/p008.pdf",
+      "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/packets/p008.pdf",
+      "results": {
+        "jev": {
+          "status": "ok",
+          "decision_ms": 296.644,
+          "wall_ms": 296.9656246714294,
+          "cost_usd": 0.001138326,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "legal_notice",
+              "pages": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                5
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                6,
+                7
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            }
+          ],
+          "exact": true
+        },
+        "openai": {
+          "status": "ok",
+          "decision_ms": 1428.39,
+          "wall_ms": 1428.7332496605814,
+          "cost_usd": 0.0038207999999999996,
+          "request_count": 1,
+          "segments": [
+            {
+              "category": "legal_notice",
+              "pages": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "category": "other",
+              "pages": [
+                5
+              ]
+            },
+            {
+              "category": "tax_form",
+              "pages": [
+                6,
+                7
+              ]
+            },
+            {
+              "category": "financial_report",
+              "pages": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ]
+            },
+            {
+              "category": "press_release",
+              "pages": [
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            }
+          ],
+          "exact": true
+        }
+      }
+    }
+  ],
+  "costs": {
+    "jev": {
+      "measured_usd": 0.011662644,
+      "warmup_usd": 0.00179109,
+      "total_usd": 0.013453734
+    },
+    "openai": {
+      "measured_usd": 0.046893699999999996,
+      "warmup_usd": 0.00770305,
+      "total_usd": 0.05459675
+    },
+    "total_usd": 0.068050484,
+    "measured_usd": 0.058556343999999996,
+    "warmup_usd": 0.00949414,
+    "ocr_api_usd": 0,
+    "local_compute_cost": "not estimated",
+    "status": "estimated from recorded provider usage and the saved pricing snapshot",
+    "unknown_cost_calls": 0,
+    "pricing_date": "2026-09-18",
+    "pricing_sources": [
+      "https://docs.typesafe.ai/models",
+      "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "https://developers.llamaindex.ai/llamaparse/general/pricing/"
+    ],
+    "budget_usd": 2
+  },
+  "stages": {
+    "preparation_seconds": 56.572822915855795,
+    "paid_seconds": 58.109235083218664,
+    "measured_seconds": 53.15483337501064,
+    "run_seconds": 58.64414066588506,
+    "warmup_call_seconds": 4.9178712903521955,
+    "preparation_items": 50,
+    "preparation_cache_hits": 2,
+    "note": "Preparation is shared once. Paid-stage elapsed time includes four excluded warmups; run time also includes setup and cleanup. Stages omit the manual pause between preparation and inference."
+  },
+  "error": {
+    "packet_id": "p001",
+    "source_id": "e017",
+    "title": "The attachment that looked like a new document",
+    "source_title": "Federal Reserve issues FOMC statement",
+    "expected_packet_pages": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "predicted_packet_segments": [
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "extra_boundary_after_packet_page": 8,
+    "before_source_page": 2,
+    "after_source_page": 3,
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20250730a1.pdf",
+    "github_url": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/originals/e017.pdf",
+    "explanation": "Jev split the FOMC statement from its implementation attachment. Both pieces kept the correct press-release label. The frozen rules retain supporting attachments with their original publication; GPT-5.6 Luna preserved the expected segment.",
+    "interpretation": "The new heading and repeated release timestamp plausibly explain the extra boundary; this is an inference from layout, not access to model reasoning."
+  },
+  "methodology": {
+    "comparison": "Practical task implementations, using identical cached LiteParse text for each matched input.",
+    "latency": "Decision latency per complete document or packet, excluding OCR and four warmups. Headline speed ratios divide Luna's median by Jev's median over the same source set.",
+    "accuracy": "Classification counts a correct category; exact splitting requires every labeled segment and page boundary to match the frozen publication-based truth.",
+    "protocol": "One measured pass, concurrency 1, seeded paired provider order, zero retries, fixed rules and thresholds. No provider-cache control or repeatability measurement.",
+    "sampling": "40 curated English government PDFs, not a representative production sample. Eight constructed packets reuse the same 40 originals, with no separator pages. The two tasks are not independent datasets.",
+    "annotation": "Agent labels plus separate agent review before inference. Independent human review was not performed.",
+    "coverage": "Digital PDFs and blank official tax forms; no evidence here for filled private forms, scans, other languages, or general office formats.",
+    "uncertainty": "No headline confidence intervals: curated sample, source overlap, and shared issuer templates limit generalization.",
+    "other": "Other is an explicit catch-all category. Both engines flag all eight Other documents for review even when the category is correct.",
+    "no_endorsement": "Source agencies and organizations do not sponsor or endorse this independent evaluation."
+  },
+  "links": {
+    "repository": "https://github.com/jerryjliu/docjev",
+    "report": "https://github.com/jerryjliu/docjev/blob/main/benchmarks/results/real-small-v1-run01/report.md",
+    "raw": "https://github.com/jerryjliu/docjev/blob/main/benchmarks/results/real-small-v1-run01/raw.jsonl",
+    "summary": "https://github.com/jerryjliu/docjev/blob/main/benchmarks/results/real-small-v1-run01/summary.json",
+    "methodology": "https://github.com/jerryjliu/docjev/blob/main/docs/benchmark-methodology.md",
+    "dataset_card": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/DATASET_CARD.md",
+    "source_manifest": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/SOURCE.json",
+    "error_analysis": "https://github.com/jerryjliu/docjev/blob/main/benchmarks/results/real-small-v1-run01/error-analysis.md",
+    "freeze": "https://github.com/jerryjliu/docjev/blob/main/datasets/real-small/v1/FREEZE.json"
+  },
+  "evidence_sha256": {
+    "summary.json": "cf876858a7249f8b287827f1e9bd509439b399b172d8cb941d517ab2ab35ebdc",
+    "raw.jsonl": "670ed16e68fd17855d30d60e108389ebc1a80291d0ab33b04b7efc9ecf40b3df",
+    "manifest.json": "c83957b75013251218c6ea76813086bf49c45e03fb55d4451ac1116c8ae9bf5b",
+    "preparation.json": "95b15c6af95bb62e110d797dc8cbb8d51965efef0294f8d33ff4076e14ce6964"
+  }
+}

@@ -1,12 +1,16 @@
 # Publishing DocJev
 
-The destination repository is [jerryjliu/docjev](https://github.com/jerryjliu/docjev). The [initial release commit](https://github.com/jerryjliu/docjev/commit/3a68115e9a910219adf6457afb2f79e74ff7601e) has been pushed and its [GitHub checks](https://github.com/jerryjliu/docjev/actions/runs/35458387718) passed. The subsequent accuracy corpus, runner, and results are committed locally; the benchmark plan keeps their external publication separate.
+The destination repository is [jerryjliu/docjev](https://github.com/jerryjliu/docjev). The [initial release commit](https://github.com/jerryjliu/docjev/commit/3a68115e9a910219adf6457afb2f79e74ff7601e) has been pushed and its [GitHub checks](https://github.com/jerryjliu/docjev/actions/runs/35458387718) passed. The accuracy corpus, runner, results, and visual report are included in the follow-up repository release.
 
 ## Repository
 
-The current source bundle is `output/release/docjev-0.1.0.zip`, with a per-file release manifest and SHA-256 sidecar. The local branch contains the follow-up benchmark commits ready for review and a later push to the existing `origin`.
+The current source bundle is `output/release/docjev-0.1.0.zip`, with a per-file release manifest and SHA-256 sidecar. The follow-up commits include the complete benchmark evidence and [interactive visual report](report/README.md).
 
 The package name and primary CLI are `docjev`; availability on PyPI has not been checked or reserved. Python imports remain `jev_docs`, and the older `jev-docs` CLI continues to work. Existing recordings and measured run artifacts retain their original names and evidence.
+
+## Visual report
+
+The [visual benchmark report](report/README.md) includes a self-contained HTML explorer and a [shareable summary image](report/summary.png). Download the HTML to open it in a browser; GitHub renders HTML as source. The report makes no model calls. Keep its small-sample scope and exact-packet accuracy visible when sharing speed figures.
 
 ## Demo assets
 

@@ -12,6 +12,10 @@ The real-document demo uses original IRS, Treasury, BEA, and SEC publications. I
 
 This is an independent open-source implementation. It does not call LlamaIndex's hosted Classify or Split APIs or use their implementation. LlamaParse is used only for optional OCR. Jev is a hosted service; local OCR does not make inference offline.
 
+[![DocJev visual benchmark report: 40 real PDFs, eight packets, Jev and Luna accuracy and decision latency](docs/report/summary.png)](docs/report/README.md)
+
+**[Explore the visual report](docs/report/README.md)** — browse all 40 documents, compare packet boundaries, replay recorded median timings, and inspect the one extra split.
+
 ## Quick start
 
 Requires Python 3.11+ and a [TypeSafe API key](https://console.typesafe.ai/). Clone [DocJev](https://github.com/jerryjliu/docjev) and install it:
@@ -158,7 +162,7 @@ One measured pass completed all 96 tasks, plus four excluded warmups. Both engin
 
 Timing ratios use the same 40 completed classification inputs and eight completed splitting inputs for each engine. Both found all 32 true packet boundaries, including all four adjacent same-category boundaries, and labeled all 116 packet pages correctly. Jev added one extra boundary before a Federal Reserve statement’s implementation attachment; the frozen rules treat it as part of the original publication. See the [error review](benchmarks/results/real-small-v1-run01/error-analysis.md).
 
-Measured decisions cost an estimated **$0.011663 for Jev** and **$0.046894 for Luna**. The entire run, including warmups, cost **$0.068050**, with no unknown charges. Local preparation took 56.6 seconds; the paid stage took 58.1 seconds. LiteParse has no API fee; local compute is not priced. Two warmup inputs used cached OCR, so preparation is not wholly cold.
+Measured decisions cost an estimated **$0.011663 for Jev** and **$0.046894 for Luna**. The entire run, including warmups, cost **$0.068050**, with all provider usage recorded. Local preparation took 56.6 seconds; the paid stage took 58.1 seconds. LiteParse has no API fee; local compute is not priced. Two warmup inputs used cached OCR, so preparation is not wholly cold.
 
 These are descriptive results on a small convenience sample, with shared source/template families and uncontrolled provider caching. The tasks reuse the same originals and are reported separately. Eight packets do not establish general splitting accuracy; no inferential confidence interval or repeat-stability claim is made.
 
