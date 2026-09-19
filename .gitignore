@@ -16,4 +16,5 @@ demo/recordings/
 demo/exports/*.mp4
 *.egg-info/
 datasets/.qa/
+datasets/real-small/qa/
 PAUSED.md

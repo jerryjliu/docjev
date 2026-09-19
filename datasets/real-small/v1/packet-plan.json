@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "construction": "Five complete originals per packet; no added separator pages. Authored combinations, not naturally occurring inbox packets.",
+  "assignment_method": "Fixed pre-inference category slots, assigning available originals to keep every packet below25pages.",
+  "packets": [
+    {
+      "id": "p001",
+      "source_ids": [
+        "e001",
+        "e002",
+        "e009",
+        "e017",
+        "e033"
+      ],
+      "page_count": 12,
+      "source_page_mapping": [
+        {
+          "source_id": "e001",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            1,
+            2
+          ]
+        },
+        {
+          "source_id": "e002",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e009",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            6
+          ]
+        },
+        {
+          "source_id": "e017",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "source_id": "e033",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p002",
+      "source_ids": [
+        "e010",
+        "e011",
+        "e025",
+        "e003",
+        "e034"
+      ],
+      "page_count": 10,
+      "source_page_mapping": [
+        {
+          "source_id": "e010",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            1
+          ]
+        },
+        {
+          "source_id": "e011",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            2
+          ]
+        },
+        {
+          "source_id": "e025",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e003",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "source_id": "e034",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p003",
+      "source_ids": [
+        "e018",
+        "e020",
+        "e004",
+        "e026",
+        "e035"
+      ],
+      "page_count": 15,
+      "source_page_mapping": [
+        {
+          "source_id": "e018",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e020",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            6
+          ]
+        },
+        {
+          "source_id": "e004",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "source_id": "e026",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            11,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "source_id": "e035",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p004",
+      "source_ids": [
+        "e027",
+        "e028",
+        "e012",
+        "e022",
+        "e036"
+      ],
+      "page_count": 12,
+      "source_page_mapping": [
+        {
+          "source_id": "e027",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "e028",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e012",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "source_id": "e022",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "source_id": "e036",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p005",
+      "source_ids": [
+        "e005",
+        "e013",
+        "e023",
+        "e029",
+        "e037"
+      ],
+      "page_count": 20,
+      "source_page_mapping": [
+        {
+          "source_id": "e005",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e013",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "packet_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "source_id": "e023",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "source_id": "e029",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "source_id": "e037",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p006",
+      "source_ids": [
+        "e014",
+        "e024",
+        "e030",
+        "e038",
+        "e006"
+      ],
+      "page_count": 13,
+      "source_page_mapping": [
+        {
+          "source_id": "e014",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "source_id": "e024",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            6
+          ]
+        },
+        {
+          "source_id": "e030",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "source_id": "e038",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            10
+          ]
+        },
+        {
+          "source_id": "e006",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            11,
+            12,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p007",
+      "source_ids": [
+        "e021",
+        "e031",
+        "e039",
+        "e007",
+        "e015"
+      ],
+      "page_count": 16,
+      "source_page_mapping": [
+        {
+          "source_id": "e021",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "e031",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "source_id": "e039",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "source_id": "e007",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "source_id": "e015",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p008",
+      "source_ids": [
+        "e032",
+        "e040",
+        "e008",
+        "e016",
+        "e019"
+      ],
+      "page_count": 18,
+      "source_page_mapping": [
+        {
+          "source_id": "e032",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "e040",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            5
+          ]
+        },
+        {
+          "source_id": "e008",
+          "source_pages": [
+            1,
+            2
+          ],
+          "packet_pages": [
+            6,
+            7
+          ]
+        },
+        {
+          "source_id": "e016",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "packet_pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "source_id": "e019",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "packet_pages": [
+            14,
+            15,
+            16,
+            17,
+            18
+          ]
+        }
+      ]
+    }
+  ]
+}

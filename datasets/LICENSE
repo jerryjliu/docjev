@@ -1,14 +1,24 @@
-CC0 1.0 Universal
+CC0 1.0 Universal — first-party synthetic contents and labels only
 
 To the extent possible under law, the authors of the DocJev synthetic dataset
 have waived all copyright and related or neighboring rights to the first-party
 synthetic document contents and labels in datasets/files, datasets/manifests,
-and examples. These materials are dedicated to the public domain under CC0 1.0:
+examples/classify, examples/split, and examples/demo-manifest.json. These
+synthetic materials are dedicated to the public domain under CC0 1.0:
 https://creativecommons.org/publicdomain/zero/1.0/legalcode
 
 No real personal record, business transaction, customer record, signature,
-payment account, or financial claim is represented by these examples.
+payment account, or financial claim is represented by the synthetic examples.
 
-This dedication does not apply to bundled fonts, third-party software, or
-trademarks. Font licenses are preserved under datasets/assets/fonts. Generator
-and test code are licensed under the repository's code license.
+REAL DOCUMENT EXCLUSIONS
+This dedication does not apply to examples/real/** or datasets/real-small/**.
+Those authentic government publications and assembled packets retain their
+source-specific rights. See examples/real/SOURCE.json and NOTICE.md, and
+datasets/real-small/v1/SOURCE.json and NOTICE.md. In particular, co-branded
+handouts are not claimed to be wholly public domain or licensed CC0. Official
+seals, agency marks and third-party trademarks retain their protections.
+The benchmark metadata and code do not grant rights in the original documents.
+
+This dedication also does not apply to bundled fonts, third-party software,
+or trademarks. Font licenses are preserved under datasets/assets/fonts.
+Generator, verification, and test code use the repository's code license.

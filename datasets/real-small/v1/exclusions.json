@@ -1,0 +1,52 @@
+[
+  {
+    "source_url": "https://www.osha.gov/sites/default/files/publications/PORTABLE_LADDER_QC.pdf",
+    "reason": "Official download returned HTTP 403; no bytes acquired; replaced before freeze or inference",
+    "replacement_id": "e033"
+  },
+  {
+    "source_url": "https://www.osha.gov/sites/default/files/publications/OSHA3743.pdf",
+    "reason": "Official download returned HTTP 403; no bytes acquired; replaced before freeze or inference",
+    "replacement_id": "e034"
+  },
+  {
+    "source_url": "https://www.cisa.gov/sites/default/files/2024-08/CISA-SOW-Opportunities-Guide.pdf",
+    "reason": "Official download returned HTTP 403; no bytes acquired; replaced before freeze or inference",
+    "replacement_id": "e040"
+  },
+  {
+    "source_url": "https://www.bls.gov/news.release/archives/wkstp_02202025.pdf",
+    "reason": "Official download returned HTTP 403; no bytes acquired; replaced before freeze or inference",
+    "replacement_id": "e020"
+  },
+  {
+    "source_url": "https://www.irs.gov/pub/irs-pdf/f941.pdf",
+    "sha256": "38a3d8cf7a455101d52543c8c48e66202bc25c189ead878627e35c797c88e2ad",
+    "source_id": "r01",
+    "reason": "Existing real demo original and all revisions of the same publication excluded from scored sources; retained only as existing warmup dependency where applicable."
+  },
+  {
+    "source_url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250812_1.pdf",
+    "sha256": "b1e2a47e0d7c2d462f57f98d954b678a7686e91608489385fc12191d13e7a5f0",
+    "source_id": "r02",
+    "reason": "Existing real demo original and all revisions of the same publication excluded from scored sources; retained only as existing warmup dependency where applicable."
+  },
+  {
+    "source_url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250512_2.pdf",
+    "sha256": "6118be61512b0499d1a3653b77ee049b3880217a2de102730852df45a8410182",
+    "source_id": "r03",
+    "reason": "Existing real demo original and all revisions of the same publication excluded from scored sources; retained only as existing warmup dependency where applicable."
+  },
+  {
+    "source_url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+    "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+    "source_id": "r04",
+    "reason": "Existing real demo original and all revisions of the same publication excluded from scored sources; retained only as existing warmup dependency where applicable."
+  },
+  {
+    "source_url": "https://public-inspection.federalregister.gov/2025-11513.pdf",
+    "sha256": "c0b710cdaf3f3aadc00ebcf4074257d770770da85c23561c973785df6c24dba6",
+    "source_id": "r05",
+    "reason": "Existing real demo original and all revisions of the same publication excluded from scored sources; retained only as existing warmup dependency where applicable."
+  }
+]

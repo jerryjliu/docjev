@@ -1,0 +1,663 @@
+[
+  {
+    "id": "e001",
+    "path": "datasets/real-small/v1/originals/e001.pdf",
+    "category": "tax_form",
+    "page_count": 2,
+    "sha256": "3d31c226df0d189ced80e039d01cf0f8820c1019681a0f0ca6264de277b7e982",
+    "source_family_id": "irs-f1040",
+    "template_family": "irs-f1040",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e001"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e002",
+    "path": "datasets/real-small/v1/originals/e002.pdf",
+    "category": "tax_form",
+    "page_count": 3,
+    "sha256": "575bb0d645ff613574c9b58506c6e0f7cbdc757c85ebc3e766ffc59fd5709d7c",
+    "source_family_id": "irs-f940",
+    "template_family": "irs-f940",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e002"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e003",
+    "path": "datasets/real-small/v1/originals/e003.pdf",
+    "category": "tax_form",
+    "page_count": 4,
+    "sha256": "b462579a45e4ce3877019b02ee159b11d5abee6e71a5a8c9d9271daa7ec25b66",
+    "source_family_id": "irs-f2553",
+    "template_family": "irs-f2553",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e003"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e004",
+    "path": "datasets/real-small/v1/originals/e004.pdf",
+    "category": "tax_form",
+    "page_count": 4,
+    "sha256": "36c7607db08ff469ed4e5df89e27ca90f29023c7cd6ca77c69343045e8f33d29",
+    "source_family_id": "irs-f4868",
+    "template_family": "irs-f4868",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e004"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e005",
+    "path": "datasets/real-small/v1/originals/e005.pdf",
+    "category": "tax_form",
+    "page_count": 5,
+    "sha256": "92444d8856ce55d9e25dca8b6d1420634fc68b11e1ab1f760916ea29ddd312b2",
+    "source_family_id": "irs-fw4",
+    "template_family": "irs-fw4",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e005"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e006",
+    "path": "datasets/real-small/v1/originals/e006.pdf",
+    "category": "tax_form",
+    "page_count": 3,
+    "sha256": "fd783d1f46f1f286cd1d7a2cca8812fc2ec05760478359873e22ba9d05d5f3b5",
+    "source_family_id": "irs-f8862",
+    "template_family": "irs-f8862",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e006"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e007",
+    "path": "datasets/real-small/v1/originals/e007.pdf",
+    "category": "tax_form",
+    "page_count": 2,
+    "sha256": "274513891e4e281d11e14286f14b9df724c24b6030fca0f0681da64fb2e7f525",
+    "source_family_id": "irs-f8949",
+    "template_family": "irs-f8949",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e007"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e008",
+    "path": "datasets/real-small/v1/originals/e008.pdf",
+    "category": "tax_form",
+    "page_count": 2,
+    "sha256": "dc7d2c6b566cac66badae721e2ce47ac47bb4e8b71aafb01721ff7368d803099",
+    "source_family_id": "irs-f8962",
+    "template_family": "irs-f8962",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e008"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e009",
+    "path": "datasets/real-small/v1/originals/e009.pdf",
+    "category": "financial_report",
+    "page_count": 1,
+    "sha256": "75b209c74f086a90ea7e945c40772578581ec8fae51cc33b615b3727d1693dfa",
+    "source_family_id": "treasury-auction-tips",
+    "template_family": "treasury-auction-results",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e009"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e010",
+    "path": "datasets/real-small/v1/originals/e010.pdf",
+    "category": "financial_report",
+    "page_count": 1,
+    "sha256": "4b7656121cf2f05a6ae5a5cb0589de118b67d782c015b0d093c9c2bbc9f1139d",
+    "source_family_id": "treasury-auction-bond",
+    "template_family": "treasury-auction-results",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e010"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e011",
+    "path": "datasets/real-small/v1/originals/e011.pdf",
+    "category": "financial_report",
+    "page_count": 1,
+    "sha256": "543483639656247532e7558d7c3aa35fd5f31b2559436b5be48be65c4d4593b3",
+    "source_family_id": "treasury-auction-frn",
+    "template_family": "treasury-auction-results",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e011"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e012",
+    "path": "datasets/real-small/v1/originals/e012.pdf",
+    "category": "financial_report",
+    "page_count": 4,
+    "sha256": "0daea9cbb63f571d1f9513d2bb295943351dabc965301cad83890bb2db185b04",
+    "source_family_id": "treasury-daily-statement",
+    "template_family": "daily-treasury-statement",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e012"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e013",
+    "path": "datasets/real-small/v1/originals/e013.pdf",
+    "category": "financial_report",
+    "page_count": 7,
+    "sha256": "8c6a1d354fd41a5f6aeb972af9d7a7758932094325024f2869d509bf3502b2b1",
+    "source_family_id": "ncua-share-insurance-fund",
+    "template_family": "ncua-fund-monthly-statements",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e013"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e014",
+    "path": "datasets/real-small/v1/originals/e014.pdf",
+    "category": "financial_report",
+    "page_count": 5,
+    "sha256": "f54abe847820f2b14a04dd96794159b5550dc699b00ca37df0c7be3188f15448",
+    "source_family_id": "ncua-operating-fund",
+    "template_family": "ncua-fund-monthly-statements",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e014"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e015",
+    "path": "datasets/real-small/v1/originals/e015.pdf",
+    "category": "financial_report",
+    "page_count": 5,
+    "sha256": "b2cf21c9820e462f5625592dac4504c7541f00ce144f454c39ee0aaeef87f57c",
+    "source_family_id": "ncua-central-liquidity-facility",
+    "template_family": "ncua-fund-monthly-statements",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e015"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e016",
+    "path": "datasets/real-small/v1/originals/e016.pdf",
+    "category": "financial_report",
+    "page_count": 6,
+    "sha256": "a285e7815b42b4ca47553e7be5e63bc691ca01020ee2a2e5c6ddf87ff7ddce5a",
+    "source_family_id": "ncua-revolving-loan-fund",
+    "template_family": "ncua-fund-monthly-statements",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e016"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e017",
+    "path": "datasets/real-small/v1/originals/e017.pdf",
+    "category": "press_release",
+    "page_count": 4,
+    "sha256": "a03d33f6c48a6e3b5d0c2cacb76c0792a517c99c6d900d0bb8f362145bc5e579",
+    "source_family_id": "federal-reserve-fomc-statement",
+    "template_family": "federal-reserve-policy-release",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e017"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e018",
+    "path": "datasets/real-small/v1/originals/e018.pdf",
+    "category": "press_release",
+    "page_count": 5,
+    "sha256": "e8f437ef887d9eeb5de9e450e32fd9973ed81a6c428710f5cca549f1bf89d3fe",
+    "source_family_id": "census-new-residential-sales",
+    "template_family": "census-construction-news",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e018"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e019",
+    "path": "datasets/real-small/v1/originals/e019.pdf",
+    "category": "press_release",
+    "page_count": 5,
+    "sha256": "465e6711c81fa675175a548f721b6adfc479ec946acc21e6d80ae266e7b81bd5",
+    "source_family_id": "census-construction-spending",
+    "template_family": "census-construction-news",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e019"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e020",
+    "path": "datasets/real-small/v1/originals/e020.pdf",
+    "category": "press_release",
+    "page_count": 1,
+    "sha256": "27303801785b13fc8f39cb995e2f7e92877aedefd4cdddcdc1fca6d1a48de5eb",
+    "source_family_id": "usda-southern-plains-supervisor-award",
+    "template_family": "nass-regional-news",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e020"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e021",
+    "path": "datasets/real-small/v1/originals/e021.pdf",
+    "category": "press_release",
+    "page_count": 4,
+    "sha256": "d4d764654d5bf8c55f30c22bb1e5c8f739f330fc48401820dbd76dc4ef116bd7",
+    "source_family_id": "bea-new-foreign-direct-investment",
+    "template_family": "bea-news-release",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e021"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e022",
+    "path": "datasets/real-small/v1/originals/e022.pdf",
+    "category": "press_release",
+    "page_count": 2,
+    "sha256": "f0236b347feeb86f87ac78bf5cf1511a1b6301a4a5bc5da2f398cc4377463de2",
+    "source_family_id": "usda-cattle-inventory-news",
+    "template_family": "nass-national-news",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e022"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e023",
+    "path": "datasets/real-small/v1/originals/e023.pdf",
+    "category": "press_release",
+    "page_count": 2,
+    "sha256": "748698113e12643430b168ee3236fcbe321936d64a9a7eeb584a711c1d3130f5",
+    "source_family_id": "usda-june-agricultural-survey-news",
+    "template_family": "nass-national-news",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e023"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e024",
+    "path": "datasets/real-small/v1/originals/e024.pdf",
+    "category": "press_release",
+    "page_count": 1,
+    "sha256": "1e6fa9edc937107aea306b35fad9ab6957cc76063ce90819fe6bd3a3f7b9d547",
+    "source_family_id": "usda-southern-plains-farm-labor-news",
+    "template_family": "nass-regional-news",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e024"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e025",
+    "path": "datasets/real-small/v1/originals/e025.pdf",
+    "category": "legal_notice",
+    "page_count": 3,
+    "sha256": "d159aae0e23a7ab42aa47ef6b1e9823c99acaf014de22482078fbb294449dea3",
+    "source_family_id": "fr-2025-09450",
+    "template_family": "federal-register-public-inspection",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e025"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e026",
+    "path": "datasets/real-small/v1/originals/e026.pdf",
+    "category": "legal_notice",
+    "page_count": 4,
+    "sha256": "109dfa30282c731ad15826b060bd960b38089feb22eca98340103baceb7ff9ee",
+    "source_family_id": "fr-2025-03798",
+    "template_family": "federal-register-public-inspection",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e026"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e027",
+    "path": "datasets/real-small/v1/originals/e027.pdf",
+    "category": "legal_notice",
+    "page_count": 3,
+    "sha256": "3a08f45914fb76ba7452cf892dc16ebb331443a6bbe3d11683e55353b21fcd96",
+    "source_family_id": "fr-2025-08802",
+    "template_family": "federal-register-public-inspection",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e027"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e028",
+    "path": "datasets/real-small/v1/originals/e028.pdf",
+    "category": "legal_notice",
+    "page_count": 2,
+    "sha256": "47c4e80b6cb0e3415694d5d604c53b6cecbab2b753423de19690f53c178f24d6",
+    "source_family_id": "fr-2025-01780",
+    "template_family": "federal-register-public-inspection",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e028"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e029",
+    "path": "datasets/real-small/v1/originals/e029.pdf",
+    "category": "legal_notice",
+    "page_count": 5,
+    "sha256": "da03ef96ca13606794bfd09856d51de5c2204cba1cae7896ca530a1aca4dc425",
+    "source_family_id": "fr-2025-14904",
+    "template_family": "federal-register-public-inspection",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e029"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e030",
+    "path": "datasets/real-small/v1/originals/e030.pdf",
+    "category": "legal_notice",
+    "page_count": 3,
+    "sha256": "e9f3e79b037b90c478c38da475f0ca72efe27e5178903b61ed1a94146f8e1895",
+    "source_family_id": "fr-2025-17867",
+    "template_family": "federal-register-public-inspection",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e030"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e031",
+    "path": "datasets/real-small/v1/originals/e031.pdf",
+    "category": "legal_notice",
+    "page_count": 3,
+    "sha256": "6542d6947c193d0deed607bc346f8fd7d7a92e85c5e3930a237813b7ee83486b",
+    "source_family_id": "fr-2025-12393",
+    "template_family": "federal-register-public-inspection",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e031"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e032",
+    "path": "datasets/real-small/v1/originals/e032.pdf",
+    "category": "legal_notice",
+    "page_count": 4,
+    "sha256": "0f444c7d7133dd474b95d82f0e7d321474079d7c8a0986f1fa4090c5c001b707",
+    "source_family_id": "fr-2025-13908",
+    "template_family": "federal-register-public-inspection",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e032"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e033",
+    "path": "datasets/real-small/v1/originals/e033.pdf",
+    "category": "other",
+    "page_count": 2,
+    "sha256": "8e142f5c1d7f44cc86a98ac2d1f287466a9906da7ef97f06cd94ad535d8e3455",
+    "source_family_id": "cdc-listeria-factsheet",
+    "template_family": "cdc-factsheet",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e033"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e034",
+    "path": "datasets/real-small/v1/originals/e034.pdf",
+    "category": "other",
+    "page_count": 1,
+    "sha256": "f987330d7e8a5794ec3ac52c16204bad9cc3a7e461d1a5f8e8ccbfe4349e113a",
+    "source_family_id": "fda-food-storage-chart",
+    "template_family": "fda-storage-chart",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e034"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e035",
+    "path": "datasets/real-small/v1/originals/e035.pdf",
+    "category": "other",
+    "page_count": 1,
+    "sha256": "cb334696bd5eb287a07ebf58496dd960f19de9c810f521aea5aef7e783aa8b0b",
+    "source_family_id": "cdc-handwashing-poster",
+    "template_family": "cdc-poster",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e035"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e036",
+    "path": "datasets/real-small/v1/originals/e036.pdf",
+    "category": "other",
+    "page_count": 1,
+    "sha256": "7d83b7a543c39e29e8ac77bd6836aae734a4819a595a58f6a083918d2c1c8867",
+    "source_family_id": "usfa-smoke-alarm-poster",
+    "template_family": "usfa-public-safety-infographic",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e036"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e037",
+    "path": "datasets/real-small/v1/originals/e037.pdf",
+    "category": "other",
+    "page_count": 1,
+    "sha256": "3c82c5aff866b94035f74a9c343cd73b4f823e0ab39fa681388814664be411bf",
+    "source_family_id": "usfa-fire-escape-poster",
+    "template_family": "usfa-public-safety-infographic",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e037"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e038",
+    "path": "datasets/real-small/v1/originals/e038.pdf",
+    "category": "other",
+    "page_count": 1,
+    "sha256": "3c77a3ff40ac0de01dc6fb761c49cc397678311f49d81c3a4bacfb94a0b219e0",
+    "source_family_id": "usfa-escape-planning-worksheet",
+    "template_family": "usfa-worksheet",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e038"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e039",
+    "path": "datasets/real-small/v1/originals/e039.pdf",
+    "category": "other",
+    "page_count": 2,
+    "sha256": "375f8acfeec361ecf2ee2e032178bd112ad3001035ccf5fd4e848aa9440f939c",
+    "source_family_id": "fema-emergency-supply-checklist",
+    "template_family": "fema-checklist",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e039"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "e040",
+    "path": "datasets/real-small/v1/originals/e040.pdf",
+    "category": "other",
+    "page_count": 1,
+    "sha256": "2abf1f8e39392be20eb8704d1ab5b7bc5865aa7e8f4e9db613e2adf12e458ebd",
+    "source_family_id": "usfa-highrise-fire-safety",
+    "template_family": "usfa-public-safety-infographic",
+    "format": "pdf",
+    "scan": false,
+    "split": "test",
+    "source_ids": [
+      "e040"
+    ],
+    "provenance_kind": "original"
+  },
+  {
+    "id": "real-small-warmup-classify",
+    "path": "examples/real/originals/r04.pdf",
+    "title": "BEA income & spending release",
+    "category": "press_release",
+    "page_count": 10,
+    "source_ids": [
+      "r04"
+    ],
+    "format": "pdf",
+    "scan": false,
+    "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+    "issuer": "U.S. Bureau of Economic Analysis",
+    "source_url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+    "source_title": "Personal Income and Outlays, July 2025 (BEA 25–36)",
+    "source_note": "Complete ten-page news release including charts, technical notes, and statistical tables. Historical estimates may have been revised since publication.",
+    "provenance_kind": "original",
+    "split": "dev",
+    "template_family": "existing-real-demo",
+    "excluded_from_scoring": true
+  }
+]
