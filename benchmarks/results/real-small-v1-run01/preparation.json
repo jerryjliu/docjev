@@ -1,0 +1,4829 @@
+{
+  "schema_version": "1",
+  "preparation_id": "c8cdc5fd638b44db8d67bab6d165dbcc",
+  "status": "ready",
+  "started_at": "2026-09-19T17:57:35.360780+00:00",
+  "config": {
+    "seed": 20260919,
+    "experiment_kind": "real-document-accuracy-pilot",
+    "demo_set": "real",
+    "dataset_version": "real-small-v1",
+    "repeats": 1,
+    "warmups": 1,
+    "warmup_policy": "dev",
+    "concurrency": 1,
+    "scope": "decision",
+    "budget_usd": 2,
+    "ocr": "liteparse",
+    "tier": "agentic",
+    "parser_version": "latest",
+    "jev_model": "jev-1.13.0",
+    "baseline_model": "gpt-5.6-luna",
+    "max_retries": 0,
+    "context_recovery": false,
+    "window_size": 8,
+    "boundary_threshold": 0.5,
+    "min_probability": 0.7,
+    "ocr_timeout_s": 60,
+    "preparation_timeout_s": 600,
+    "request_timeout_s": 30,
+    "task_timeout_s": 60,
+    "paid_timeout_s": 300,
+    "cleanup_timeout_s": 5,
+    "tasks": {
+      "classify": {
+        "manifest": "datasets/real-small/v1/manifests/classify.json",
+        "rules": "datasets/real-small/v1/rules/classify.yaml"
+      },
+      "split": {
+        "manifest": "datasets/real-small/v1/manifests/split.json",
+        "rules": "datasets/real-small/v1/rules/split.yaml"
+      }
+    },
+    "pilot_limit_per_task": null
+  },
+  "identity": {
+    "config_sha256": "d2020261cb84651e97656e46cb2cf84efe52bc022ec7bd78dd6991a141990cda",
+    "datasets_sha256": "7de975db966b2cea4d44b46b6952bc86f75950333b5121e704ac16aff17d7c25",
+    "corpus_freeze_sha256": "835294eaff57fddd3514bfeefae00ae00a6be0d30c7552b6dedc33e568797274",
+    "source_hashes": {
+      "benchmarks/__init__.py": "f3964b0ece5ea4401c3d292366c372ce77c2908b809cd2119bbe419d874ae4d2",
+      "benchmarks/metrics.py": "db4950f30908e343665ec94957ab517eedd6372b3dd8498fb3ec6ea9dd858933",
+      "benchmarks/prepare.py": "34c3eb93734fb03d830079560841f1b482ef6c61738dee524a6b75e7c7d30997",
+      "benchmarks/pricing.json": "c206dde4f34199da88594c968f12244b0c9605731525425c4b28d3f175a59643",
+      "benchmarks/report.py": "a81ee7716cca8ea6ba7c4783071f8584ab6f7534c6b6dbe0321d3e46df27e0a0",
+      "benchmarks/run.py": "99f18c8aba4c50cdd6045c037c1c8f6ba11ad1c7fa6d1bedbb9906ec7c67fd2a",
+      "datasets/real-small/prepare.py": "2c0dbfe933c81f0ee171522380ed9f678abf00b1389f10ad14f4fdc310f97b93",
+      "pyproject.toml": "cb80e83d3f552ed0fa8802c253fbba2f6f0d096fadf17159c7d97d773174b030",
+      "src/jev_docs/__init__.py": "955c5e0b16929faf3ba25a8f19a4daaeb9007ca16543df6ae1a3fd71afc799b1",
+      "src/jev_docs/cache.py": "2c5d4ed0df4b846574409a7b19ee0ac91a1c691024e3356aaa190836a29b6c05",
+      "src/jev_docs/classify.py": "9c25b72efe522f330af8128e4ec00cfd5f0e609b27d4fc887329c834c19fd523",
+      "src/jev_docs/cli.py": "bfa0cff470253bf960059f157919f3ceb60c306d9b0863e27fa8c0979e33ae1e",
+      "src/jev_docs/conversion.py": "8c18eb0067a33f081eedb7545cc68a0523a9e9d76db54036bfac3f253e23c6fe",
+      "src/jev_docs/doctor.py": "3285c6a25f8181f960af57d6603f6c21a24cccdf809bd7e6caecff43c890d8b5",
+      "src/jev_docs/documents.py": "3ffe0bca43047e3e678dd10a0d654380c9be637d423df930b8a6ba32230ade45",
+      "src/jev_docs/engines/__init__.py": "01e8f669c85795a6cf225a140b927aba910d6c712575d7422a50d3afe862aab5",
+      "src/jev_docs/engines/base.py": "5ec3c7cfeb4485aabfc6768e1d9f99f07e5aca36af3c23dd9bfa0974294e6876",
+      "src/jev_docs/engines/jev.py": "9974bd8a3da33bc519c43f97ba6d56a32718f3dd17dca5f66bc7fc8283453e3e",
+      "src/jev_docs/engines/openai.py": "581dbe9d73c552561ce8a6f4789a4264d21f6af180898090303b6c5093b01ee3",
+      "src/jev_docs/errors.py": "f3426a8e8149d766caef072b8f26ce0d79712ad447283c412e1e4784086377a6",
+      "src/jev_docs/export.py": "5015948c4c98ec08bfae0c8c5e0feb542664858e75095dc6fdb8540952b8b759",
+      "src/jev_docs/ocr/__init__.py": "73174c393f397c17347c20b51de75ae7afa533eea32e4f181160a5730c662ab4",
+      "src/jev_docs/ocr/base.py": "c0963c6d95944964adce1579da31026f54d456ca9e1937a03468329c9016689a",
+      "src/jev_docs/ocr/liteparse.py": "b630281f9325cd08ee7814edc0503eb67166ce7462bd4bd083cbb0a49bccb16b",
+      "src/jev_docs/ocr/llamaparse.py": "95ba563d85145c530080202830535e006f0efe9429df47be34f2f6a08a94ae4e",
+      "src/jev_docs/rules.py": "9950ab04e1a0db31de666db811c1bb024c6e519e59aab66d5b4f740aa40b95f2",
+      "src/jev_docs/schemas.py": "85a175ab625b191f37e5d30c2566629af8905dfc2a176bbc1b3273e475625386",
+      "src/jev_docs/split.py": "6ce7e12c00c172ea757b623ab228cef8b8439e01b68b426b3b4fb959f6431183",
+      "src/jev_docs/telemetry.py": "b6bc789b9bd101d224b7ac256ff55591e4a53ac73c985d4fd79c69e55c5cfff5",
+      "src/jev_docs/web/__init__.py": "cc5e8ea13d2ca7a1d11c23709e9829e1aa94384e9d061e52bfdbe81c95c3cbd4",
+      "src/jev_docs/web/app.py": "16d9fbc99c4200bbba15fadd3ed78dae5f981f2fd0fdc2f6dbd40af69eb9f4df",
+      "src/jev_docs/windows.py": "3a3c7c1a5e16d58f747d73f2d9a69bb9da1d7b18b60a5fe957fa55282a5e207f",
+      "uv.lock": "cc2fe4912ca0fab30a7eca510c42d4ad34b9eb3ffbf4fa5693bc09f242cbf69a"
+    },
+    "input_manifest_hashes": {
+      "classify": "170e55916c66732297dfabdbb7f1f7f84c762df0e82ac7606da034d4d75db28b",
+      "split": "e13d9521b9b1b3c0c19b836ff107aa0f5e810aa076a4c221a1d0767cacffd342"
+    },
+    "rules_hashes": {
+      "classify": "615162c1bb59dea0184543098e6b09ae6e13a01d9950cc83aef2442d64009ba7",
+      "split": "636eecae2eb6c29ca0b108aa5940365194cc2dd1cbec6715663b91b7e400cf6c"
+    },
+    "input_hashes": {
+      "real-small-warmup-classify": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+      "e001": "3d31c226df0d189ced80e039d01cf0f8820c1019681a0f0ca6264de277b7e982",
+      "e002": "575bb0d645ff613574c9b58506c6e0f7cbdc757c85ebc3e766ffc59fd5709d7c",
+      "e003": "b462579a45e4ce3877019b02ee159b11d5abee6e71a5a8c9d9271daa7ec25b66",
+      "e004": "36c7607db08ff469ed4e5df89e27ca90f29023c7cd6ca77c69343045e8f33d29",
+      "e005": "92444d8856ce55d9e25dca8b6d1420634fc68b11e1ab1f760916ea29ddd312b2",
+      "e006": "fd783d1f46f1f286cd1d7a2cca8812fc2ec05760478359873e22ba9d05d5f3b5",
+      "e007": "274513891e4e281d11e14286f14b9df724c24b6030fca0f0681da64fb2e7f525",
+      "e008": "dc7d2c6b566cac66badae721e2ce47ac47bb4e8b71aafb01721ff7368d803099",
+      "e009": "75b209c74f086a90ea7e945c40772578581ec8fae51cc33b615b3727d1693dfa",
+      "e010": "4b7656121cf2f05a6ae5a5cb0589de118b67d782c015b0d093c9c2bbc9f1139d",
+      "e011": "543483639656247532e7558d7c3aa35fd5f31b2559436b5be48be65c4d4593b3",
+      "e012": "0daea9cbb63f571d1f9513d2bb295943351dabc965301cad83890bb2db185b04",
+      "e013": "8c6a1d354fd41a5f6aeb972af9d7a7758932094325024f2869d509bf3502b2b1",
+      "e014": "f54abe847820f2b14a04dd96794159b5550dc699b00ca37df0c7be3188f15448",
+      "e015": "b2cf21c9820e462f5625592dac4504c7541f00ce144f454c39ee0aaeef87f57c",
+      "e016": "a285e7815b42b4ca47553e7be5e63bc691ca01020ee2a2e5c6ddf87ff7ddce5a",
+      "e017": "a03d33f6c48a6e3b5d0c2cacb76c0792a517c99c6d900d0bb8f362145bc5e579",
+      "e018": "e8f437ef887d9eeb5de9e450e32fd9973ed81a6c428710f5cca549f1bf89d3fe",
+      "e019": "465e6711c81fa675175a548f721b6adfc479ec946acc21e6d80ae266e7b81bd5",
+      "e020": "27303801785b13fc8f39cb995e2f7e92877aedefd4cdddcdc1fca6d1a48de5eb",
+      "e021": "d4d764654d5bf8c55f30c22bb1e5c8f739f330fc48401820dbd76dc4ef116bd7",
+      "e022": "f0236b347feeb86f87ac78bf5cf1511a1b6301a4a5bc5da2f398cc4377463de2",
+      "e023": "748698113e12643430b168ee3236fcbe321936d64a9a7eeb584a711c1d3130f5",
+      "e024": "1e6fa9edc937107aea306b35fad9ab6957cc76063ce90819fe6bd3a3f7b9d547",
+      "e025": "d159aae0e23a7ab42aa47ef6b1e9823c99acaf014de22482078fbb294449dea3",
+      "e026": "109dfa30282c731ad15826b060bd960b38089feb22eca98340103baceb7ff9ee",
+      "e027": "3a08f45914fb76ba7452cf892dc16ebb331443a6bbe3d11683e55353b21fcd96",
+      "e028": "47c4e80b6cb0e3415694d5d604c53b6cecbab2b753423de19690f53c178f24d6",
+      "e029": "da03ef96ca13606794bfd09856d51de5c2204cba1cae7896ca530a1aca4dc425",
+      "e030": "e9f3e79b037b90c478c38da475f0ca72efe27e5178903b61ed1a94146f8e1895",
+      "e031": "6542d6947c193d0deed607bc346f8fd7d7a92e85c5e3930a237813b7ee83486b",
+      "e032": "0f444c7d7133dd474b95d82f0e7d321474079d7c8a0986f1fa4090c5c001b707",
+      "e033": "8e142f5c1d7f44cc86a98ac2d1f287466a9906da7ef97f06cd94ad535d8e3455",
+      "e034": "f987330d7e8a5794ec3ac52c16204bad9cc3a7e461d1a5f8e8ccbfe4349e113a",
+      "e035": "cb334696bd5eb287a07ebf58496dd960f19de9c810f521aea5aef7e783aa8b0b",
+      "e036": "7d83b7a543c39e29e8ac77bd6836aae734a4819a595a58f6a083918d2c1c8867",
+      "e037": "3c82c5aff866b94035f74a9c343cd73b4f823e0ab39fa681388814664be411bf",
+      "e038": "3c77a3ff40ac0de01dc6fb761c49cc397678311f49d81c3a4bacfb94a0b219e0",
+      "e039": "375f8acfeec361ecf2ee2e032178bd112ad3001035ccf5fd4e848aa9440f939c",
+      "e040": "2abf1f8e39392be20eb8704d1ab5b7bc5865aa7e8f4e9db613e2adf12e458ebd",
+      "real-small-warmup-split": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+      "p001": "c127e0f9ea28879c499dd7dd9b5b60adba504d8eeb74e49c98fbe621f204e46e",
+      "p002": "40dee4616e151898c401b7059024b802bd54cf56e66e2ce1f980e680d72b573f",
+      "p003": "ab193f15daf681e43dc8c1e8d3a265d8c02cfbaa801c46a5a61ebea778e00ff7",
+      "p004": "028aadb6bfca23a959e755bfae33cd1f229e16c36e4fb3a45c3bfe58ecf96bb5",
+      "p005": "67227f1422b2bc894b1c0dbd1ec4ff419664a35c4a82d8c1195bbc0cd4844c44",
+      "p006": "1d25afa808d74d58bd483fafd372a1908ce8802fa6d5524d8f23daaed7a9d3c1",
+      "p007": "1e9371104fbbfa76391b769ee3c856c3444f68f8adf57be96441551e65c9f0f2",
+      "p008": "3553a68398472d4c8fa731e592dc4e179d7a1b91d0390349ae3cda1ef83920f4"
+    },
+    "packages": {
+      "docjev": "0.1.0",
+      "liteparse": "2.14.6",
+      "typesafe-sdk": "0.7.0",
+      "openai": "2.54.0",
+      "pydantic": "2.13.5",
+      "pypdf": "6.19.0",
+      "pypdfium2": "5.13.0",
+      "Pillow": "12.3.0"
+    },
+    "parser": {
+      "name": "liteparse",
+      "version": "2.14.6",
+      "tier": null,
+      "options": {
+        "ocr_enabled": true,
+        "ocr_language": "en",
+        "continue_on_page_error": false,
+        "ocr_failure_fatal": true,
+        "quiet": true,
+        "normalization": "unicode-nfc-lines-v1"
+      },
+      "conversion": {}
+    }
+  },
+  "execution_plan": [
+    {
+      "observation_id": "warmup:classify:real-small-warmup-classify:openai:-1",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "real-small-warmup-classify",
+      "repeat": -1,
+      "phase": "warmup",
+      "reserved_cost_usd": 0.0184485
+    },
+    {
+      "observation_id": "warmup:classify:real-small-warmup-classify:jev:-1",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "real-small-warmup-classify",
+      "repeat": -1,
+      "phase": "warmup",
+      "reserved_cost_usd": 0.010752
+    },
+    {
+      "observation_id": "warmup:split:real-small-warmup-split:jev:-1",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "real-small-warmup-split",
+      "repeat": -1,
+      "phase": "warmup",
+      "reserved_cost_usd": 0.010752
+    },
+    {
+      "observation_id": "warmup:split:real-small-warmup-split:openai:-1",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "real-small-warmup-split",
+      "repeat": -1,
+      "phase": "warmup",
+      "reserved_cost_usd": 0.0241685
+    },
+    {
+      "observation_id": "measured:classify:e023:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e023",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e023:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e023",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0047495
+    },
+    {
+      "observation_id": "measured:classify:e027:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e027",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e027:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e027",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005701
+    },
+    {
+      "observation_id": "measured:classify:e015:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e015",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00600825
+    },
+    {
+      "observation_id": "measured:classify:e015:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e015",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:split:p005:openai:0",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p005",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.02118175
+    },
+    {
+      "observation_id": "measured:split:p005:jev:0",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p005",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.016128000000000003
+    },
+    {
+      "observation_id": "measured:classify:e010:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e010",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0047487499999999995
+    },
+    {
+      "observation_id": "measured:classify:e010:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e010",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:split:p004:openai:0",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p004",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.01695825
+    },
+    {
+      "observation_id": "measured:split:p004:jev:0",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p004",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.010752
+    },
+    {
+      "observation_id": "measured:classify:e007:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e007",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.006367
+    },
+    {
+      "observation_id": "measured:classify:e007:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e007",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e032:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e032",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.006115000000000001
+    },
+    {
+      "observation_id": "measured:classify:e032:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e032",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e019:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e019",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.01295825
+    },
+    {
+      "observation_id": "measured:classify:e019:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e019",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e017:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e017",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e017:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e017",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0056
+    },
+    {
+      "observation_id": "measured:classify:e012:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e012",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.012947249999999999
+    },
+    {
+      "observation_id": "measured:classify:e012:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e012",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e024:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e024",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00465025
+    },
+    {
+      "observation_id": "measured:classify:e024:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e024",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e014:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e014",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e014:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e014",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00740125
+    },
+    {
+      "observation_id": "measured:classify:e038:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e038",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e038:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e038",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.004182
+    },
+    {
+      "observation_id": "measured:classify:e013:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e013",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.007877
+    },
+    {
+      "observation_id": "measured:classify:e013:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e013",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:split:p007:openai:0",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p007",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.01391025
+    },
+    {
+      "observation_id": "measured:split:p007:jev:0",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p007",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.010752
+    },
+    {
+      "observation_id": "measured:classify:e029:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e029",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e029:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e029",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.006518749999999999
+    },
+    {
+      "observation_id": "measured:classify:e011:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e011",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.004792749999999999
+    },
+    {
+      "observation_id": "measured:classify:e011:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e011",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:split:p001:openai:0",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p001",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.016904000000000002
+    },
+    {
+      "observation_id": "measured:split:p001:jev:0",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p001",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.010752
+    },
+    {
+      "observation_id": "measured:classify:e039:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e039",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e039:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e039",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005136
+    },
+    {
+      "observation_id": "measured:classify:e030:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e030",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00525925
+    },
+    {
+      "observation_id": "measured:classify:e030:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e030",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e034:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e034",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00558675
+    },
+    {
+      "observation_id": "measured:classify:e034:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e034",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:split:p008:openai:0",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p008",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.02112025
+    },
+    {
+      "observation_id": "measured:split:p008:jev:0",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p008",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.016128000000000003
+    },
+    {
+      "observation_id": "measured:classify:e033:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e033",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00527125
+    },
+    {
+      "observation_id": "measured:classify:e033:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e033",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:split:p003:jev:0",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p003",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.010752
+    },
+    {
+      "observation_id": "measured:split:p003:openai:0",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p003",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.022544250000000002
+    },
+    {
+      "observation_id": "measured:classify:e008:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e008",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.006656
+    },
+    {
+      "observation_id": "measured:classify:e008:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e008",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e020:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e020",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e020:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e020",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00477925
+    },
+    {
+      "observation_id": "measured:classify:e040:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e040",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0044919999999999995
+    },
+    {
+      "observation_id": "measured:classify:e040:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e040",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e016:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e016",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.006386
+    },
+    {
+      "observation_id": "measured:classify:e016:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e016",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e031:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e031",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e031:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e031",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00544725
+    },
+    {
+      "observation_id": "measured:split:p006:openai:0",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p006",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.01300525
+    },
+    {
+      "observation_id": "measured:split:p006:jev:0",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p006",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.010752
+    },
+    {
+      "observation_id": "measured:classify:e003:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e003",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e003:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e003",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00793275
+    },
+    {
+      "observation_id": "measured:classify:e001:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e001",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e001:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e001",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.008913
+    },
+    {
+      "observation_id": "measured:classify:e025:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e025",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e025:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e025",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005379
+    },
+    {
+      "observation_id": "measured:classify:e037:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e037",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0042805
+    },
+    {
+      "observation_id": "measured:classify:e037:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e037",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e021:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e021",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00643875
+    },
+    {
+      "observation_id": "measured:classify:e021:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e021",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e002:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e002",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.007608
+    },
+    {
+      "observation_id": "measured:classify:e002:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e002",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e035:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e035",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e035:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e035",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0041725
+    },
+    {
+      "observation_id": "measured:classify:e006:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e006",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0069995000000000005
+    },
+    {
+      "observation_id": "measured:classify:e006:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e006",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e028:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e028",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.004624
+    },
+    {
+      "observation_id": "measured:classify:e028:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e028",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e005:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e005",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e005:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e005",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.013243
+    },
+    {
+      "observation_id": "measured:classify:e004:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e004",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e004:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e004",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0115365
+    },
+    {
+      "observation_id": "measured:classify:e018:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e018",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.011634499999999999
+    },
+    {
+      "observation_id": "measured:classify:e018:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e018",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e036:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e036",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0046425
+    },
+    {
+      "observation_id": "measured:classify:e036:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e036",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e026:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e026",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e026:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e026",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0059085000000000006
+    },
+    {
+      "observation_id": "measured:classify:e022:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e022",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e022:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e022",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.0045305
+    },
+    {
+      "observation_id": "measured:split:p002:jev:0",
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p002",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.010752
+    },
+    {
+      "observation_id": "measured:split:p002:openai:0",
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "p002",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.012953
+    },
+    {
+      "observation_id": "measured:classify:e009:jev:0",
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e009",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.005376
+    },
+    {
+      "observation_id": "measured:classify:e009:openai:0",
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "source_id": "e009",
+      "repeat": 0,
+      "phase": "measured",
+      "reserved_cost_usd": 0.00499875
+    }
+  ],
+  "items": {
+    "real-small-warmup-classify": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "dev",
+      "source_sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+      "page_count": 10,
+      "source_ids": [
+        "r04"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 4.7552078031003475,
+        "ocr_ms": 0.0,
+        "decision_ms": 0.0,
+        "validation_ms": 0.0,
+        "export_ms": 0.0,
+        "total_ms": 8.526333142071962,
+        "ocr_cache_hit": true,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": true,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 56493
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/real-small-warmup-classify.json",
+      "artifact_sha256": "de9216d3bb1d58c45af5e77460e988ff87c9440e7f81a96a5081703ddc653ec2",
+      "pages_sha256": "efda7f1bae2a82e844bb6455f192cde4aaecdf36108e035842535558de979652",
+      "canonical_sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 54392,
+      "wall_ms": 356.3630832359195
+    },
+    "e001": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "3d31c226df0d189ced80e039d01cf0f8820c1019681a0f0ca6264de277b7e982",
+      "page_count": 2,
+      "source_ids": [
+        "e001"
+      ],
+      "source_family_id": "irs-f1040",
+      "preparation_metrics": {
+        "conversion_ms": 6.776916794478893,
+        "ocr_ms": 112.62466665357351,
+        "decision_ms": 0.0,
+        "validation_ms": 0.020791776478290558,
+        "export_ms": 0.0,
+        "total_ms": 120.51112484186888,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 20615
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e001.json",
+      "artifact_sha256": "943399819568df46e85d13fde7bc0c26562543b6d8173360b666ec0abab57bac",
+      "pages_sha256": "0b10e757e5b1c7c8776cdd5a9e5ccbc0aefd365ef3866399f803a7e43ddcfed1",
+      "canonical_sha256": "3d31c226df0d189ced80e039d01cf0f8820c1019681a0f0ca6264de277b7e982",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 19258,
+      "wall_ms": 457.52850035205483
+    },
+    "e002": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "575bb0d645ff613574c9b58506c6e0f7cbdc757c85ebc3e766ffc59fd5709d7c",
+      "page_count": 3,
+      "source_ids": [
+        "e002"
+      ],
+      "source_family_id": "irs-f940",
+      "preparation_metrics": {
+        "conversion_ms": 5.40166674181819,
+        "ocr_ms": 1244.0722081810236,
+        "decision_ms": 0.0,
+        "validation_ms": 0.02350006252527237,
+        "export_ms": 0.0,
+        "total_ms": 1250.5170409567654,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 15099
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e002.json",
+      "artifact_sha256": "8eba2e382658c463de3b49b5d0d38008fcfa89d882ba3cf9143ac8c33a2003c4",
+      "pages_sha256": "63f3a3f6b3e1821b33ac56968d383acee5b8606e827ac2da61f395f91503d63a",
+      "canonical_sha256": "575bb0d645ff613574c9b58506c6e0f7cbdc757c85ebc3e766ffc59fd5709d7c",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 13662,
+      "wall_ms": 1539.712750352919
+    },
+    "e003": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "b462579a45e4ce3877019b02ee159b11d5abee6e71a5a8c9d9271daa7ec25b66",
+      "page_count": 4,
+      "source_ids": [
+        "e003"
+      ],
+      "source_family_id": "irs-f2553",
+      "preparation_metrics": {
+        "conversion_ms": 3.1433338299393654,
+        "ocr_ms": 477.57970821112394,
+        "decision_ms": 0.0,
+        "validation_ms": 0.021792016923427582,
+        "export_ms": 0.0,
+        "total_ms": 481.3768332824111,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 16114
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e003.json",
+      "artifact_sha256": "11ba1f13f63e267a3da74082d3f75150fb7e302c61554e081dee23a41fcb15bd",
+      "pages_sha256": "1bf59d013e672e9ed758e020f90a1008e7d089c304aefe43be0a041482218f2e",
+      "canonical_sha256": "b462579a45e4ce3877019b02ee159b11d5abee6e71a5a8c9d9271daa7ec25b66",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 14585,
+      "wall_ms": 780.6787919253111
+    },
+    "e004": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "36c7607db08ff469ed4e5df89e27ca90f29023c7cd6ca77c69343045e8f33d29",
+      "page_count": 4,
+      "source_ids": [
+        "e004"
+      ],
+      "source_family_id": "irs-f4868",
+      "preparation_metrics": {
+        "conversion_ms": 3.2699168659746647,
+        "ocr_ms": 1535.1543752476573,
+        "decision_ms": 0.0,
+        "validation_ms": 0.018834136426448822,
+        "export_ms": 0.0,
+        "total_ms": 1539.2389581538737,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 30579
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e004.json",
+      "artifact_sha256": "d72d849a82495c040587cef5b072014794d45a769afd85180c87aef33862b2c3",
+      "pages_sha256": "8685fd847ac57d714629b087a648e12f95e99c9a1cbe46c457262cb507d85881",
+      "canonical_sha256": "36c7607db08ff469ed4e5df89e27ca90f29023c7cd6ca77c69343045e8f33d29",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 29000,
+      "wall_ms": 1799.4467080570757
+    },
+    "e005": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "92444d8856ce55d9e25dca8b6d1420634fc68b11e1ab1f760916ea29ddd312b2",
+      "page_count": 5,
+      "source_ids": [
+        "e005"
+      ],
+      "source_family_id": "irs-fw4",
+      "preparation_metrics": {
+        "conversion_ms": 8.797291200608015,
+        "ocr_ms": 65.95508381724358,
+        "decision_ms": 0.0,
+        "validation_ms": 0.018042046576738358,
+        "export_ms": 0.0,
+        "total_ms": 75.5755421705544,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 37088
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e005.json",
+      "artifact_sha256": "6a52ac0918ce62b31ec4520f483c723f1f4b39c9b86beca63f712d3513ad1ea0",
+      "pages_sha256": "654cb7bd4fa9fb043aaf0406830db50afc041e4a6d18710fad940811d322f470",
+      "canonical_sha256": "92444d8856ce55d9e25dca8b6d1420634fc68b11e1ab1f760916ea29ddd312b2",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 35450,
+      "wall_ms": 347.293124999851
+    },
+    "e006": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "fd783d1f46f1f286cd1d7a2cca8812fc2ec05760478359873e22ba9d05d5f3b5",
+      "page_count": 3,
+      "source_ids": [
+        "e006"
+      ],
+      "source_family_id": "irs-f8862",
+      "preparation_metrics": {
+        "conversion_ms": 4.300499800592661,
+        "ocr_ms": 471.87587479129434,
+        "decision_ms": 0.0,
+        "validation_ms": 0.02291705459356308,
+        "export_ms": 0.0,
+        "total_ms": 476.82949993759394,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 12651
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e006.json",
+      "artifact_sha256": "2a4e2a66c66dbd3cf0bc75ad7ddbddcfbd83f63c0c8cc631c0bcf3e0e3de4e48",
+      "pages_sha256": "5b139fc516bf68e93e74cc2a9a9e2c942e108f0539a7f5e5390962c3ac0941b6",
+      "canonical_sha256": "fd783d1f46f1f286cd1d7a2cca8812fc2ec05760478359873e22ba9d05d5f3b5",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 11228,
+      "wall_ms": 736.3196248188615
+    },
+    "e007": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "274513891e4e281d11e14286f14b9df724c24b6030fca0f0681da64fb2e7f525",
+      "page_count": 2,
+      "source_ids": [
+        "e007"
+      ],
+      "source_family_id": "irs-f8949",
+      "preparation_metrics": {
+        "conversion_ms": 4.033500328660011,
+        "ocr_ms": 37.7010409720242,
+        "decision_ms": 0.0,
+        "validation_ms": 0.014832708984613419,
+        "export_ms": 0.0,
+        "total_ms": 42.66754165291786,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 10386
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e007.json",
+      "artifact_sha256": "0f43b11273d82a70a562dee0b0a504ae28276007b64f3f4625002f3770e0e379",
+      "pages_sha256": "3c89f1c61aa0dd76469451dc8c281df9fca57a497e43ceb16c22f140264c4688",
+      "canonical_sha256": "274513891e4e281d11e14286f14b9df724c24b6030fca0f0681da64fb2e7f525",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 9074,
+      "wall_ms": 348.6374169588089
+    },
+    "e008": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "dc7d2c6b566cac66badae721e2ce47ac47bb4e8b71aafb01721ff7368d803099",
+      "page_count": 2,
+      "source_ids": [
+        "e008"
+      ],
+      "source_family_id": "irs-f8962",
+      "preparation_metrics": {
+        "conversion_ms": 3.9399168454110622,
+        "ocr_ms": 1177.6658748276532,
+        "decision_ms": 0.0,
+        "validation_ms": 0.016999896615743637,
+        "export_ms": 0.0,
+        "total_ms": 1182.2903752326965,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 11553
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e008.json",
+      "artifact_sha256": "a2fc587236690e105e0d954998590ee8075443110e5cd1c86a270f8c1979cc1e",
+      "pages_sha256": "6e50b3d3491a1b9f7ab522ee4dbccc6b0100f9303b680e1ed840cb636afdccee",
+      "canonical_sha256": "dc7d2c6b566cac66badae721e2ce47ac47bb4e8b71aafb01721ff7368d803099",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 10230,
+      "wall_ms": 1466.1971656605601
+    },
+    "e009": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "75b209c74f086a90ea7e945c40772578581ec8fae51cc33b615b3727d1693dfa",
+      "page_count": 1,
+      "source_ids": [
+        "e009"
+      ],
+      "source_family_id": "treasury-auction-tips",
+      "preparation_metrics": {
+        "conversion_ms": 0.881291925907135,
+        "ocr_ms": 679.7349588014185,
+        "decision_ms": 0.0,
+        "validation_ms": 0.012707896530628204,
+        "export_ms": 0.0,
+        "total_ms": 681.2053332105279,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 5203
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e009.json",
+      "artifact_sha256": "0d06e5adeffe8cfea645a4273728dcb40fab8fe58f9b6f453d8f8ad4648f5164",
+      "pages_sha256": "fe918596da48b9ae02d91001c6d80e933b9a14eaba59c45a829c48d5bc1f086d",
+      "canonical_sha256": "75b209c74f086a90ea7e945c40772578581ec8fae51cc33b615b3727d1693dfa",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 3977,
+      "wall_ms": 931.8653340451419
+    },
+    "e010": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "4b7656121cf2f05a6ae5a5cb0589de118b67d782c015b0d093c9c2bbc9f1139d",
+      "page_count": 1,
+      "source_ids": [
+        "e010"
+      ],
+      "source_family_id": "treasury-auction-bond",
+      "preparation_metrics": {
+        "conversion_ms": 0.9442083537578583,
+        "ocr_ms": 521.2162500247359,
+        "decision_ms": 0.0,
+        "validation_ms": 0.012250151485204697,
+        "export_ms": 0.0,
+        "total_ms": 522.7773748338223,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 4202
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e010.json",
+      "artifact_sha256": "4ba97f312ed47061903002b526480a16e1dcd73e88616ba73d3ea257ba14574e",
+      "pages_sha256": "d1f215550815faa19378a1f1d52a69c175edfa5fdab4cf008d98572d1cf06a60",
+      "canonical_sha256": "4b7656121cf2f05a6ae5a5cb0589de118b67d782c015b0d093c9c2bbc9f1139d",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 2977,
+      "wall_ms": 835.7985839247704
+    },
+    "e011": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "543483639656247532e7558d7c3aa35fd5f31b2559436b5be48be65c4d4593b3",
+      "page_count": 1,
+      "source_ids": [
+        "e011"
+      ],
+      "source_family_id": "treasury-auction-frn",
+      "preparation_metrics": {
+        "conversion_ms": 1.1677080765366554,
+        "ocr_ms": 500.8606668561697,
+        "decision_ms": 0.0,
+        "validation_ms": 0.015917234122753143,
+        "export_ms": 0.0,
+        "total_ms": 503.61137511208653,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 4380
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e011.json",
+      "artifact_sha256": "f2f736ec1e3072501a63da39b6bfcdd0bcfb0b92244c97721e046238c7a8d0a2",
+      "pages_sha256": "61fa6cbe73405fadc8e6d7160447df6da35515074f77ad44b0e281a7c22035cc",
+      "canonical_sha256": "543483639656247532e7558d7c3aa35fd5f31b2559436b5be48be65c4d4593b3",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 3153,
+      "wall_ms": 773.7101251259446
+    },
+    "e012": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "0daea9cbb63f571d1f9513d2bb295943351dabc965301cad83890bb2db185b04",
+      "page_count": 4,
+      "source_ids": [
+        "e012"
+      ],
+      "source_family_id": "treasury-daily-statement",
+      "preparation_metrics": {
+        "conversion_ms": 1.209499780088663,
+        "ocr_ms": 1905.2628329955041,
+        "decision_ms": 0.0,
+        "validation_ms": 0.01929188147187233,
+        "export_ms": 0.0,
+        "total_ms": 1907.4983750469983,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 36188
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e012.json",
+      "artifact_sha256": "f63d20bc3dc8abd0be2525c4bd62d2d6cc29d15074659933a72cbac4c9e02e54",
+      "pages_sha256": "92ec96a29b15e04a2451aebe20c3979e9dafa164a951ada3a54e5aaeb7a50efe",
+      "canonical_sha256": "0daea9cbb63f571d1f9513d2bb295943351dabc965301cad83890bb2db185b04",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 34643,
+      "wall_ms": 2222.3897078074515
+    },
+    "e013": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "8c6a1d354fd41a5f6aeb972af9d7a7758932094325024f2869d509bf3502b2b1",
+      "page_count": 7,
+      "source_ids": [
+        "e013"
+      ],
+      "source_family_id": "ncua-share-insurance-fund",
+      "preparation_metrics": {
+        "conversion_ms": 7.703207898885012,
+        "ocr_ms": 678.434208035469,
+        "decision_ms": 0.0,
+        "validation_ms": 0.023250002413988113,
+        "export_ms": 0.0,
+        "total_ms": 688.7512500397861,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 14975
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e013.json",
+      "artifact_sha256": "128019cd509eb1a336381ecf57b1fa4834077535d1b12bd0455cb6387dc0e7f5",
+      "pages_sha256": "4ccb8d949924d1f71462edd99b0004ba19e91fb40547b558e96f135ee1d578a4",
+      "canonical_sha256": "8c6a1d354fd41a5f6aeb972af9d7a7758932094325024f2869d509bf3502b2b1",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 13234,
+      "wall_ms": 1068.2778330519795
+    },
+    "e014": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "f54abe847820f2b14a04dd96794159b5550dc699b00ca37df0c7be3188f15448",
+      "page_count": 5,
+      "source_ids": [
+        "e014"
+      ],
+      "source_family_id": "ncua-operating-fund",
+      "preparation_metrics": {
+        "conversion_ms": 6.1950841918587685,
+        "ocr_ms": 910.4177090339363,
+        "decision_ms": 0.0,
+        "validation_ms": 0.01795915886759758,
+        "export_ms": 0.0,
+        "total_ms": 917.9357080720365,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 13626
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e014.json",
+      "artifact_sha256": "6a20c0d194a2938c9efea721b572d6ac780d83b47091db7ba73109dba1855920",
+      "pages_sha256": "20443252b9dcf663271ceb652a6825fa6a79af17fc56b06b28ce7d50da04aa41",
+      "canonical_sha256": "f54abe847820f2b14a04dd96794159b5550dc699b00ca37df0c7be3188f15448",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 12083,
+      "wall_ms": 1207.4053338728845
+    },
+    "e015": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "b2cf21c9820e462f5625592dac4504c7541f00ce144f454c39ee0aaeef87f57c",
+      "page_count": 5,
+      "source_ids": [
+        "e015"
+      ],
+      "source_family_id": "ncua-central-liquidity-facility",
+      "preparation_metrics": {
+        "conversion_ms": 7.099583279341459,
+        "ocr_ms": 793.4156670235097,
+        "decision_ms": 0.0,
+        "validation_ms": 0.015624798834323883,
+        "export_ms": 0.0,
+        "total_ms": 802.0489998161793,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 8035
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e015.json",
+      "artifact_sha256": "ea0e31d942d9d3c1822e298062abc4e39f2033548d497320b049a40eaf163e20",
+      "pages_sha256": "91818e7159cf08c6cca6d6510ac91207d56a79bc5b0a70ff3063295dcd6cdc10",
+      "canonical_sha256": "b2cf21c9820e462f5625592dac4504c7541f00ce144f454c39ee0aaeef87f57c",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 6511,
+      "wall_ms": 1099.7262923046947
+    },
+    "e016": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "a285e7815b42b4ca47553e7be5e63bc691ca01020ee2a2e5c6ddf87ff7ddce5a",
+      "page_count": 6,
+      "source_ids": [
+        "e016"
+      ],
+      "source_family_id": "ncua-revolving-loan-fund",
+      "preparation_metrics": {
+        "conversion_ms": 5.790750030428171,
+        "ocr_ms": 660.0762917660177,
+        "decision_ms": 0.0,
+        "validation_ms": 0.01691700890660286,
+        "export_ms": 0.0,
+        "total_ms": 666.7652921751142,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 9263
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e016.json",
+      "artifact_sha256": "9a861e876ad1eaa3e0eabbfbbcc5e32e4ced539fd438a4328746b2439b1f6627",
+      "pages_sha256": "9e6ef7c3b26f73355c9cd54967bb8afcec90c8067f3d6ffd2eea0006a992a52d",
+      "canonical_sha256": "a285e7815b42b4ca47553e7be5e63bc691ca01020ee2a2e5c6ddf87ff7ddce5a",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 7646,
+      "wall_ms": 940.3286250308156
+    },
+    "e017": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "a03d33f6c48a6e3b5d0c2cacb76c0792a517c99c6d900d0bb8f362145bc5e579",
+      "page_count": 4,
+      "source_ids": [
+        "e017"
+      ],
+      "source_family_id": "federal-reserve-fomc-statement",
+      "preparation_metrics": {
+        "conversion_ms": 2.736582886427641,
+        "ocr_ms": 597.6340831257403,
+        "decision_ms": 0.0,
+        "validation_ms": 0.020792242139577866,
+        "export_ms": 0.0,
+        "total_ms": 601.3958328403533,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 6668
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e017.json",
+      "artifact_sha256": "bf777c524276f9bb484d3839f693784ed382667bfdccb257201bd79b69af042a",
+      "pages_sha256": "52707d532c39858db71db3c3d3329f50f7237b0101222c7e685c5d3e2ee2bbce",
+      "canonical_sha256": "a03d33f6c48a6e3b5d0c2cacb76c0792a517c99c6d900d0bb8f362145bc5e579",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 5254,
+      "wall_ms": 840.3001250699162
+    },
+    "e018": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "e8f437ef887d9eeb5de9e450e32fd9973ed81a6c428710f5cca549f1bf89d3fe",
+      "page_count": 5,
+      "source_ids": [
+        "e018"
+      ],
+      "source_family_id": "census-new-residential-sales",
+      "preparation_metrics": {
+        "conversion_ms": 2.2574998438358307,
+        "ocr_ms": 1087.1942499652505,
+        "decision_ms": 0.0,
+        "validation_ms": 0.0210409052670002,
+        "export_ms": 0.0,
+        "total_ms": 1090.585082769394,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 30772
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e018.json",
+      "artifact_sha256": "a77f17ca6ac67931e2cd75dc973a0989c0befe15ed9f53d6dc4b19f0c7ff9010",
+      "pages_sha256": "4a9fb3181df2c643e100adef6cf39e92772ace98d405d92dc2e5100a5e04f931",
+      "canonical_sha256": "e8f437ef887d9eeb5de9e450e32fd9973ed81a6c428710f5cca549f1bf89d3fe",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 29016,
+      "wall_ms": 1356.4998749643564
+    },
+    "e019": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "465e6711c81fa675175a548f721b6adfc479ec946acc21e6d80ae266e7b81bd5",
+      "page_count": 5,
+      "source_ids": [
+        "e019"
+      ],
+      "source_family_id": "census-construction-spending",
+      "preparation_metrics": {
+        "conversion_ms": 5.471167154610157,
+        "ocr_ms": 1053.3245829865336,
+        "decision_ms": 0.0,
+        "validation_ms": 0.024207867681980133,
+        "export_ms": 0.0,
+        "total_ms": 1060.5104588903487,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 35978
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e019.json",
+      "artifact_sha256": "3662dec45e890f05b4e5c3d3aa60aec231ff0b5fd4a04cbbd83345dd6c35117f",
+      "pages_sha256": "e74c5dfaf43e652b6c6e9ac19d2e40bb468e25842bdfb7976d2495746c7e1ea3",
+      "canonical_sha256": "465e6711c81fa675175a548f721b6adfc479ec946acc21e6d80ae266e7b81bd5",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 34311,
+      "wall_ms": 1311.6780421696603
+    },
+    "e020": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "27303801785b13fc8f39cb995e2f7e92877aedefd4cdddcdc1fca6d1a48de5eb",
+      "page_count": 1,
+      "source_ids": [
+        "e020"
+      ],
+      "source_family_id": "usda-southern-plains-supervisor-award",
+      "preparation_metrics": {
+        "conversion_ms": 1.8039592541754246,
+        "ocr_ms": 966.2695829756558,
+        "decision_ms": 0.0,
+        "validation_ms": 0.016124919056892395,
+        "export_ms": 0.0,
+        "total_ms": 969.0315001644194,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 4325
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e020.json",
+      "artifact_sha256": "7e505d5e19264732d18eeaefa5167d6f236fc98b8c2107580e4f6864f04be485",
+      "pages_sha256": "4d103c48ce21bc45262f0083638cbb587554f732db429bb897ccdbbf830f06d2",
+      "canonical_sha256": "27303801785b13fc8f39cb995e2f7e92877aedefd4cdddcdc1fca6d1a48de5eb",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 3099,
+      "wall_ms": 1204.6343749389052
+    },
+    "e021": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "d4d764654d5bf8c55f30c22bb1e5c8f739f330fc48401820dbd76dc4ef116bd7",
+      "page_count": 4,
+      "source_ids": [
+        "e021"
+      ],
+      "source_family_id": "bea-new-foreign-direct-investment",
+      "preparation_metrics": {
+        "conversion_ms": 2.8036250732839108,
+        "ocr_ms": 623.0841246433556,
+        "decision_ms": 0.0,
+        "validation_ms": 0.021167099475860596,
+        "export_ms": 0.0,
+        "total_ms": 627.5021671317518,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 10070
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e021.json",
+      "artifact_sha256": "cfcb7bb033c9287607ebfc908a41d6dfeba46554eecbed1528c052eb7720b4bc",
+      "pages_sha256": "ff9d8018c92c6e287315ae401cb0a0ca0b377e7fc09584f5dea8946b6ede1584",
+      "canonical_sha256": "d4d764654d5bf8c55f30c22bb1e5c8f739f330fc48401820dbd76dc4ef116bd7",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 8609,
+      "wall_ms": 888.8740409165621
+    },
+    "e022": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "f0236b347feeb86f87ac78bf5cf1511a1b6301a4a5bc5da2f398cc4377463de2",
+      "page_count": 2,
+      "source_ids": [
+        "e022"
+      ],
+      "source_family_id": "usda-cattle-inventory-news",
+      "preparation_metrics": {
+        "conversion_ms": 2.3093749769032,
+        "ocr_ms": 451.2866660952568,
+        "decision_ms": 0.0,
+        "validation_ms": 0.013874843716621399,
+        "export_ms": 0.0,
+        "total_ms": 455.2681250497699,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 3002
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e022.json",
+      "artifact_sha256": "98b47e0d1a6fb47c0365d8f1567b564d9e08a9846098f0ab1d9967c51e9fdfee",
+      "pages_sha256": "b930c1d597a48a66224b8d3067570ecc565d97588651bea53d4c3968654917f0",
+      "canonical_sha256": "f0236b347feeb86f87ac78bf5cf1511a1b6301a4a5bc5da2f398cc4377463de2",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 1728,
+      "wall_ms": 722.5073329173028
+    },
+    "e023": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "748698113e12643430b168ee3236fcbe321936d64a9a7eeb584a711c1d3130f5",
+      "page_count": 2,
+      "source_ids": [
+        "e023"
+      ],
+      "source_family_id": "usda-june-agricultural-survey-news",
+      "preparation_metrics": {
+        "conversion_ms": 1.8814168870449066,
+        "ocr_ms": 777.5947083719075,
+        "decision_ms": 0.0,
+        "validation_ms": 0.013083219528198242,
+        "export_ms": 0.0,
+        "total_ms": 781.2669998966157,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 3872
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e023.json",
+      "artifact_sha256": "c702dbb6999acc2010526fcd40d0a5c4fad595fa7a5af0e89985a732458ed8d7",
+      "pages_sha256": "b34df7276ee5c569e63c3f21bb0894e8c86f9334490afd0e05b37deede5f0a4c",
+      "canonical_sha256": "748698113e12643430b168ee3236fcbe321936d64a9a7eeb584a711c1d3130f5",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 2604,
+      "wall_ms": 1047.6452922448516
+    },
+    "e024": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "1e6fa9edc937107aea306b35fad9ab6957cc76063ce90819fe6bd3a3f7b9d547",
+      "page_count": 1,
+      "source_ids": [
+        "e024"
+      ],
+      "source_family_id": "usda-southern-plains-farm-labor-news",
+      "preparation_metrics": {
+        "conversion_ms": 1.5783747658133507,
+        "ocr_ms": 817.4067917279899,
+        "decision_ms": 0.0,
+        "validation_ms": 0.009917188435792923,
+        "export_ms": 0.0,
+        "total_ms": 820.0023341923952,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 3810
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e024.json",
+      "artifact_sha256": "690c01fda417b1835d1c77fcc360dadf78d5ca8e645d49b03ae6cc2fa5f20172",
+      "pages_sha256": "14a7db54736e0027ee6b5676d406e544a1a817026dab7c05f213ddf83321b7e6",
+      "canonical_sha256": "1e6fa9edc937107aea306b35fad9ab6957cc76063ce90819fe6bd3a3f7b9d547",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 2583,
+      "wall_ms": 1094.3920407444239
+    },
+    "e025": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "d159aae0e23a7ab42aa47ef6b1e9823c99acaf014de22482078fbb294449dea3",
+      "page_count": 3,
+      "source_ids": [
+        "e025"
+      ],
+      "source_family_id": "fr-2025-09450",
+      "preparation_metrics": {
+        "conversion_ms": 1.3895831070840359,
+        "ocr_ms": 1024.2742919363081,
+        "decision_ms": 0.0,
+        "validation_ms": 0.07404107600450516,
+        "export_ms": 0.0,
+        "total_ms": 1026.6075828112662,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 6122
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e025.json",
+      "artifact_sha256": "ccf657d7005385f8c2ed6427c5760e45933ff789324f275bbd85b9d2893243b0",
+      "pages_sha256": "ec7125a19d02d19c8b0fb29b9e2e0ec1542a85778c32a23698d7567d32fa6bba",
+      "canonical_sha256": "d159aae0e23a7ab42aa47ef6b1e9823c99acaf014de22482078fbb294449dea3",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 4746,
+      "wall_ms": 1324.1205839440227
+    },
+    "e026": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "109dfa30282c731ad15826b060bd960b38089feb22eca98340103baceb7ff9ee",
+      "page_count": 4,
+      "source_ids": [
+        "e026"
+      ],
+      "source_family_id": "fr-2025-03798",
+      "preparation_metrics": {
+        "conversion_ms": 1.2330417521297932,
+        "ocr_ms": 628.0213333666325,
+        "decision_ms": 0.0,
+        "validation_ms": 0.014666002243757248,
+        "export_ms": 0.0,
+        "total_ms": 629.892666824162,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 7957
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e026.json",
+      "artifact_sha256": "6e3e2155953addb2457e21b670b9eb691c09938669f5a3600da4e0ec7223d137",
+      "pages_sha256": "66f6688b8e5820a6e697ee97eea288345f02f0154c8dccf2fb76b6062c4fd94f",
+      "canonical_sha256": "109dfa30282c731ad15826b060bd960b38089feb22eca98340103baceb7ff9ee",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 6488,
+      "wall_ms": 892.8601671941578
+    },
+    "e027": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "3a08f45914fb76ba7452cf892dc16ebb331443a6bbe3d11683e55353b21fcd96",
+      "page_count": 3,
+      "source_ids": [
+        "e027"
+      ],
+      "source_family_id": "fr-2025-08802",
+      "preparation_metrics": {
+        "conversion_ms": 1.9051251001656055,
+        "ocr_ms": 764.7933750413358,
+        "decision_ms": 0.0,
+        "validation_ms": 0.014416873455047607,
+        "export_ms": 0.0,
+        "total_ms": 767.3874576576054,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 7471
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e027.json",
+      "artifact_sha256": "5ff0e8a248b75cedce400d387badbf5f02f0f486f96485c0ca693182fd8c761e",
+      "pages_sha256": "c9a92c62e4866c0ac0be298e4c5985e573d99668232eed98dfbcf9a64d02ccde",
+      "canonical_sha256": "3a08f45914fb76ba7452cf892dc16ebb331443a6bbe3d11683e55353b21fcd96",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 6034,
+      "wall_ms": 1051.2610832229257
+    },
+    "e028": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "47c4e80b6cb0e3415694d5d604c53b6cecbab2b753423de19690f53c178f24d6",
+      "page_count": 2,
+      "source_ids": [
+        "e028"
+      ],
+      "source_family_id": "fr-2025-01780",
+      "preparation_metrics": {
+        "conversion_ms": 1.401333138346672,
+        "ocr_ms": 770.1086667366326,
+        "decision_ms": 0.0,
+        "validation_ms": 0.01933285966515541,
+        "export_ms": 0.0,
+        "total_ms": 772.3090420477092,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 3394
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e028.json",
+      "artifact_sha256": "bb0342568fc112f067f62b2a69e9f4aacceb343dd66501dfe3be1c660176e187",
+      "pages_sha256": "f04f84cc3f8061ec2611f1aa0bb71f7a5cd36d735ea927641be02fc373b9be30",
+      "canonical_sha256": "47c4e80b6cb0e3415694d5d604c53b6cecbab2b753423de19690f53c178f24d6",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 2102,
+      "wall_ms": 1041.2219581194222
+    },
+    "e029": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "da03ef96ca13606794bfd09856d51de5c2204cba1cae7896ca530a1aca4dc425",
+      "page_count": 5,
+      "source_ids": [
+        "e029"
+      ],
+      "source_family_id": "fr-2025-14904",
+      "preparation_metrics": {
+        "conversion_ms": 3.180209081619978,
+        "ocr_ms": 655.0964578054845,
+        "decision_ms": 0.0,
+        "validation_ms": 0.016124919056892395,
+        "export_ms": 0.0,
+        "total_ms": 659.1131249442697,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 10137
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e029.json",
+      "artifact_sha256": "58a459918c81882cc5a2a33973399ea29919fed1786ca5961ed2ece8d4e39a44",
+      "pages_sha256": "93a490a9cdadcdfb826274563b917f660017a22c0ae4822af453f900cd3507be",
+      "canonical_sha256": "da03ef96ca13606794bfd09856d51de5c2204cba1cae7896ca530a1aca4dc425",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 8553,
+      "wall_ms": 1009.7860000096262
+    },
+    "e030": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "e9f3e79b037b90c478c38da475f0ca72efe27e5178903b61ed1a94146f8e1895",
+      "page_count": 3,
+      "source_ids": [
+        "e030"
+      ],
+      "source_family_id": "fr-2025-17867",
+      "preparation_metrics": {
+        "conversion_ms": 1.2196660973131657,
+        "ocr_ms": 591.7984591796994,
+        "decision_ms": 0.0,
+        "validation_ms": 0.018999911844730377,
+        "export_ms": 0.0,
+        "total_ms": 593.7224579975009,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 5661
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e030.json",
+      "artifact_sha256": "fdec6d22e24c3229996dfdf9aae944731f3a1da7f24c0589a5b8aabbc7620ee8",
+      "pages_sha256": "d2897550720eb6ce85aa2766cf02ab79a0c2f7e90d8a0f559141f4e76413ab7d",
+      "canonical_sha256": "e9f3e79b037b90c478c38da475f0ca72efe27e5178903b61ed1a94146f8e1895",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 4267,
+      "wall_ms": 885.2898329496384
+    },
+    "e031": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "6542d6947c193d0deed607bc346f8fd7d7a92e85c5e3930a237813b7ee83486b",
+      "page_count": 3,
+      "source_ids": [
+        "e031"
+      ],
+      "source_family_id": "fr-2025-12393",
+      "preparation_metrics": {
+        "conversion_ms": 1.6498328186571598,
+        "ocr_ms": 607.8004161827266,
+        "decision_ms": 0.0,
+        "validation_ms": 0.02024974673986435,
+        "export_ms": 0.0,
+        "total_ms": 610.0859171710908,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 6432
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e031.json",
+      "artifact_sha256": "38b46c46358c6df91997b06bf60054d1d35ecb983008adf7d78e134935b118f6",
+      "pages_sha256": "51e5dfdaedb3d213589eb494564ad2597c48f023e0f69db358967be72a06e260",
+      "canonical_sha256": "6542d6947c193d0deed607bc346f8fd7d7a92e85c5e3930a237813b7ee83486b",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 5019,
+      "wall_ms": 878.759500104934
+    },
+    "e032": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "0f444c7d7133dd474b95d82f0e7d321474079d7c8a0986f1fa4090c5c001b707",
+      "page_count": 4,
+      "source_ids": [
+        "e032"
+      ],
+      "source_family_id": "fr-2025-13908",
+      "preparation_metrics": {
+        "conversion_ms": 1.290624961256981,
+        "ocr_ms": 549.3482076562941,
+        "decision_ms": 0.0,
+        "validation_ms": 0.016416888684034348,
+        "export_ms": 0.0,
+        "total_ms": 551.2987496331334,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 8857
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e032.json",
+      "artifact_sha256": "1d39d17fd86207f5798929053d2302a6fabd5e44e79447e528076aa6ef5b2482",
+      "pages_sha256": "ebdb1005fb583490a52991d18b632339ca64e9b2863138e0f2cfa9a6b5c82d36",
+      "canonical_sha256": "0f444c7d7133dd474b95d82f0e7d321474079d7c8a0986f1fa4090c5c001b707",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 7314,
+      "wall_ms": 823.8931251689792
+    },
+    "e033": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "8e142f5c1d7f44cc86a98ac2d1f287466a9906da7ef97f06cd94ad535d8e3455",
+      "page_count": 2,
+      "source_ids": [
+        "e033"
+      ],
+      "source_family_id": "cdc-listeria-factsheet",
+      "preparation_metrics": {
+        "conversion_ms": 2.3357090540230274,
+        "ocr_ms": 1117.7984587848186,
+        "decision_ms": 0.0,
+        "validation_ms": 0.016124919056892395,
+        "export_ms": 0.0,
+        "total_ms": 1120.9035832434893,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 6142
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e033.json",
+      "artifact_sha256": "2e51d6b1b9b9252d2b494c00c0dde6c8bd0f6e0c0b9bffec1e35878222caaa66",
+      "pages_sha256": "cc6e6a1e6076e26db7724900c280fa8d9123ff08371003e46e23bf3de662effb",
+      "canonical_sha256": "8e142f5c1d7f44cc86a98ac2d1f287466a9906da7ef97f06cd94ad535d8e3455",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 4691,
+      "wall_ms": 1413.1057080812752
+    },
+    "e034": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "f987330d7e8a5794ec3ac52c16204bad9cc3a7e461d1a5f8e8ccbfe4349e113a",
+      "page_count": 1,
+      "source_ids": [
+        "e034"
+      ],
+      "source_family_id": "fda-food-storage-chart",
+      "preparation_metrics": {
+        "conversion_ms": 2.010874915868044,
+        "ocr_ms": 1220.7719581201673,
+        "decision_ms": 0.0,
+        "validation_ms": 0.011791940778493881,
+        "export_ms": 0.0,
+        "total_ms": 1223.5617088153958,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 7593
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e034.json",
+      "artifact_sha256": "f6cc65df3d3dfb238645258aebfd66af267b03d98763050143b22d4488a8cd29",
+      "pages_sha256": "842efe7489cf3aa2b0b7a8744b16ad7ecf58545a07d1276188663b18bcd73297",
+      "canonical_sha256": "f987330d7e8a5794ec3ac52c16204bad9cc3a7e461d1a5f8e8ccbfe4349e113a",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 6329,
+      "wall_ms": 1490.6406248919666
+    },
+    "e035": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "cb334696bd5eb287a07ebf58496dd960f19de9c810f521aea5aef7e783aa8b0b",
+      "page_count": 1,
+      "source_ids": [
+        "e035"
+      ],
+      "source_family_id": "cdc-handwashing-poster",
+      "preparation_metrics": {
+        "conversion_ms": 2.872833050787449,
+        "ocr_ms": 209.4629998318851,
+        "decision_ms": 0.0,
+        "validation_ms": 0.012584030628204346,
+        "export_ms": 0.0,
+        "total_ms": 213.66995805874467,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 1860
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e035.json",
+      "artifact_sha256": "1cc0766931058603c329ecceb580304794de0d7acbe94a9a2e1c071b4ada2914",
+      "pages_sha256": "39226bd81e589db883e69862fee725f4afb35bbd1b5dc062312443fee04e9766",
+      "canonical_sha256": "cb334696bd5eb287a07ebf58496dd960f19de9c810f521aea5aef7e783aa8b0b",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 672,
+      "wall_ms": 456.11245883628726
+    },
+    "e036": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "7d83b7a543c39e29e8ac77bd6836aae734a4819a595a58f6a083918d2c1c8867",
+      "page_count": 1,
+      "source_ids": [
+        "e036"
+      ],
+      "source_family_id": "usfa-smoke-alarm-poster",
+      "preparation_metrics": {
+        "conversion_ms": 2.784708049148321,
+        "ocr_ms": 636.3049168139696,
+        "decision_ms": 0.0,
+        "validation_ms": 0.023541972041130066,
+        "export_ms": 0.0,
+        "total_ms": 640.3799578547478,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 3761
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e036.json",
+      "artifact_sha256": "6a1b93c984a605d87d64613e183bab76e095ab38d5357163ece0bf0b431b1e2a",
+      "pages_sha256": "6b48122ece4e55fca8d020f78f50ab7ed029cae06a2cf58cea70b88e6b8589da",
+      "canonical_sha256": "7d83b7a543c39e29e8ac77bd6836aae734a4819a595a58f6a083918d2c1c8867",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 2552,
+      "wall_ms": 889.7858341224492
+    },
+    "e037": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "3c82c5aff866b94035f74a9c343cd73b4f823e0ab39fa681388814664be411bf",
+      "page_count": 1,
+      "source_ids": [
+        "e037"
+      ],
+      "source_family_id": "usfa-fire-escape-poster",
+      "preparation_metrics": {
+        "conversion_ms": 2.578707877546549,
+        "ocr_ms": 356.65841680020094,
+        "decision_ms": 0.0,
+        "validation_ms": 0.011791009455919266,
+        "export_ms": 0.0,
+        "total_ms": 360.5963746085763,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 2317
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e037.json",
+      "artifact_sha256": "531bb458f3a72d0f45b8e2482c56ddbc01d8c054ef5622b192dd50d108066160",
+      "pages_sha256": "6d143e6ae8a05934f9f611396f98c5c37ba51b119ca0cb4b730dda9dfb431f15",
+      "canonical_sha256": "3c82c5aff866b94035f74a9c343cd73b4f823e0ab39fa681388814664be411bf",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 1104,
+      "wall_ms": 621.6032500378788
+    },
+    "e038": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "3c77a3ff40ac0de01dc6fb761c49cc397678311f49d81c3a4bacfb94a0b219e0",
+      "page_count": 1,
+      "source_ids": [
+        "e038"
+      ],
+      "source_family_id": "usfa-escape-planning-worksheet",
+      "preparation_metrics": {
+        "conversion_ms": 1.7100418917834759,
+        "ocr_ms": 301.939208060503,
+        "decision_ms": 0.0,
+        "validation_ms": 0.016874633729457855,
+        "export_ms": 0.0,
+        "total_ms": 304.6070826239884,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 1936
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e038.json",
+      "artifact_sha256": "e733b7002f9b39bb0445bebe1aa07684a924287961ebb5c2d2b24fb9cf1110c5",
+      "pages_sha256": "78738285ca8ab798227aeeaff4e1f5d457f75f6991219f697640cf5d6b9e2aa2",
+      "canonical_sha256": "3c77a3ff40ac0de01dc6fb761c49cc397678311f49d81c3a4bacfb94a0b219e0",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 710,
+      "wall_ms": 564.0114997513592
+    },
+    "e039": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "375f8acfeec361ecf2ee2e032178bd112ad3001035ccf5fd4e848aa9440f939c",
+      "page_count": 2,
+      "source_ids": [
+        "e039"
+      ],
+      "source_family_id": "fema-emergency-supply-checklist",
+      "preparation_metrics": {
+        "conversion_ms": 2.3422501981258392,
+        "ocr_ms": 574.8252500779927,
+        "decision_ms": 0.0,
+        "validation_ms": 0.01470884308218956,
+        "export_ms": 0.0,
+        "total_ms": 578.2357919961214,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 5492
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e039.json",
+      "artifact_sha256": "c2f55ccccd36682051097956ef93275e79f58cfd22ed7ea9896802744105d564",
+      "pages_sha256": "e9411afe5ffc2754034362648fe68fdc538f8237502dc2a7ba5d5bc41056a417",
+      "canonical_sha256": "375f8acfeec361ecf2ee2e032178bd112ad3001035ccf5fd4e848aa9440f939c",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 4150,
+      "wall_ms": 888.5287917219102
+    },
+    "e040": {
+      "status": "ok",
+      "task": "classify",
+      "partition": "test",
+      "source_sha256": "2abf1f8e39392be20eb8704d1ab5b7bc5865aa7e8f4e9db613e2adf12e458ebd",
+      "page_count": 1,
+      "source_ids": [
+        "e040"
+      ],
+      "source_family_id": "usfa-highrise-fire-safety",
+      "preparation_metrics": {
+        "conversion_ms": 2.0065829157829285,
+        "ocr_ms": 802.2205838933587,
+        "decision_ms": 0.0,
+        "validation_ms": 0.02033403143286705,
+        "export_ms": 0.0,
+        "total_ms": 805.566624738276,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 3165
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/e040.json",
+      "artifact_sha256": "609156fdb10860a4b405f17fe0728d2824083ff17280588f1ca44c023f511ab8",
+      "pages_sha256": "5dd89b6b80250b7fdb5c2427cb9eefaa23d3ed7bf458470f59fd2397dd861f66",
+      "canonical_sha256": "2abf1f8e39392be20eb8704d1ab5b7bc5865aa7e8f4e9db613e2adf12e458ebd",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 1950,
+      "wall_ms": 1103.5850420594215
+    },
+    "real-small-warmup-split": {
+      "status": "ok",
+      "task": "split",
+      "partition": "dev",
+      "source_sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+      "page_count": 15,
+      "source_ids": [
+        "r01",
+        "r02",
+        "r03",
+        "r04"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 6.126958876848221,
+        "ocr_ms": 0.0,
+        "decision_ms": 0.0,
+        "validation_ms": 0.0,
+        "export_ms": 0.0,
+        "total_ms": 11.106791906058788,
+        "ocr_cache_hit": true,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": true,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 77416
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/real-small-warmup-split.json",
+      "artifact_sha256": "dba753199a63693f430e0bf88a1aba31652e6fdef2477f12f9375c074a55d262",
+      "pages_sha256": "3c390dbde53d1870533342775c802177318b19cef091a8a1b273382d7a1a0320",
+      "canonical_sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 74772,
+      "wall_ms": 298.9899171516299
+    },
+    "p001": {
+      "status": "ok",
+      "task": "split",
+      "partition": "test",
+      "source_sha256": "c127e0f9ea28879c499dd7dd9b5b60adba504d8eeb74e49c98fbe621f204e46e",
+      "page_count": 12,
+      "source_ids": [
+        "e001",
+        "e002",
+        "e009",
+        "e017",
+        "e033"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 4.864291753619909,
+        "ocr_ms": 1306.7544996738434,
+        "decision_ms": 0.0,
+        "validation_ms": 0.026999972760677338,
+        "export_ms": 0.0,
+        "total_ms": 1313.7435829266906,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 49236
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/p001.json",
+      "artifact_sha256": "0ce878e6117f9dacaec9dda1d8a26e99e6dcae4e5742ed1ed35379f40fdbf4a9",
+      "pages_sha256": "fde89ea2a9f0cab3e1155ee450226b59cfcfd1e5a04463a84d7970d5013324b1",
+      "canonical_sha256": "c127e0f9ea28879c499dd7dd9b5b60adba504d8eeb74e49c98fbe621f204e46e",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 46842,
+      "wall_ms": 1587.3834160156548
+    },
+    "p002": {
+      "status": "ok",
+      "task": "split",
+      "partition": "test",
+      "source_sha256": "40dee4616e151898c401b7059024b802bd54cf56e66e2ce1f980e680d72b573f",
+      "page_count": 10,
+      "source_ids": [
+        "e010",
+        "e011",
+        "e025",
+        "e003",
+        "e034"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 2.928665839135647,
+        "ocr_ms": 1343.0017083883286,
+        "decision_ms": 0.0,
+        "validation_ms": 0.022042077034711838,
+        "export_ms": 0.0,
+        "total_ms": 1347.7117912843823,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 33918
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/p002.json",
+      "artifact_sha256": "ea92fa419f46bacd2b1ff220f53f17c5295640b7d9ce50e645f5b5f2efe1fbc6",
+      "pages_sha256": "e5593670af9ea06ebc3530fb803e67576352164638358047373e709298ca0a08",
+      "canonical_sha256": "40dee4616e151898c401b7059024b802bd54cf56e66e2ce1f980e680d72b573f",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 31790,
+      "wall_ms": 1636.022875085473
+    },
+    "p003": {
+      "status": "ok",
+      "task": "split",
+      "partition": "test",
+      "source_sha256": "ab193f15daf681e43dc8c1e8d3a265d8c02cfbaa801c46a5a61ebea778e00ff7",
+      "page_count": 15,
+      "source_ids": [
+        "e018",
+        "e020",
+        "e004",
+        "e026",
+        "e035"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 4.598541185259819,
+        "ocr_ms": 1773.3124173246324,
+        "decision_ms": 0.0,
+        "validation_ms": 0.04037516191601753,
+        "export_ms": 0.0,
+        "total_ms": 1781.0122082009912,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 71005
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/p003.json",
+      "artifact_sha256": "0e3eb4ea7723358706610178b99550637736af72226b9fe7ec0835ab53cc1dae",
+      "pages_sha256": "875b095f5c87ece8c75ab21c5c71593a3045b4af905485492fec0980419a5995",
+      "canonical_sha256": "ab193f15daf681e43dc8c1e8d3a265d8c02cfbaa801c46a5a61ebea778e00ff7",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 68275,
+      "wall_ms": 2086.5902923978865
+    },
+    "p004": {
+      "status": "ok",
+      "task": "split",
+      "partition": "test",
+      "source_sha256": "028aadb6bfca23a959e755bfae33cd1f229e16c36e4fb3a45c3bfe58ecf96bb5",
+      "page_count": 12,
+      "source_ids": [
+        "e027",
+        "e028",
+        "e012",
+        "e022",
+        "e036"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 3.502208273857832,
+        "ocr_ms": 2300.715916324407,
+        "decision_ms": 0.0,
+        "validation_ms": 0.034207943826913834,
+        "export_ms": 0.0,
+        "total_ms": 2306.2172909267247,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 49325
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/p004.json",
+      "artifact_sha256": "e73db515e771d2a91607558e485af9ce5920a9ee23bdacbddf7baa687183b3cb",
+      "pages_sha256": "36fedee42f47f043bfbd785b62aae053eaa23df49806c010d77b2a6cc4d76869",
+      "canonical_sha256": "028aadb6bfca23a959e755bfae33cd1f229e16c36e4fb3a45c3bfe58ecf96bb5",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 47059,
+      "wall_ms": 2585.0944579578936
+    },
+    "p005": {
+      "status": "ok",
+      "task": "split",
+      "partition": "test",
+      "source_sha256": "67227f1422b2bc894b1c0dbd1ec4ff419664a35c4a82d8c1195bbc0cd4844c44",
+      "page_count": 20,
+      "source_ids": [
+        "e005",
+        "e013",
+        "e023",
+        "e029",
+        "e037"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 4.449333995580673,
+        "ocr_ms": 1459.7245422191918,
+        "decision_ms": 0.0,
+        "validation_ms": 0.03750016912817955,
+        "export_ms": 0.0,
+        "total_ms": 1466.3064163178205,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 63906
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/p005.json",
+      "artifact_sha256": "4285ef837b31d315d470eced88d5df0726c7385a3617a821ea52628367cda62f",
+      "pages_sha256": "7433d007f1cda7694e25ad2bea248e617eaf3c5e3e0a6a840170b02fa2b28748",
+      "canonical_sha256": "67227f1422b2bc894b1c0dbd1ec4ff419664a35c4a82d8c1195bbc0cd4844c44",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 60945,
+      "wall_ms": 1759.2026670463383
+    },
+    "p006": {
+      "status": "ok",
+      "task": "split",
+      "partition": "test",
+      "source_sha256": "1d25afa808d74d58bd483fafd372a1908ce8802fa6d5524d8f23daaed7a9d3c1",
+      "page_count": 13,
+      "source_ids": [
+        "e014",
+        "e024",
+        "e030",
+        "e038",
+        "e006"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 3.740458283573389,
+        "ocr_ms": 1082.1018749848008,
+        "decision_ms": 0.0,
+        "validation_ms": 0.03974977880716324,
+        "export_ms": 0.0,
+        "total_ms": 1087.9425001330674,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 33194
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/p006.json",
+      "artifact_sha256": "7988294ce1ee65eb8e723755826bedc574bc92dd4b83546a2d1bd452974cc295",
+      "pages_sha256": "32b103d9353cb60e3a3218c07af0f259cd8a3019b0cd0d2f5e6e0faa4b93dadc",
+      "canonical_sha256": "1d25afa808d74d58bd483fafd372a1908ce8802fa6d5524d8f23daaed7a9d3c1",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 30871,
+      "wall_ms": 1383.9488751254976
+    },
+    "p007": {
+      "status": "ok",
+      "task": "split",
+      "partition": "test",
+      "source_sha256": "1e9371104fbbfa76391b769ee3c856c3444f68f8adf57be96441551e65c9f0f2",
+      "page_count": 16,
+      "source_ids": [
+        "e021",
+        "e031",
+        "e039",
+        "e007",
+        "e015"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 6.988000124692917,
+        "ocr_ms": 1234.8349578678608,
+        "decision_ms": 0.0,
+        "validation_ms": 0.06258394569158554,
+        "export_ms": 0.0,
+        "total_ms": 1244.06170938164,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 35928
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/p007.json",
+      "artifact_sha256": "de7a49e868b8bcd65e238c1aaaa56cd00d83e0b3da49d2a5d6d8effe0fc9cdcd",
+      "pages_sha256": "fa06e924382764fd275fabcbaef3dbf01f084089e8ebcb7379b1658b86ff7f32",
+      "canonical_sha256": "1e9371104fbbfa76391b769ee3c856c3444f68f8adf57be96441551e65c9f0f2",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 33363,
+      "wall_ms": 1559.3263343907893
+    },
+    "p008": {
+      "status": "ok",
+      "task": "split",
+      "partition": "test",
+      "source_sha256": "3553a68398472d4c8fa731e592dc4e179d7a1b91d0390349ae3cda1ef83920f4",
+      "page_count": 18,
+      "source_ids": [
+        "e032",
+        "e040",
+        "e008",
+        "e016",
+        "e019"
+      ],
+      "source_family_id": null,
+      "preparation_metrics": {
+        "conversion_ms": 4.2914170771837234,
+        "ocr_ms": 1919.2022080533206,
+        "decision_ms": 0.0,
+        "validation_ms": 0.03133295103907585,
+        "export_ms": 0.0,
+        "total_ms": 1925.3439158201218,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      },
+      "cache_hit": false,
+      "engine_preflight": {
+        "jev": {
+          "status": "ok",
+          "request_count": 1,
+          "windows": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          ]
+        },
+        "openai": {
+          "status": "ok",
+          "request_count": 1,
+          "payload_bytes": 64331
+        }
+      },
+      "artifact": ".jev-docs/benchmark-parsed/c8cdc5fd638b44db8d67bab6d165dbcc/p008.json",
+      "artifact_sha256": "30bd2d2191b462c918fe57a983bf46ca3c4bacdd7f54e8106303d400fb2a2f74",
+      "pages_sha256": "3e7d0d043b0f22976dde73c476c9bd128d7f059ba1e3e3a8c69de2e37c083b91",
+      "canonical_sha256": "3553a68398472d4c8fa731e592dc4e179d7a1b91d0390349ae3cda1ef83920f4",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "text_bytes": 61451,
+      "wall_ms": 2211.9770837016404
+    }
+  },
+  "blockers": [],
+  "remote_calls": 0,
+  "note": "LiteParse preparation only; no decision provider was called. Cache hits are not cold OCR measurements.",
+  "receipt_sha256": "0e97a902bea11c43b61c7ed576e3bba90f988ec794ef2c32745e78356a9b951c",
+  "budget_estimate": {
+    "estimated_upper_reservations_usd": 0.7769790000000009,
+    "budget_usd": 2,
+    "within_estimated_budget": true,
+    "planned_task_calls": 100,
+    "dispatchable_task_calls": 100,
+    "is_provider_billing_cap": false
+  },
+  "elapsed_seconds": 56.572822915855795,
+  "finished_at": "2026-09-19T17:58:31.536797+00:00"
+}

@@ -63,7 +63,7 @@ For a live side-by-side comparison, open [localhost:8765/race](http://127.0.0.1:
 
 Longer walkthroughs: [Publication inbox](docs/media/classification.mp4) · [15-page packet](docs/media/splitting.mp4). All videos are captioned, silent 1080p screen recordings; retained processing plays at normal speed. The [actual split PDFs and result JSON](docs/media/split-output.zip) are from the longer walkthrough. See [publishing notes](docs/publishing.md) to share the prepared repository and video assets.
 
-**Accuracy-study research:** [Current executable scope](research/2026-09-19-accuracy-run-scope.md) · [Real-document dataset options and proposed study](research/2026-09-19-real-document-evaluation-options.md). The real demonstrations establish only the displayed examples; the full accuracy study remains unrun.
+**Accuracy results:** The separate [40-document accuracy pilot](benchmarks/results/real-small-v1-run01/report.md) is complete. Both engines classified 40/40 originals correctly; Jev split 7/8 packets exactly and Luna split 8/8. The video demonstrations remain separate evidence.
 
 ## Rules and results
 
@@ -145,7 +145,50 @@ Use `--parser-version` to pin a valid tier-specific published LlamaParse version
 
 PDF bytes are uploaded only when LlamaParse is selected. Normalized page text is sent to the selected decision engine—TypeSafe by default, or OpenAI for the optional baseline. LiteParse has no OCR API fee; compute resources and hosted decision calls still have costs.
 
-## Measured real-document pilot
+## Small real-document accuracy benchmark
+
+**40 authentic PDFs, eight per category, reused across eight constructed five-document packets.** This curated English public-sector sample contains 116 unique pages. The [frozen dataset](datasets/real-small/v1/DATASET_CARD.md) includes complete original publications, source-specific rights, agent-reviewed labels, and verified packet boundaries. Human annotation review was not performed.
+
+One measured pass completed all 96 tasks, plus four excluded warmups. Both engines received the same LiteParse text. Decision times exclude OCR; concurrency was one and retries were disabled.
+
+| Task | Jev 1.13.0 quality | GPT-5.6 Luna quality | Jev median | Luna median | Luna/Jev median-time ratio |
+|---|---:|---:|---:|---:|---:|
+| Classification | 40/40 correct | 40/40 correct | 138.6 ms | 794.3 ms | 5.73× |
+| Splitting | 7/8 exact packets | 8/8 exact packets | 209.6 ms | 1,352.3 ms | 6.45× |
+
+Timing ratios use the same 40 completed classification inputs and eight completed splitting inputs for each engine. Both found all 32 true packet boundaries, including all four adjacent same-category boundaries, and labeled all 116 packet pages correctly. Jev added one extra boundary before a Federal Reserve statement’s implementation attachment; the frozen rules treat it as part of the original publication. See the [error review](benchmarks/results/real-small-v1-run01/error-analysis.md).
+
+Measured decisions cost an estimated **$0.011663 for Jev** and **$0.046894 for Luna**. The entire run, including warmups, cost **$0.068050**, with no unknown charges. Local preparation took 56.6 seconds; the paid stage took 58.1 seconds. LiteParse has no API fee; local compute is not priced. Two warmup inputs used cached OCR, so preparation is not wholly cold.
+
+These are descriptive results on a small convenience sample, with shared source/template families and uncontrolled provider caching. The tasks reuse the same originals and are reported separately. Eight packets do not establish general splitting accuracy; no inferential confidence interval or repeat-stability claim is made.
+
+[Full report](benchmarks/results/real-small-v1-run01/report.md) · [Raw results](benchmarks/results/real-small-v1-run01/raw.jsonl) · [Metrics CSV](benchmarks/results/real-small-v1-run01/metrics.csv) · [Frozen run manifest](benchmarks/results/real-small-v1-run01/manifest.json) · [Dataset and notices](datasets/real-small/README.md) · [Methodology](docs/benchmark-methodology.md)
+
+![Accuracy-pilot decision latency](benchmarks/results/real-small-v1-run01/latency.svg)
+
+To run your own single-pass comparison:
+
+```sh
+uv sync --all-extras --locked
+uv run python datasets/real-small/prepare.py --verify
+uv run python -m benchmarks.run --config benchmarks/configs/real-small-v1.yaml --dry-run
+
+# Local OCR and actual-text admission only; no inference calls.
+uv run python -m benchmarks.run --config benchmarks/configs/real-small-v1.yaml \
+  --prepare-only --output output/my-real-small-preflight
+
+# Requires TYPESAFE_API_KEY and OPENAI_API_KEY; consumes this receipt once.
+uv run python -m benchmarks.run --config benchmarks/configs/real-small-v1.yaml \
+  --prepared output/my-real-small-preflight/preparation.json \
+  --output benchmarks/results/my-real-small-run
+
+# Rebuild saved results offline, without keys.
+uv run python -m benchmarks.report benchmarks/results/my-real-small-run
+```
+
+The profile enforces a $2 local estimated guard, 60-second OCR/task limits, a 600-second preparation limit, and a 300-second paid-stage limit. It stops on service failures and preserves incomplete outcomes in the original denominator. The guard is not a provider billing cap; a preparation receipt cannot be reused for another paid attempt.
+
+## Earlier real-document timing pilot
 
 **Three timed repeats of one ten-page BEA document and one 15-page packet, per engine. This is a demonstration timing pilot, not a held-out accuracy benchmark.** One excluded warmup preceded each engine/task condition. Both engines consumed the same LiteParse page text, with reused clients, sequential execution, and no retries. OCR is excluded from these decision times.
 
@@ -180,6 +223,8 @@ The pilot has a $2 estimated local reservation guard. It is not a provider billi
 
 The real collection contains exact original downloads from the [IRS](https://www.irs.gov/pub/irs-pdf/f941.pdf), [Treasury](https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250812_1.pdf), [BEA](https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf), and [SEC / Office of the Federal Register](https://public-inspection.federalregister.gov/2025-11513.pdf). The packet was assembled for this independent demo and was not issued by those agencies. All 15 packet pages were verified against their original rendered pages. See [source descriptions and reuse terms](examples/real/README.md) and [exact download hashes](examples/real/SOURCE.json). Source dates and statistics are historical publications, not current financial guidance; no agency endorsement is implied.
 
+The separate [accuracy corpus](datasets/real-small/README.md) adds 40 original PDFs and eight constructed packets, with [per-source provenance](datasets/real-small/v1/SOURCE.json) and [reuse notices](datasets/real-small/v1/NOTICE.md).
+
 A **separate synthetic corpus** contains 60 classification documents and 24 split packets, with independent development/test source identities, scans, continuation pages, blanks, and adjacent same-category documents. Its generator, labels, and [dataset card](datasets/DATASET_CARD.md) are included for broader evaluation. The full synthetic benchmark has **not been run**; no synthetic accuracy result is claimed.
 
 ```sh
@@ -205,4 +250,4 @@ Default tests make no paid provider calls. The three optional LlamaParse tier ch
 
 Splitting is page-level and contiguous. Very large whole-document classification fails explicitly; large packets use context windows, and an oversized individual page/context pair still fails. No text is silently truncated. The app runs on localhost with in-process jobs and is intended for local demonstrations. See [architecture](docs/architecture.md), [limitations](docs/limitations.md), [contributing](CONTRIBUTING.md), and [security](SECURITY.md).
 
-Code is [Apache-2.0](LICENSE). Synthetic documents have a [CC0 dedication](datasets/LICENSE). The selected real source publications have their own [public-domain and attribution basis](examples/real/README.md#redistribution-and-attribution); official seals and logos retain their protections. LlamaIndex brand assets and bundled font notices are described in [NOTICE](NOTICE).
+Code is [Apache-2.0](LICENSE). Synthetic documents have a [CC0 dedication](datasets/LICENSE). The real publications retain their [demo-source terms](examples/real/README.md#redistribution-and-attribution) and [accuracy-corpus reuse terms](datasets/real-small/v1/NOTICE.md); official seals and logos retain their protections. LlamaIndex brand assets and bundled font notices are described in [NOTICE](NOTICE).

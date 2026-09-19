@@ -1,7 +1,7 @@
 # Small real-document accuracy benchmark implementation plan
 
 Date: September 19, 2026  
-Status: Implementation phases 1–4 complete. Corpus frozen and local preparation admitted; the single scoped paid attempt is in progress.
+Status: Complete. Frozen corpus, bounded runner, one paid attempt, offline report/error review, and release packaging verified. Initial release is pushed; benchmark follow-up commits remain local as specified by this plan.
 
 ## Overview
 
@@ -236,14 +236,14 @@ This phase executes the one scoped study only after the prior phases and local r
 
 **Automated verification**
 
-- [ ] Offline quality gates pass. Full report regeneration produces the same metrics from recorded files without keys or network access.
-- [ ] Published artifact checks verify hashes, JSON/CSV counts, working links, and absence of secrets or private absolute paths. New corpus files retain their source-specific rights notes.
-- [ ] A completed run has all 96 measured terminal outcomes and four terminal warmups; a stopped run accurately identifies every unattempted or uncertain observation. Provider-request count is reported separately and may exceed task count.
+- [x] Offline quality gates pass. Full report regeneration produces the same metrics from recorded files without keys or network access.
+- [x] Published artifact checks verify hashes, JSON/CSV counts, working links, and absence of secrets or private absolute paths. New corpus files retain their source-specific rights notes.
+- [x] A completed run has all 96 measured terminal outcomes and four terminal warmups; a stopped run accurately identifies every unattempted or uncertain observation. Provider-request count is reported separately and may exceed task count.
 
 **Manual verification**
 
-- [ ] README claims match actual correct/40 and exact/8 counts and actual elapsed/cost data. No result is presented as a broad accuracy or unconditional speed claim.
-- [ ] Review all failed/incorrect cases and several successful cases against original pages. The final deliverable is useful even if performance is poor or the guard stops execution.
+- [x] README claims match actual correct/40 and exact/8 counts and actual elapsed/cost data. No result is presented as a broad accuracy or unconditional speed claim.
+- [x] Review all failed/incorrect cases and several successful cases against original pages. The final deliverable is useful even if performance is poor or the guard stops execution.
 
 ## What we're NOT doing
 
@@ -277,3 +277,9 @@ Tests should target failure modes that change spend or conclusions: no paid work
 - Offline gates: locked dependency sync, Ruff, typing for library and benchmark modules, 177 offline tests, and wheel/source builds passed. Root-level QA exclusion was added after archive inspection caught local galleries in the first source build; the corrected source build includes all originals/packets and excludes QA, while the wheel excludes the evaluation corpus.
 - Preparation: 50/50 inputs and 100/100 adapter preflight checks passed in 56.57 seconds, with two cache hits, zero remote calls, 257 pages including warmups, and no empty-text pages. Actual-text reservation: $0.776979 under the $2 local estimated guard. Receipt validation confirmed source, page, artifact, parser, rules, code, package, and execution-matrix identity before dispatch.
 - Manual verification checkboxes record implementation reviews by the agents under the plan’s instruction that these are verification steps, not additional user approval gates. Human annotation/review is not claimed.
+
+- Single paid attempt `real-small-v1-run01`: complete, all 100 task invocations/provider requests (96 measured + four warmups), no failures, skipped work, unclosed events, or unknown costs. Paid stage 58.109 seconds; total recorded estimated API cost $0.068050484 ($0.058556344 measured + $0.009494140 warmups). No repeat inference or tuning performed.
+- Classification: Jev 40/40 and Luna 40/40. Splitting: Jev 7/8 and Luna 8/8 exact; both found 32/32 true boundaries and 4/4 same-category boundaries, with 116/116 page categories correct. Jev inserted one extra boundary before the FOMC implementation attachment. The original publication-based annotation stands; the error review discloses alternative document semantics without changing ground truth.
+- Decision medians: Jev 138.565 ms classification / 209.578 ms splitting; Luna 794.309 ms / 1352.3175 ms. Populations match all 40 classification and eight split inputs. These are descriptive single-pass measurements.
+- Separate metrics audit reconciled events, terminal rows, provider requests, JSON/CSV counts, and cost arithmetic. Offline regeneration produced identical summary/CSV/report/SVG hashes; actual chart and successful/error source cases were reviewed.
+- Release inventory, all per-file hashes, 73 documentation links, nested archive credential/private-path scans, corpus inclusion, and QA/cache exclusion passed. Updated source ZIP, sdist, and wheel are under ignored `output/release/`; existing videos remain unchanged.

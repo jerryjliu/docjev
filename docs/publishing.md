@@ -1,21 +1,12 @@
 # Publishing DocJev
 
-The destination repository is [jerryjliu/docjev](https://github.com/jerryjliu/docjev). The source, package, and video assets are prepared locally; publishing them is a separate step from renaming the project.
+The destination repository is [jerryjliu/docjev](https://github.com/jerryjliu/docjev). The [initial release commit](https://github.com/jerryjliu/docjev/commit/3a68115e9a910219adf6457afb2f79e74ff7601e) has been pushed and its [GitHub checks](https://github.com/jerryjliu/docjev/actions/runs/35458387718) passed. The subsequent accuracy corpus, runner, and results are committed locally; the benchmark plan keeps their external publication separate.
 
 ## Repository
 
-From this project directory, review the files, create the initial commit, and push to [DocJev](https://github.com/jerryjliu/docjev). Inspect `git remote -v` first; skip the `remote add` command below if `origin` already points to this repository. The local release ZIP, `output/release/docjev-0.1.0.zip`, can also be unpacked into a fresh checkout.
+The current source bundle is `output/release/docjev-0.1.0.zip`, with a per-file release manifest and SHA-256 sidecar. The local branch contains the follow-up benchmark commits ready for review and a later push to the existing `origin`.
 
-```sh
-git init
-git add .
-git commit -m "Add DocJev document classification and splitting demo"
-git branch -M main
-git remote add origin https://github.com/jerryjliu/docjev.git
-git push -u origin main
-```
-
-If `origin` points elsewhere, confirm the intended destination before changing it. The package name and primary CLI are `docjev`; availability on PyPI has not been checked or reserved. Python imports remain `jev_docs`, and the older `jev-docs` CLI continues to work. Existing recordings and measured run artifacts retain their original names and evidence.
+The package name and primary CLI are `docjev`; availability on PyPI has not been checked or reserved. Python imports remain `jev_docs`, and the older `jev-docs` CLI continues to work. Existing recordings and measured run artifacts retain their original names and evidence.
 
 ## Demo assets
 
@@ -23,6 +14,7 @@ If `origin` points elsewhere, confirm the intended destination before changing i
 - Longer walkthroughs: [Classification](media/classification.mp4) and [Splitting](media/splitting.mp4).
 - [Actual split PDFs and JSON](media/split-output.zip).
 - [Source provenance](../examples/real/README.md) and [measured timing report](../benchmarks/results/real-doc-pilot-20260919/report.md).
+- Separate [40-document accuracy report](../benchmarks/results/real-small-v1-run01/report.md), [error analysis](../benchmarks/results/real-small-v1-run01/error-analysis.md), and [dataset notices](../datasets/real-small/v1/NOTICE.md).
 
 The videos are silent, captioned 1080p recordings. They can be uploaded directly as release assets or shared with the repository link. Every retained processing sequence plays at normal speed. The short clips show individual concurrent comparisons; the longer walkthroughs show a separate saved pilot with three timed repeats on one source per task. Neither establishes general accuracy. Keep that scope with any benchmark numbers reused in a post.
 
@@ -38,4 +30,4 @@ uv run pytest
 uv build
 ```
 
-These checks passed locally on macOS with Python 3.12: 85 tests passed and three opt-in live OCR tests were excluded. The configured GitHub Actions matrix has not yet run remotely. The optional full synthetic benchmark has not been executed.
+These checks passed locally on macOS with Python 3.12: 177 offline tests passed and three opt-in live OCR tests were excluded. The initial release passed GitHub Actions; subsequent benchmark changes have local verification. All corpus pages passed rendered equality checks; source archives include the evaluation corpus while the wheel excludes it. The optional full synthetic benchmark has not been executed.

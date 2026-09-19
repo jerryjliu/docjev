@@ -4,6 +4,8 @@ The harness measures authentic provider calls and preserves each observation. A 
 
 The completed [real-document pilot](../benchmarks/results/real-doc-pilot-20260919/report.md) uses one ten-page BEA release and one 15-page packet, three timed repeats, and one excluded warmup per engine/task. Both matched 1/1 declared sources. Jev median decision times were 182.5 ms for classification and 293.8 ms for splitting; Luna's were 785.4 ms and 1,590.8 ms. Repeated Luna input was almost entirely served from its input cache and cost less in the measured portion. The full synthetic evaluation remains unrun.
 
+The separate [40-original / eight-packet accuracy pilot](../benchmarks/results/real-small-v1-run01/report.md) completed one pass: both engines classified 40/40, while Jev split 7/8 exactly and Luna split 8/8. All 100 tasks including warmups completed for an estimated $0.068050. The [error review](../benchmarks/results/real-small-v1-run01/error-analysis.md) documents the extra attachment boundary without changing frozen truth or rerunning.
+
 ## Running and regenerating
 
 ```sh
