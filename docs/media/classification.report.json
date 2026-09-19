@@ -1,0 +1,234 @@
+{
+  "input": "../../output/recordings/classification-raw.mp4",
+  "input_metadata": {
+    "duration": 159.06,
+    "fps": 29.99,
+    "width": 1670,
+    "height": 1080
+  },
+  "inputs": {
+    "../../output/recordings/classification-raw.mp4": {
+      "duration": 159.06,
+      "fps": 29.99,
+      "width": 1670,
+      "height": 1080
+    }
+  },
+  "output": "classification.mp4",
+  "output_metadata": {
+    "duration": 76.4,
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 76.4,
+  "frames": 2292,
+  "source_type": "continuous_screen_recording",
+  "audio": "omitted",
+  "segments": [
+    {
+      "kind": "intro",
+      "output_start": 0.0,
+      "output_end": 3.0,
+      "frames": 90
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 3.0,
+      "source_end": 13.0,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "01 / Start with the original document",
+      "caption": "An original 10-page BEA release: charts, notes, and statistical tables. Source linked in the app.",
+      "badge": "",
+      "output_start": 3.0,
+      "output_end": 13.0,
+      "frames": 300
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 17.0,
+      "source_end": 29.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "02 / Define categories in plain language",
+      "caption": "Review editable category descriptions and document-level instructions. The whole document informs one decision.",
+      "badge": "",
+      "output_start": 13.0,
+      "output_end": 25.5,
+      "frames": 375
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 32.3,
+      "source_end": 40.2,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "03 / Choose the OCR layer",
+      "caption": "LiteParse runs locally by default. LlamaParse offers Cost-effective, Agentic, and Agentic Plus modes.",
+      "badge": "",
+      "output_start": 25.5,
+      "output_end": 33.4,
+      "frames": 237
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 43.5,
+      "source_end": 49.9,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "04 / Read, then classify",
+      "caption": "Actual processing, shown at normal speed: LiteParse reads all 10 pages, then Jev applies the rules.",
+      "badge": "",
+      "output_start": 33.4,
+      "output_end": 39.8,
+      "frames": 192
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 49.9,
+      "source_end": 56.6,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "05 / Inspect the decision and timings",
+      "caption": "Press Release. Jev: 326 ms. Reading: 4.34 s. Full pipeline: 4.76 s for this run.",
+      "badge": "",
+      "output_start": 39.8,
+      "output_end": 46.5,
+      "frames": 201
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 56.6,
+      "source_end": 65.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "06 / Inspect the source pages",
+      "caption": "Browse the original pages alongside the result and category probabilities. Structured JSON is available.",
+      "badge": "",
+      "output_start": 46.5,
+      "output_end": 55.4,
+      "frames": 267
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 90.5,
+      "source_end": 99.0,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "07 / Compare measured decision speed",
+      "caption": "Saved pilot: Jev 182 ms vs. GPT-5.6 Luna 785 ms median. One source, three timed runs per model.",
+      "badge": "SAVED PILOT \u00b7 OCR EXCLUDED",
+      "output_start": 55.4,
+      "output_end": 63.9,
+      "frames": 255
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 120.5,
+      "source_end": 125.0,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "08 / Try another document",
+      "caption": "A Treasury auction report uses the same rules and OCR path. This second run is also shown at normal speed.",
+      "badge": "",
+      "output_start": 63.9,
+      "output_end": 68.4,
+      "frames": 135
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/classification-raw.mp4",
+      "source_start": 125.0,
+      "source_end": 129.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "09 / Reuse the workflow",
+      "caption": "Financial Report. Jev: 312 ms. Full pipeline: 875 ms. Timings are measured for this one-page report.",
+      "badge": "",
+      "output_start": 68.4,
+      "output_end": 72.9,
+      "frames": 135
+    },
+    {
+      "kind": "outro",
+      "output_start": 72.9,
+      "output_end": 76.4,
+      "frames": 105
+    }
+  ],
+  "contact_sheet": "classification-contactsheet.jpg",
+  "notes": "Raw video is trimmed; every retained recording segment is speed 1. Actual cursor pixels are preserved. At most a few terminal frames repeat solely for frame-rate rounding.",
+  "quality_checks": {
+    "complete_decode": "passed",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "audio": "omitted",
+    "crop_verified": true,
+    "captions_verified": true,
+    "model_processing_speed": 1,
+    "sensitive_download_popover": "complete source interval 65.5\u201390.5 seconds excluded",
+    "motion_inspection": "Quarter-second ordered frame sequences inspected across both processing intervals and page navigation.",
+    "limitations": [
+      "The Treasury large result card is above the captured viewport; its Financial Report probability label and timings remain visible."
+    ],
+    "caption_revision": "Category rules described as reviewed rather than changed, matching the captured interaction."
+  },
+  "input_visibility": "Local unpublished provenance; raw captures are not shipped in the repository."
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "video": "classification.mp4",
+  "raw_recording": "../../output/recordings/classification-raw.mp4",
+  "raw_recording_sha256": "7a6eb87804eced9e7dffa4fcd2c6f1beff08cb51d2ecf0e0079d077acd969f15",
+  "rules": "../../examples/real/classify/rules.yaml",
+  "source_manifest": "../../examples/real/demo-manifest.json",
+  "saved_comparison": "../../benchmarks/results/real-doc-pilot-20260919/summary.json",
+  "runs": [
+    {
+      "title": "BEA income & spending release",
+      "task": "classify",
+      "run_id": "Y9XpQRQsIKz5w_Xv-2BCCoqW",
+      "result": {
+        "schema_version": "1",
+        "task": "classify",
+        "category": "press_release",
+        "category_probability": 1.0,
+        "probabilities": {
+          "press_release": 1.0,
+          "tax_form": 0.0,
+          "financial_report": 0.0,
+          "legal_notice": 0.0,
+          "other": 0.0
+        },
+        "provider_confidence": 1.0,
+        "needs_review": false,
+        "warnings": [],
+        "document": {
+          "name": "r04.pdf",
+          "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+          "canonical_sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+          "page_count": 10,
+          "parser": {
+            "name": "liteparse",
+            "version": "2.14.6",
+            "tier": null,
+            "options": {
+              "ocr_enabled": true,
+              "ocr_language": "en",
+              "continue_on_page_error": false,
+              "ocr_failure_fatal": true,
+              "quiet": true,
+              "normalization": "unicode-nfc-lines-v1"
+            },
+            "conversion": {
+              "kind": "original-pdf",
+              "page_numbering": "one-based-original"
+            }
+          }
+        },
+        "engine": "jev",
+        "model": "jev-1.13.0",
+        "metrics": {
+          "conversion_ms": 6.918541621416807,
+          "ocr_ms": 4330.520499963313,
+          "decision_ms": 326.108,
+          "validation_ms": 0.016,
+          "export_ms": 0.0,
+          "total_ms": 4758.459,
+          "ocr_cache_hit": false,
+          "ocr_cost_usd": 0.0,
+          "ocr_cost_status": "not_applicable",
+          "decision_cost_usd": 0.0006402900000000001,
+          "requests": [
+            {
+              "provider": "jev",
+              "model": "jev-1.13.0",
+              "task": "classify",
+              "request_id": "req_01a0b8a922457fedafa502fd87aba70f",
+              "attempt": 1,
+              "status": "ok",
+              "elapsed_ms": 325.617166236043,
+              "input_tokens": 15245,
+              "output_tokens": 57,
+              "cached_input_tokens": null,
+              "cache_write_tokens": null,
+              "reasoning_tokens": null,
+              "cost_usd": 0.0006402900000000001,
+              "cost_status": "estimated",
+              "error_code": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Treasury auction \u2014 42-day bill",
+      "task": "classify",
+      "run_id": "EjHgOY2WyhN8tkeMt8s52nS_",
+      "result": {
+        "schema_version": "1",
+        "task": "classify",
+        "category": "financial_report",
+        "category_probability": 1.0,
+        "probabilities": {
+          "tax_form": 0.0,
+          "other": 0.0,
+          "financial_report": 1.0,
+          "legal_notice": 0.0,
+          "press_release": 0.0
+        },
+        "provider_confidence": 1.0,
+        "needs_review": false,
+        "warnings": [],
+        "document": {
+          "name": "r02.pdf",
+          "sha256": "b1e2a47e0d7c2d462f57f98d954b678a7686e91608489385fc12191d13e7a5f0",
+          "canonical_sha256": "b1e2a47e0d7c2d462f57f98d954b678a7686e91608489385fc12191d13e7a5f0",
+          "page_count": 1,
+          "parser": {
+            "name": "liteparse",
+            "version": "2.14.6",
+            "tier": null,
+            "options": {
+              "ocr_enabled": true,
+              "ocr_language": "en",
+              "continue_on_page_error": false,
+              "ocr_failure_fatal": true,
+              "quiet": true,
+              "normalization": "unicode-nfc-lines-v1"
+            },
+            "conversion": {
+              "kind": "original-pdf",
+              "page_numbering": "one-based-original"
+            }
+          }
+        },
+        "engine": "jev",
+        "model": "jev-1.13.0",
+        "metrics": {
+          "conversion_ms": 2.745166886597872,
+          "ocr_ms": 553.662917111069,
+          "decision_ms": 312.35,
+          "validation_ms": 0.041,
+          "export_ms": 0.0,
+          "total_ms": 875.348,
+          "ocr_cache_hit": false,
+          "ocr_cost_usd": 0.0,
+          "ocr_cost_status": "not_applicable",
+          "decision_cost_usd": 5.8044e-05,
+          "requests": [
+            {
+              "provider": "jev",
+              "model": "jev-1.13.0",
+              "task": "classify",
+              "request_id": "req_01a0b8aa472a765e885e8b88a0aa406b",
+              "attempt": 1,
+              "status": "ok",
+              "elapsed_ms": 311.97658320888877,
+              "input_tokens": 1382,
+              "output_tokens": 57,
+              "cached_input_tokens": null,
+              "cache_write_tokens": null,
+              "reasoning_tokens": null,
+              "cost_usd": 5.8044e-05,
+              "cost_status": "estimated",
+              "error_code": null
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "scope": "Recorded demonstration; individual live timings and a separate one-source, three-repeat decision-only pilot. No general accuracy or speed claim.",
+  "rules_sha256": "108660cb2d72fd711408d3c7b26934793bf9b9fc613bdc0993fb4aca75ccc250",
+  "video_sha256": "17fc05cc19895c03fe6c3c95a61d23bab8d7ffc29748f52d0f728e34314de898",
+  "raw_recording_visibility": "Local unpublished provenance; raw capture is not shipped in the repository."
+}

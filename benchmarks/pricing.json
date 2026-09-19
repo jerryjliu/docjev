@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-18",
+  "currency": "USD",
+  "sources": ["https://docs.typesafe.ai/models", "https://developers.openai.com/api/docs/models/gpt-5.6-luna", "https://developers.llamaindex.ai/llamaparse/general/pricing/"],
+  "jev-1.13.0": {"input_per_million": 0.042, "output_per_million": 0},
+  "gpt-5.6-luna": {"input_per_million": 0.20, "cached_input_per_million": 0.02, "cache_write_per_million": 0.25, "output_per_million": 1.20},
+  "gpt-4o-mini": {"input_per_million": 0.15, "cached_input_per_million": 0.075, "output_per_million": 0.60},
+  "llamaparse": {"usd_per_credit": 0.00125, "credits_per_page": {"cost_effective": 3, "agentic": 10, "agentic_plus": 45}},
+  "note": "List-price estimates; negotiated discounts and infrastructure cost are excluded. Null provider usage remains unknown."
+}

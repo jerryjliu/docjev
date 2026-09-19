@@ -1,0 +1,25 @@
+Observed: 2026-09-18 23:10 America/Los_Angeles
+Workspace: <workspace>
+Initial directory listing: empty (only . and ..)
+Git: no repository in workspace or parent directories; branch/commit unavailable
+Ancestor AGENTS.md checks: none found in /, /Users, $HOME, $HOME/Programming, $HOME/Programming/other, $HOME/Programming/other/gtm_exp
+Existing project source, configuration, tests, examples, datasets: none
+Default Python: 3.10.8
+uv: available
+Node and npm: available
+ffmpeg and ffprobe: available
+soffice: available via bundled runtime; reports LibreOfficeDev 26.8.0.0.alpha0
+lit command: available; reports 2.0.0
+Default Python liteparse distribution: 1.0.1
+Default Python typesafe-sdk distribution: not installed
+Default Python llama-cloud distribution: 2.1.0
+Default Python llama-parse distribution: 0.6.54
+Default Python openai distribution: 1.109.1
+Default Python fastapi distribution: 0.128.0
+Default Python pydantic distribution: 2.11.7
+Default Python pytest distribution: 9.0.2
+TYPESAFE_API_KEY: not set in current process
+LLAMA_CLOUD_API_KEY: set in current process
+OPENAI_API_KEY: set in current process
+Credential values were not printed or stored; presence does not verify validity or model access.
+No dependencies installed, hosted inference requests made, or implementation code written during this inventory.

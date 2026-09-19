@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:05,000
+10 real pages. Classified by Jev in 383 ms. OCR already complete.
+
+2
+00:00:05,000 --> 00:00:11,000
+A complete BEA release: narrative, charts, and dense statistical tables.
+
+3
+00:00:11,000 --> 00:00:19,100
+Define categories in plain language. Both models receive the same rules.
+
+4
+00:00:19,100 --> 00:00:24,000
+Same category. Jev: 383 ms. GPT-5.6 Luna: 1.18 s. One live run.

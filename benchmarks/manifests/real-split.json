@@ -1,0 +1,136 @@
+[
+  {
+    "id": "real-finance-packet",
+    "path": "examples/real/public-finance-packet.pdf",
+    "title": "Finance & policy packet",
+    "page_count": 15,
+    "format": "pdf",
+    "scan": false,
+    "source_ids": [
+      "r01",
+      "r02",
+      "r03",
+      "r04"
+    ],
+    "segments": [
+      {
+        "category": "tax_form",
+        "pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "category": "financial_report",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "category": "financial_report",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "category": "press_release",
+        "pages": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      }
+    ],
+    "provenance_kind": "assembled",
+    "source_note": "Independently assembled from four complete official publications. Original pages preserved without edits or added separators; this combined packet was not issued by a government agency.",
+    "sources": [
+      {
+        "url": "https://www.irs.gov/pub/irs-pdf/f941.pdf",
+        "title": "Employer\u2019s Quarterly Federal Tax Return, Form 941 (Rev. March 2026)"
+      },
+      {
+        "url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250812_1.pdf",
+        "title": "Treasury Auction Results, 42-Day Bill, CUSIP 912797PY7"
+      },
+      {
+        "url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250512_2.pdf",
+        "title": "Treasury Auction Results, 91-Day Bill, CUSIP 912797PN1"
+      },
+      {
+        "url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+        "title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)"
+      }
+    ],
+    "source_page_mapping": [
+      {
+        "source_id": "r01",
+        "source_pages": [
+          1,
+          2,
+          3
+        ],
+        "packet_pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "source_id": "r02",
+        "source_pages": [
+          1
+        ],
+        "packet_pages": [
+          4
+        ]
+      },
+      {
+        "source_id": "r03",
+        "source_pages": [
+          1
+        ],
+        "packet_pages": [
+          5
+        ]
+      },
+      {
+        "source_id": "r04",
+        "source_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "packet_pages": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      }
+    ],
+    "sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+    "split": "test",
+    "sample_purpose": "demonstration only; repeated timings on this same source, no held-out accuracy claim"
+  }
+]

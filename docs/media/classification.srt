@@ -1,0 +1,35 @@
+1
+00:00:03,000 --> 00:00:13,000
+An original 10-page BEA release: charts, notes, and statistical tables. Source linked in the app.
+
+2
+00:00:13,000 --> 00:00:25,500
+Review editable category descriptions and document-level instructions. The whole document informs one decision.
+
+3
+00:00:25,500 --> 00:00:33,400
+LiteParse runs locally by default. LlamaParse offers Cost-effective, Agentic, and Agentic Plus modes.
+
+4
+00:00:33,400 --> 00:00:39,800
+Actual processing, shown at normal speed: LiteParse reads all 10 pages, then Jev applies the rules.
+
+5
+00:00:39,800 --> 00:00:46,500
+Press Release. Jev: 326 ms. Reading: 4.34 s. Full pipeline: 4.76 s for this run.
+
+6
+00:00:46,500 --> 00:00:55,400
+Browse the original pages alongside the result and category probabilities. Structured JSON is available.
+
+7
+00:00:55,400 --> 00:01:03,900
+Saved pilot: Jev 182 ms vs. GPT-5.6 Luna 785 ms median. One source, three timed runs per model.
+
+8
+00:01:03,900 --> 00:01:08,400
+A Treasury auction report uses the same rules and OCR path. This second run is also shown at normal speed.
+
+9
+00:01:08,400 --> 00:01:12,900
+Financial Report. Jev: 312 ms. Full pipeline: 875 ms. Timings are measured for this one-page report.

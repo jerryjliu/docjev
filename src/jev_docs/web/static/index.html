@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <title>DocJev · A LlamaIndex experiment</title>
+  <link rel="icon" href="/static/assets/brand/llamaindex-logo.png">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="LlamaIndex DocJev home"><img src="/static/assets/brand/llamaindex-wordmark-black.png" alt="LlamaIndex"></a>
+      <div class="project-mark"><span class="slash">/</span> <span>DocJev</span><span class="experiment-label">AN OPEN SOURCE EXPERIMENT</span></div>
+      <span class="local-pill"><i></i> Local studio</span>
+    </header>
+    <section class="hero" aria-labelledby="hero-title">
+      <div><p class="eyebrow">SMALL MODEL. USEFUL WORK.</p><h1 id="hero-title">Documents in.<br><span>Decisions out.</span></h1></div>
+      <div class="hero-description"><p id="hero-description">Turn a mixed inbox into organized documents.<br>Read with LiteParse. Classify with Jev.</p><div class="flow-line"><span>YOUR DOCUMENT</span><b>↗</b><span>OCR</span><b>↗</b><span class="flow-final">JEV</span></div></div>
+      <div class="hero-orbit" aria-hidden="true"><div></div><div></div><div></div></div>
+    </section>
+    <nav class="view-tabs" aria-label="Document task">
+      <button class="view-tab active" id="tab-classify" data-task="classify" aria-pressed="true"><span>01</span> Classify documents <b>↗</b></button>
+      <button class="view-tab" id="tab-split" data-task="split" aria-pressed="false"><span>02</span> Split a packet <b>↗</b></button>
+      <span class="tab-note" id="tab-note">One document. One category.</span>
+    </nav>
+    <main class="workspace">
+      <aside class="input-panel panel">
+        <div class="panel-heading"><span class="section-number">01 / INPUT</span><span class="small-tag" id="sample-count">SAMPLES</span></div>
+        <h2 id="input-title">The document inbox</h2><p class="panel-intro" id="input-description">Pick a sample or bring your own.</p><span id="demo-set-label" class="demo-set-label">Loading document set…</span>
+        <div id="sample-list" class="sample-list" aria-label="Sample documents"></div>
+        <label class="upload-zone" for="file-upload"><span class="upload-icon">＋</span><span>Upload a document<small>PDF, DOCX or PPTX · up to 30 MB</small></span><input id="file-upload" type="file" accept=".pdf,.docx,.pptx"></label>
+        <div class="input-options">
+          <div class="option-heading"><label for="ocr-provider">Read the document with</label><span class="info-mark" title="Both providers read the same canonical PDF before Jev makes a decision.">i</span></div>
+          <select id="ocr-provider"><option value="liteparse">LiteParse · local OCR</option><option value="cost_effective">LlamaParse · Cost-effective</option><option value="agentic">LlamaParse · Agentic</option><option value="agentic_plus">LlamaParse · Agentic Plus</option></select>
+          <button class="rules-button" id="edit-rules"><span><b id="rule-count">0</b> category rules</span><span>Edit rules ↗</span></button>
+          <button class="run-button" id="run-button"><span id="run-label">Classify document</span><span class="run-arrow">↗</span></button>
+          <p class="privacy-note" id="privacy-note">OCR runs locally. Page text is sent to Jev.</p>
+        </div>
+      </aside>
+      <section class="document-panel panel" aria-labelledby="document-title">
+        <div class="document-heading"><div><span class="section-number">02 / SOURCE</span><h2 id="document-title">Choose a document</h2></div><span class="document-format" id="document-format">PDF</span></div>
+        <div id="source-provenance" class="source-provenance" hidden><span id="source-kind"></span><details id="source-details"><summary>View sources ↗</summary><div id="source-links"></div><p id="source-note"></p></details></div>
+        <div class="preview-stage" id="preview-stage">
+          <div id="preview-empty" class="preview-empty"><div class="paper-illustration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><p>Your source document,<br>always in view.</p></div>
+          <iframe id="pdf-preview" title="Source PDF preview" hidden></iframe>
+          <img id="page-preview" alt="" hidden>
+          <div id="preview-label" class="preview-label" hidden>CANONICAL PDF</div>
+        </div>
+        <div class="page-controls" id="page-controls"><span id="page-info">Original document</span><div><button id="previous-page" class="icon-button" aria-label="Previous page" disabled>←</button><button id="next-page" class="icon-button" aria-label="Next page" disabled>→</button></div></div>
+        <div class="page-strip" id="page-strip" hidden aria-label="Document pages"></div>
+      </section>
+      <section class="result-panel panel" aria-labelledby="result-heading">
+        <div class="panel-heading"><span class="section-number">03 / RESULT</span><span class="live-badge"><i></i> JEV</span></div>
+        <div class="result-content" id="result-content" aria-live="polite">
+          <div class="result-empty"><div class="result-symbol" aria-hidden="true">↗</div><h2 id="result-heading">A little intelligence.<br>A lot of clarity.</h2><p>Run a document to see its category, page-level evidence, and measured speed.</p><div class="empty-rule-chips" id="empty-rule-chips"></div><span class="empty-footnote">YOUR RULES. JEV'S DECISION.</span></div>
+        </div>
+        <div class="metrics-panel" id="metrics-panel" hidden><div class="metric-heading"><span>MEASURED WALL TIME</span><span id="cache-label"></span></div><div class="metric-grid"><div><span>Read / OCR</span><strong id="metric-ocr">—</strong></div><div class="decision-metric"><span id="decision-metric-label">Jev decision</span><strong id="metric-decision">—</strong></div><div><span>Full pipeline</span><strong id="metric-total">—</strong></div></div><p class="metric-note" id="metric-note">Actual measurements from this run.</p></div>
+        <div class="result-downloads" id="result-downloads" hidden></div>
+      </section>
+    </main>
+    <section id="comparison-panel" class="comparison-panel" hidden aria-labelledby="comparison-title"><div class="comparison-heading"><div><span id="comparison-eyebrow" class="eyebrow">FROM A SAVED EVALUATION</span><h2 id="comparison-title">Speed, with quality in view.</h2></div><span class="comparison-scope" id="comparison-scope"></span></div><div id="comparison-rows" class="comparison-rows"></div><p class="comparison-note" id="comparison-note"></p></section>
+    <footer class="page-footer"><span>Built with LiteParse + Jev</span><span>Documents → OCR → decisions</span><a href="https://github.com/jerryjliu/docjev" target="_blank" rel="noopener noreferrer">DocJev on GitHub ↗</a></footer>
+  </div>
+  <dialog id="rules-dialog" aria-labelledby="rules-title">
+    <form id="rules-form"><div class="dialog-header"><div><span class="eyebrow">DEFINE WHAT MATTERS</span><h2 id="rules-title">Your categories, in plain language.</h2></div><button type="button" id="close-rules" class="icon-button" aria-label="Close rules editor">×</button></div><p class="dialog-intro">Give each category a name and a description. Jev uses these rules to decide where a document belongs.</p><div id="rules-list" class="rules-list"></div><button type="button" id="add-rule" class="add-rule">＋ Add category</button><label class="instructions-label" for="rule-instructions">Additional instructions</label><textarea id="rule-instructions" rows="2" placeholder="Optional guidance for the document's overall purpose"></textarea><div id="split-instructions-row"><label class="instructions-label" for="split-instructions">Document boundary instructions</label><textarea id="split-instructions" rows="2" placeholder="Separate distinct documents even when they share the same category."></textarea></div><p id="rules-error" class="inline-error" role="alert"></p><div class="dialog-footer"><span>“Other” catches documents outside your categories.</span><button type="submit" class="save-button">Save rules ↗</button></div></form>
+  </dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>

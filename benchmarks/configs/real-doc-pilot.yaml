@@ -1,0 +1,25 @@
+seed: 20260919
+repeats: 3
+warmups: 1
+warmup_policy: reuse-demo-sources
+demo_set: real
+experiment_kind: demonstration
+concurrency: 1
+scope: decision
+budget_usd: 2
+ocr: liteparse
+tier: agentic
+parser_version: latest
+jev_model: jev-1.13.0
+baseline_model: gpt-5.6-luna
+max_retries: 0
+window_size: 8
+boundary_threshold: 0.5
+min_probability: 0.7
+tasks:
+  classify:
+    manifest: benchmarks/manifests/real-classify.json
+    rules: examples/real/classify/rules.yaml
+  split:
+    manifest: benchmarks/manifests/real-split.json
+    rules: examples/real/split/rules.yaml

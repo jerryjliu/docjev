@@ -1,0 +1,24 @@
+DocJev
+Copyright 2026 LlamaIndex contributors.
+
+Project code is distributed under Apache License 2.0.
+First-party synthetic example and dataset content is offered under CC0 1.0;
+see datasets/LICENSE. This does not relicense third-party fonts or trademarks.
+
+The authentic U.S. government publications under examples/real/originals are
+public-domain government works in the United States, not synthetic examples
+and not covered by the CC0 dedication or the project's code license. Their
+issuers, official download URLs, hashes, and redistribution basis are recorded
+in examples/real/SOURCE.json. The assembled demo packet preserves complete
+source pages. Official names, seals, and logos appear within those source
+documents only to identify their issuers; all protections on those marks remain.
+No government agency sponsors, endorses, or is affiliated with this project.
+
+LlamaIndex and LlamaParse names and official brand assets remain the property
+of LlamaIndex. Brand guidance: https://www.llamaindex.ai/brand
+Jev and TypeSafe are the names/marks of their respective owners. This project
+is an independent open-source integration, not a redistribution of Jev weights.
+
+Overused Grotesk and IBM Plex Mono are distributed under the SIL Open Font
+License; their full notices accompany the font files under web/static/assets.
+Runtime dependencies remain under their respective licenses.

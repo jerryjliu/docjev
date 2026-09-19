@@ -1,0 +1,346 @@
+{
+  "schema_version": "1",
+  "quality_pass": 0,
+  "groups": [
+    {
+      "task": "classify",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "planned_unique": 1,
+      "completed_unique": 1,
+      "completion_rate": 1.0,
+      "measured_calls": 3,
+      "latency_samples": 3,
+      "decision_p50_ms": 182.473,
+      "decision_p95_ms": 184.1299,
+      "wall_p50_ms": 182.57412500679493,
+      "wall_p95_ms": 184.2912504915148,
+      "decision_cost_usd_known": 0.0019208700000000003,
+      "unknown_cost_calls": 0,
+      "failed_calls": 0,
+      "error_types": {},
+      "request_count": 3,
+      "input_tokens_known": 45735,
+      "cached_input_tokens_known": 0,
+      "cache_write_tokens_known": 0,
+      "output_tokens_known": 171,
+      "ocr_cost_usd_known": 0,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class": {
+        "press_release": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 1,
+          "predicted": 1,
+          "actual": 1
+        }
+      },
+      "confusion_matrix": {
+        "press_release": {
+          "press_release": 1,
+          "__missing__": 0
+        }
+      },
+      "accuracy_95pct_bootstrap": null,
+      "needs_review_rate": 0.0,
+      "repeat_disagreement_documents": 0,
+      "failures_or_incorrect_ids": []
+    },
+    {
+      "task": "classify",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "planned_unique": 1,
+      "completed_unique": 1,
+      "completion_rate": 1.0,
+      "measured_calls": 3,
+      "latency_samples": 3,
+      "decision_p50_ms": 785.397,
+      "decision_p95_ms": 1338.0041999999999,
+      "wall_p50_ms": 785.5549589730799,
+      "wall_p95_ms": 1338.0898584611714,
+      "decision_cost_usd_known": 0.0008389800000000001,
+      "unknown_cost_calls": 0,
+      "failed_calls": 0,
+      "error_types": {},
+      "request_count": 3,
+      "input_tokens_known": 39348,
+      "cached_input_tokens_known": 39339,
+      "cache_write_tokens_known": 0,
+      "output_tokens_known": 42,
+      "ocr_cost_usd_known": 0,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class": {
+        "press_release": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 1,
+          "predicted": 1,
+          "actual": 1
+        }
+      },
+      "confusion_matrix": {
+        "press_release": {
+          "press_release": 1,
+          "__missing__": 0
+        }
+      },
+      "accuracy_95pct_bootstrap": null,
+      "needs_review_rate": 0.0,
+      "repeat_disagreement_documents": 0,
+      "failures_or_incorrect_ids": []
+    },
+    {
+      "task": "split",
+      "engine": "jev",
+      "model": "jev-1.13.0",
+      "scope": "decision",
+      "concurrency": 1,
+      "planned_unique": 1,
+      "completed_unique": 1,
+      "completion_rate": 1.0,
+      "measured_calls": 3,
+      "latency_samples": 3,
+      "decision_p50_ms": 293.791,
+      "decision_p95_ms": 336.6616,
+      "wall_p50_ms": 294.1149170510471,
+      "wall_p95_ms": 336.7948295548558,
+      "decision_cost_usd_known": 0.003430224,
+      "unknown_cost_calls": 0,
+      "failed_calls": 0,
+      "error_types": {},
+      "request_count": 3,
+      "input_tokens_known": 81672,
+      "cached_input_tokens_known": 0,
+      "cache_write_tokens_known": 0,
+      "output_tokens_known": 3324,
+      "ocr_cost_usd_known": 0,
+      "packet_exact_match": 1.0,
+      "exact_packets": 1,
+      "coverage_validity": 1.0,
+      "page_accuracy": 1.0,
+      "page_macro_f1": 1.0,
+      "page_per_class": {
+        "financial_report": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 2,
+          "predicted": 2,
+          "actual": 2
+        },
+        "press_release": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 10,
+          "predicted": 10,
+          "actual": 10
+        },
+        "tax_form": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 3,
+          "predicted": 3,
+          "actual": 3
+        }
+      },
+      "page_confusion_matrix": {
+        "financial_report": {
+          "financial_report": 2,
+          "press_release": 0,
+          "tax_form": 0,
+          "__missing__": 0
+        },
+        "press_release": {
+          "financial_report": 0,
+          "press_release": 10,
+          "tax_form": 0,
+          "__missing__": 0
+        },
+        "tax_form": {
+          "financial_report": 0,
+          "press_release": 0,
+          "tax_form": 3,
+          "__missing__": 0
+        }
+      },
+      "boundary": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positive": 3,
+        "predicted": 3,
+        "actual": 3
+      },
+      "segment": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positive": 4,
+        "predicted": 4,
+        "actual": 4
+      },
+      "same_category_boundary_recall": 1.0,
+      "same_category_boundaries_found": 1,
+      "same_category_boundaries_actual": 1,
+      "packet_exact_match_95pct_bootstrap": null,
+      "repeat_disagreement_documents": 0,
+      "failures_or_incorrect_ids": []
+    },
+    {
+      "task": "split",
+      "engine": "openai",
+      "model": "gpt-5.6-luna",
+      "scope": "decision",
+      "concurrency": 1,
+      "planned_unique": 1,
+      "completed_unique": 1,
+      "completion_rate": 1.0,
+      "measured_calls": 3,
+      "latency_samples": 3,
+      "decision_p50_ms": 1590.774,
+      "decision_p95_ms": 1604.4116999999999,
+      "wall_p50_ms": 1590.8915419131517,
+      "wall_p95_ms": 1604.5947160106152,
+      "decision_cost_usd_known": 0.00127008,
+      "unknown_cost_calls": 0,
+      "failed_calls": 0,
+      "error_types": {},
+      "request_count": 3,
+      "input_tokens_known": 51903,
+      "cached_input_tokens_known": 51894,
+      "cache_write_tokens_known": 0,
+      "output_tokens_known": 192,
+      "ocr_cost_usd_known": 0,
+      "packet_exact_match": 1.0,
+      "exact_packets": 1,
+      "coverage_validity": 1.0,
+      "page_accuracy": 1.0,
+      "page_macro_f1": 1.0,
+      "page_per_class": {
+        "financial_report": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 2,
+          "predicted": 2,
+          "actual": 2
+        },
+        "press_release": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 10,
+          "predicted": 10,
+          "actual": 10
+        },
+        "tax_form": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positive": 3,
+          "predicted": 3,
+          "actual": 3
+        }
+      },
+      "page_confusion_matrix": {
+        "financial_report": {
+          "financial_report": 2,
+          "press_release": 0,
+          "tax_form": 0,
+          "__missing__": 0
+        },
+        "press_release": {
+          "financial_report": 0,
+          "press_release": 10,
+          "tax_form": 0,
+          "__missing__": 0
+        },
+        "tax_form": {
+          "financial_report": 0,
+          "press_release": 0,
+          "tax_form": 3,
+          "__missing__": 0
+        }
+      },
+      "boundary": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positive": 3,
+        "predicted": 3,
+        "actual": 3
+      },
+      "segment": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positive": 4,
+        "predicted": 4,
+        "actual": 4
+      },
+      "same_category_boundary_recall": 1.0,
+      "same_category_boundaries_found": 1,
+      "same_category_boundaries_actual": 1,
+      "packet_exact_match_95pct_bootstrap": null,
+      "repeat_disagreement_documents": 0,
+      "failures_or_incorrect_ids": []
+    }
+  ],
+  "cost_includes_warmups": false,
+  "accuracy_unit": "unique source document or packet, first measured pass",
+  "latency_unit": "completed full document or packet, all measured passes",
+  "run_id": "real-doc-pilot-20260919",
+  "config": {
+    "seed": 20260919,
+    "repeats": 3,
+    "warmups": 1,
+    "warmup_policy": "reuse-demo-sources",
+    "demo_set": "real",
+    "experiment_kind": "demonstration",
+    "concurrency": 1,
+    "scope": "decision",
+    "budget_usd": 2,
+    "ocr": "liteparse",
+    "tier": "agentic",
+    "parser_version": "latest",
+    "jev_model": "jev-1.13.0",
+    "baseline_model": "gpt-5.6-luna",
+    "max_retries": 0,
+    "window_size": 8,
+    "boundary_threshold": 0.5,
+    "min_probability": 0.7,
+    "tasks": {
+      "classify": {
+        "manifest": "benchmarks/manifests/real-classify.json",
+        "rules": "examples/real/classify/rules.yaml"
+      },
+      "split": {
+        "manifest": "benchmarks/manifests/real-split.json",
+        "rules": "examples/real/split/rules.yaml"
+      }
+    },
+    "pilot_limit_per_task": null
+  },
+  "demo_set": "real",
+  "experiment_kind": "demonstration",
+  "started_at": "2026-09-19T07:48:51.494562+00:00",
+  "run_status": "complete",
+  "budget": {
+    "limit_usd": 2,
+    "known_cost_usd": 0.016941401999999998,
+    "unknown_cost_reservations_usd": 0.0,
+    "committed_usd": 0.016941402000000008,
+    "is_provider_billing_cap": false
+  }
+}

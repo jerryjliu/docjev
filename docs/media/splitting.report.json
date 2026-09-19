@@ -1,0 +1,316 @@
+{
+  "input": "../../output/recordings/splitting-raw.mp4",
+  "input_metadata": {
+    "duration": 120.2,
+    "fps": 30.0,
+    "width": 1670,
+    "height": 1080
+  },
+  "inputs": {
+    "../../output/recordings/splitting-raw.mp4": {
+      "duration": 120.2,
+      "fps": 30.0,
+      "width": 1670,
+      "height": 1080
+    },
+    "../../output/recordings/splitting-export-raw.mp4": {
+      "duration": 50.07,
+      "fps": 30.0,
+      "width": 1670,
+      "height": 1080
+    }
+  },
+  "output": "splitting.mp4",
+  "output_metadata": {
+    "duration": 96.8,
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 96.8,
+  "frames": 2904,
+  "source_type": "continuous_screen_recording",
+  "audio": "omitted",
+  "segments": [
+    {
+      "kind": "intro",
+      "output_start": 0.0,
+      "output_end": 3.0,
+      "frames": 90
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 2.2,
+      "source_end": 8.2,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "01 / Start with a combined packet",
+      "caption": "Four complete public documents, combined into one 15-page packet. Original pages are unchanged.",
+      "badge": "",
+      "output_start": 3.0,
+      "output_end": 9.0,
+      "frames": 180
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 13.2,
+      "source_end": 21.2,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "02 / Trace the source documents",
+      "caption": "The packet combines IRS Form 941, two Treasury auction reports, and a BEA release. Original sources are linked.",
+      "badge": "",
+      "output_start": 9.0,
+      "output_end": 17.0,
+      "frames": 240
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 30.5,
+      "source_end": 38.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "03 / Review the category rules",
+      "caption": "Category descriptions identify tax forms, financial reports, press releases, and legal notices.",
+      "badge": "",
+      "output_start": 17.0,
+      "output_end": 25.0,
+      "frames": 240
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 43.0,
+      "source_end": 49.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "04 / Review the boundary instructions",
+      "caption": "Keep separate Treasury auctions apart. Keep each publication\u2019s continuation pages together.",
+      "badge": "",
+      "output_start": 25.0,
+      "output_end": 31.5,
+      "frames": 195
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 53.7,
+      "source_end": 62.8,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "05 / Read every page, then split",
+      "caption": "Actual processing at normal speed: LiteParse reads all 15 pages; Jev predicts categories and document starts.",
+      "badge": "",
+      "output_start": 31.5,
+      "output_end": 40.6,
+      "frames": 273
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 62.8,
+      "source_end": 69.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "06 / Inspect the recovered documents",
+      "caption": "Four documents. Jev: 557 ms. Reading: 5.55 s. Full pipeline, including export: 6.27 s.",
+      "badge": "",
+      "output_start": 40.6,
+      "output_end": 47.3,
+      "frames": 201
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 69.5,
+      "source_end": 75.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "07 / Inspect the first Treasury report",
+      "caption": "Packet page 4: the 42-day Treasury bill auction. Its own Financial Report segment.",
+      "badge": "",
+      "output_start": 47.3,
+      "output_end": 53.3,
+      "frames": 180
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 77.5,
+      "source_end": 84.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "08 / Preserve the next document boundary",
+      "caption": "Packet page 5: a different Treasury auction. The same category, with a separate document boundary.",
+      "badge": "",
+      "output_start": 53.3,
+      "output_end": 60.3,
+      "frames": 210
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 88.5,
+      "source_end": 96.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "09 / Keep the complete release together",
+      "caption": "The BEA release remains one document across packet pages 6\u201315, including its tables and technical notes.",
+      "badge": "",
+      "output_start": 60.3,
+      "output_end": 68.3,
+      "frames": 240
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 96.5,
+      "source_end": 102.0,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "10 / Verify the source pages",
+      "caption": "Packet page 11 is a statistical table inside the same Press Release segment.",
+      "badge": "",
+      "output_start": 68.3,
+      "output_end": 73.8,
+      "frames": 165
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "source_start": 103.0,
+      "source_end": 109.5,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "11 / Compare measured decision speed",
+      "caption": "Saved pilot: Jev 294 ms vs. GPT-5.6 Luna 1.59 s median. One packet, three timed runs per model.",
+      "badge": "SAVED PILOT \u00b7 OCR EXCLUDED",
+      "output_start": 73.8,
+      "output_end": 80.3,
+      "frames": 195
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-export-raw.mp4",
+      "source_start": 3.0,
+      "source_end": 9.0,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "12 / Download the selected document",
+      "caption": "The selected Treasury report exports as its own PDF. Four PDFs and result JSON are available.",
+      "badge": "",
+      "output_start": 80.3,
+      "output_end": 86.3,
+      "frames": 180
+    },
+    {
+      "kind": "continuous_recording",
+      "input": "../../output/recordings/splitting-export-raw.mp4",
+      "source_start": 28.0,
+      "source_end": 35.0,
+      "speed": 1.0,
+      "crop": [
+        4,
+        120,
+        1630,
+        936
+      ],
+      "title": "13 / Open the exported PDF",
+      "caption": "One page, matching packet page 4. The exported PDFs and result JSON accompany this demo.",
+      "badge": "ACTUAL EXPORTED PDF",
+      "output_start": 86.3,
+      "output_end": 93.3,
+      "frames": 210
+    },
+    {
+      "kind": "outro",
+      "output_start": 93.3,
+      "output_end": 96.8,
+      "frames": 105
+    }
+  ],
+  "contact_sheet": "splitting-contactsheet.jpg",
+  "notes": "Raw recordings are trimmed. Every retained recording segment is speed 1 and preserves actual cursor pixels. Supplementary export footage comes from the same successful run. At most a few terminal frames repeat solely for frame-rate rounding.",
+  "input_visibility": "Local unpublished provenance; raw captures are not shipped in the repository.",
+  "quality_checks": {
+    "complete_decode": "passed",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "audio": "omitted",
+    "crop_verified": true,
+    "captions_verified": true,
+    "model_processing_speed": 1,
+    "processing_continuity": "Main raw recording 53.7\u201369.5s retained continuously at speed 1 through processing and result.",
+    "live_timing_caption_seconds": 6.7,
+    "supplementary_export": "Real download click and PDF viewer from the same run; browser navigation and local paths excluded.",
+    "exported_pdf_checksum_matches_public_archive": true,
+    "motion_inspection": "Ordered 250ms frames reviewed through reading/decision and PDF fitting; Treasury boundary transitions checked at 500ms intervals.",
+    "limitations": []
+  }
+}

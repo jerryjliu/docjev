@@ -1,0 +1,135 @@
+{
+  "input": "output/recordings/social/splitting-raw.mp4",
+  "input_metadata": {
+    "duration": 69.87,
+    "fps": 30.0,
+    "width": 1670,
+    "height": 1080
+  },
+  "inputs": {
+    "output/recordings/social/splitting-raw.mp4": {
+      "duration": 69.87,
+      "fps": 30.0,
+      "width": 1670,
+      "height": 1080
+    }
+  },
+  "output": "docs/media/social/splitting.mp4",
+  "output_metadata": {
+    "duration": 24.1,
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24.1,
+  "frames": 723,
+  "source_type": "continuous_screen_recording",
+  "audio": "omitted",
+  "segments": [
+    {
+      "kind": "continuous_recording",
+      "file": "output/video-edits/social-splitting/clip_001.mp4",
+      "input": "output/recordings/social/splitting-raw.mp4",
+      "source_start": 0.0,
+      "source_end": 4.5,
+      "speed": 1.0,
+      "crop": [
+        0,
+        118,
+        1670,
+        962
+      ],
+      "title": "Run both models",
+      "caption": "15 real pages. Jev finds four documents in 457 ms. OCR already complete.",
+      "badge": "",
+      "output_start": 0.0,
+      "output_end": 4.5,
+      "frames": 135
+    },
+    {
+      "kind": "continuous_recording",
+      "file": "output/video-edits/social-splitting/clip_002.mp4",
+      "input": "output/recordings/social/splitting-raw.mp4",
+      "source_start": 28.0,
+      "source_end": 36.0,
+      "speed": 1.0,
+      "crop": [
+        0,
+        118,
+        1670,
+        962
+      ],
+      "title": "Same category, separate documents",
+      "caption": "Two Treasury auction reports. Same category. Separate documents.",
+      "badge": "",
+      "output_start": 4.5,
+      "output_end": 12.5,
+      "frames": 240
+    },
+    {
+      "kind": "continuous_recording",
+      "file": "output/video-edits/social-splitting/clip_003.mp4",
+      "input": "output/recordings/social/splitting-raw.mp4",
+      "source_start": 45.9,
+      "source_end": 50.9,
+      "speed": 1.0,
+      "crop": [
+        0,
+        118,
+        1670,
+        962
+      ],
+      "title": "Keep supporting pages together",
+      "caption": "The ten-page BEA release stays together, including its statistical tables.",
+      "badge": "",
+      "output_start": 12.5,
+      "output_end": 17.5,
+      "frames": 150
+    },
+    {
+      "kind": "continuous_recording",
+      "file": "output/video-edits/social-splitting/clip_004.mp4",
+      "input": "output/recordings/social/splitting-raw.mp4",
+      "source_start": 54.2,
+      "source_end": 60.8,
+      "speed": 1.0,
+      "crop": [
+        0,
+        118,
+        1670,
+        962
+      ],
+      "title": "Review shared boundary rules",
+      "caption": "Define categories and boundaries in plain language. Both models share the rules.",
+      "badge": "",
+      "output_start": 17.5,
+      "output_end": 24.1,
+      "frames": 198
+    }
+  ],
+  "contact_sheet": "output/video-edits/social-splitting/contact_sheet.jpg",
+  "notes": "Continuous screen recordings trimmed at normal speed. The in-app LlamaIndex branding is retained. A 60-pixel caption strip is added; no title cards or synthesized UI/cursor. Local raw paths are provenance only.",
+  "verification": {
+    "full_decode": "passed",
+    "raw_crop": [
+      0,
+      118,
+      1670,
+      962
+    ],
+    "retained_processing_speed": 1,
+    "intro_card": false,
+    "outro_card": false,
+    "synthetic_cursor": false,
+    "ui_reconstructed": false,
+    "independent_visual_review": "passed",
+    "normal_speed_opening_and_cut_boundaries": "passed",
+    "private_overlay_exclusion": "passed",
+    "displayed_values_match_run_json": true,
+    "encoded_event_positions_seconds": {
+      "running": 0.5333333333333333,
+      "jev_complete": 1.0333333333333334,
+      "both_complete": 3.066666666666667
+    }
+  }
+}

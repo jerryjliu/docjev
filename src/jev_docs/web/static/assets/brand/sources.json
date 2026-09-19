@@ -1,0 +1,48 @@
+{
+  "brand_guidelines": "https://www.llamaindex.ai/brand",
+  "assets_retrieved": "2026-09-05",
+  "logo_rights": "Official LlamaIndex and LlamaParse marks; use follows the linked brand guidelines. Brand assets remain LlamaIndex property.",
+  "fonts_license": "SIL Open Font License 1.1; full corresponding license texts are bundled.",
+  "files": {
+    "llamaparse.png": {
+      "source": "https://www.llamaindex.ai/brand/llamaparse.svg",
+      "derivation": "Rasterized unchanged official SVG with librsvg at 6\u00d7 website display resolution; transparent PNG.",
+      "sha256": "ba0e10040b772e3c1e050d179a3acc42b2fdb2ed7402ce1098324561a0d4fb16"
+    },
+    "llamaindex-wordmark-black.png": {
+      "source": "https://www.llamaindex.ai/brand/llamaindex-wordmark-black.svg",
+      "derivation": "Rasterized unchanged official SVG with librsvg at 6\u00d7 website display resolution; transparent PNG.",
+      "sha256": "2888bc1af2117b0453da10f059656c88ba10a205e5150cbf3b13abfcd51f169e"
+    },
+    "llamaindex-logo.png": {
+      "source": "https://www.llamaindex.ai/brand/llamaindex-logo.svg",
+      "derivation": "Rasterized unchanged official SVG with librsvg at 6\u00d7 website display resolution; transparent PNG.",
+      "sha256": "63bff218121ec732fba0de99dca74fe6e1056cbb47e31d46bef8e596bf76e381"
+    },
+    "fonts/OverusedGrotesk-Regular.ttf": {
+      "source": "https://www.llamaindex.ai/fonts/OverusedGrotesk-VF.woff2",
+      "derivation": "Decoded and instantiated with fontTools at weight 400 and slant 0; source publisher RandomMaerks.",
+      "license": "fonts/OverusedGrotesk-LICENSE.txt",
+      "sha256": "8a4f6ae8fabe3d19c1eceb794cd83b73435c078ed7653dc299d42aae1dc36a33"
+    },
+    "fonts/OverusedGrotesk-Medium.ttf": {
+      "source": "https://www.llamaindex.ai/fonts/OverusedGrotesk-VF.woff2",
+      "derivation": "Decoded and instantiated with fontTools at weight 500 and slant 0; source publisher RandomMaerks.",
+      "license": "fonts/OverusedGrotesk-LICENSE.txt",
+      "sha256": "fbeb66b463564c28a421e522c38a699ad323d1d4f04686099c3e2edd5338c45f"
+    },
+    "fonts/IBMPlexMono-Regular.ttf": {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+      "license": "fonts/IBMPlexMono-OFL.txt",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46"
+    },
+    "fonts/OverusedGrotesk-LICENSE.txt": {
+      "source": "https://raw.githubusercontent.com/RandomMaerks/Overused-Grotesk/main/LICENSE.txt",
+      "sha256": "d7ae15339985b618dedf0b9c6076011e8e54444e87e8765317a42c2c69efb471"
+    },
+    "fonts/IBMPlexMono-OFL.txt": {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    }
+  }
+}

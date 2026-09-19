@@ -1,0 +1,58 @@
+{
+  "capture_date": "2026-09-19",
+  "task": "splitting",
+  "raw_video": "output/recordings/social/splitting-raw.mp4",
+  "raw_sha256": "930fefffe2df24d709ed7a6da7522023a6d6cc31b635a973e56aaf118f930e34",
+  "video_sha256": "3d5cb27daf5d3676c147933d0d0565ff97a9f7f3749d7e7672fed6952a5cec85",
+  "run_file": "splitting.run.json",
+  "run_sha256": "ebb31b0140176584c51e04c6f2654a25752bfd15df57bd45b0fd73f21f083598",
+  "rules_file": "examples/real/split/rules.yaml",
+  "rules_file_sha256": "3a79d7664e327b25634db6a1ec99dbfbc06d376f19df048356ecf9c0e258f570",
+  "comparison_id": "qJUuyOI1x8pa5DCqODRL0pnE",
+  "source_sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+  "ocr_text_sha256": "08da09af4d46752c0c827a72fafe17bd1fd8888a9a8d8c96b5c6b6c1445886d9",
+  "decision_ms": {
+    "jev": 456.699,
+    "openai": 2503.747
+  },
+  "ocr_conversion_ms": 5722.986292093992,
+  "scope": "One simultaneous comparison on shared LiteParse page text. Model decision intervals exclude OCR/export. Results are predictions validated against this demo manifest; no population accuracy claim.",
+  "recording_attempt": 1,
+  "expected_segments": [
+    {
+      "category": "tax_form",
+      "pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "category": "financial_report",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "category": "financial_report",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "category": "press_release",
+      "pages": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ]
+}

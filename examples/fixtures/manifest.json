@@ -1,0 +1,29 @@
+[
+  {
+    "path": "examples/fixtures/f01.pdf",
+    "format": "pdf",
+    "page_count": 3,
+    "sha256": "a8e345af70a64ac4e6aa5ac42e2fcda460260d7d978e9ac2d94376904a0da955",
+    "related_group": "north-fern-presentation",
+    "category": "pitch_deck",
+    "excluded_from_accuracy": true
+  },
+  {
+    "path": "examples/fixtures/f01.docx",
+    "format": "docx",
+    "page_count": 3,
+    "sha256": "984d6eb7abc19831a3ceffa72ade969a64d6ee3155e60019e8270342f9978618",
+    "related_group": "north-fern-presentation",
+    "category": "pitch_deck",
+    "excluded_from_accuracy": true
+  },
+  {
+    "path": "examples/fixtures/f01.pptx",
+    "format": "pptx",
+    "page_count": 3,
+    "sha256": "7c13b5938d2701d3880dec89ca9124ddf28ba846da845b8f8ae43ea2a384f14d",
+    "related_group": "north-fern-presentation",
+    "category": "pitch_deck",
+    "excluded_from_accuracy": true
+  }
+]

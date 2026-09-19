@@ -1,0 +1,22 @@
+[
+  {
+    "id": "r04",
+    "path": "examples/real/originals/r04.pdf",
+    "title": "BEA income & spending release",
+    "category": "press_release",
+    "page_count": 10,
+    "source_ids": [
+      "r04"
+    ],
+    "format": "pdf",
+    "scan": false,
+    "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+    "issuer": "U.S. Bureau of Economic Analysis",
+    "source_url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+    "source_title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)",
+    "source_note": "Complete ten-page news release including charts, technical notes, and statistical tables. Historical estimates may have been revised since publication.",
+    "provenance_kind": "original",
+    "split": "test",
+    "sample_purpose": "demonstration only; repeated timings on this same source, no held-out accuracy claim"
+  }
+]

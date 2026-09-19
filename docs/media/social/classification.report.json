@@ -1,0 +1,135 @@
+{
+  "input": "output/recordings/social/classification-complete-raw.mp4",
+  "input_metadata": {
+    "duration": 78.0,
+    "fps": 30.0,
+    "width": 1670,
+    "height": 1080
+  },
+  "inputs": {
+    "output/recordings/social/classification-complete-raw.mp4": {
+      "duration": 78.0,
+      "fps": 30.0,
+      "width": 1670,
+      "height": 1080
+    }
+  },
+  "output": "docs/media/social/classification.mp4",
+  "output_metadata": {
+    "duration": 24.0,
+    "fps": 30.0,
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 24.0,
+  "frames": 720,
+  "source_type": "continuous_screen_recording",
+  "audio": "omitted",
+  "segments": [
+    {
+      "kind": "continuous_recording",
+      "file": "output/video-edits/social-classification/clip_001.mp4",
+      "input": "output/recordings/social/classification-complete-raw.mp4",
+      "source_start": 30.0,
+      "source_end": 35.0,
+      "speed": 1.0,
+      "crop": [
+        0,
+        118,
+        1670,
+        962
+      ],
+      "title": "Run both models",
+      "caption": "10 real pages. Classified by Jev in 383 ms. OCR already complete.",
+      "badge": "",
+      "output_start": 0.0,
+      "output_end": 5.0,
+      "frames": 150
+    },
+    {
+      "kind": "continuous_recording",
+      "file": "output/video-edits/social-classification/clip_002.mp4",
+      "input": "output/recordings/social/classification-complete-raw.mp4",
+      "source_start": 38.0,
+      "source_end": 44.0,
+      "speed": 1.0,
+      "crop": [
+        0,
+        118,
+        1670,
+        962
+      ],
+      "title": "Inspect the complete publication",
+      "caption": "A complete BEA release: narrative, charts, and dense statistical tables.",
+      "badge": "",
+      "output_start": 5.0,
+      "output_end": 11.0,
+      "frames": 180
+    },
+    {
+      "kind": "continuous_recording",
+      "file": "output/video-edits/social-classification/clip_003.mp4",
+      "input": "output/recordings/social/classification-complete-raw.mp4",
+      "source_start": 44.0,
+      "source_end": 52.1,
+      "speed": 1.0,
+      "crop": [
+        0,
+        118,
+        1670,
+        962
+      ],
+      "title": "Review the shared rules",
+      "caption": "Define categories in plain language. Both models receive the same rules.",
+      "badge": "",
+      "output_start": 11.0,
+      "output_end": 19.1,
+      "frames": 243
+    },
+    {
+      "kind": "continuous_recording",
+      "file": "output/video-edits/social-classification/clip_004.mp4",
+      "input": "output/recordings/social/classification-complete-raw.mp4",
+      "source_start": 52.1,
+      "source_end": 57.0,
+      "speed": 1.0,
+      "crop": [
+        0,
+        118,
+        1670,
+        962
+      ],
+      "title": "One live comparison",
+      "caption": "Same category. Jev: 383 ms. GPT-5.6 Luna: 1.18 s. One live run.",
+      "badge": "",
+      "output_start": 19.1,
+      "output_end": 24.0,
+      "frames": 147
+    }
+  ],
+  "contact_sheet": "output/video-edits/social-classification/contact_sheet.jpg",
+  "notes": "Continuous screen recordings trimmed at normal speed. The in-app LlamaIndex branding is retained. A 60-pixel caption strip is added; no title cards or synthesized UI/cursor. Local raw paths are provenance only.",
+  "verification": {
+    "full_decode": "passed",
+    "raw_crop": [
+      0,
+      118,
+      1670,
+      962
+    ],
+    "retained_processing_speed": 1,
+    "intro_card": false,
+    "outro_card": false,
+    "synthetic_cursor": false,
+    "ui_reconstructed": false,
+    "independent_visual_review": "passed",
+    "normal_speed_opening_and_cut_boundaries": "passed",
+    "private_overlay_exclusion": "passed",
+    "displayed_values_match_run_json": true,
+    "encoded_event_positions_seconds": {
+      "running": 0.23333333333333334,
+      "jev_complete": 0.6,
+      "both_complete": 1.4
+    }
+  }
+}

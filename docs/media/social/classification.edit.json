@@ -1,0 +1,9 @@
+{
+  "crop": [0, 118, 1670, 962],
+  "segments": [
+    {"start": 30, "end": 35, "title": "Run both models", "caption": "10 real pages. Classified by Jev in 383 ms. OCR already complete."},
+    {"start": 38, "end": 44, "title": "Inspect the complete publication", "caption": "A complete BEA release: narrative, charts, and dense statistical tables."},
+    {"start": 44, "end": 52.1, "title": "Review the shared rules", "caption": "Define categories in plain language. Both models receive the same rules."},
+    {"start": 52.1, "end": 57, "title": "One live comparison", "caption": "Same category. Jev: 383 ms. GPT-5.6 Luna: 1.18 s. One live run."}
+  ]
+}

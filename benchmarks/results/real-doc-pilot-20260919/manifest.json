@@ -1,0 +1,322 @@
+{
+  "schema_version": "1",
+  "run_id": "real-doc-pilot-20260919",
+  "started_at": "2026-09-19T07:48:51.494562+00:00",
+  "status": "complete",
+  "config": {
+    "seed": 20260919,
+    "repeats": 3,
+    "warmups": 1,
+    "warmup_policy": "reuse-demo-sources",
+    "demo_set": "real",
+    "experiment_kind": "demonstration",
+    "concurrency": 1,
+    "scope": "decision",
+    "budget_usd": 2,
+    "ocr": "liteparse",
+    "tier": "agentic",
+    "parser_version": "latest",
+    "jev_model": "jev-1.13.0",
+    "baseline_model": "gpt-5.6-luna",
+    "max_retries": 0,
+    "window_size": 8,
+    "boundary_threshold": 0.5,
+    "min_probability": 0.7,
+    "tasks": {
+      "classify": {
+        "manifest": "benchmarks/manifests/real-classify.json",
+        "rules": "examples/real/classify/rules.yaml"
+      },
+      "split": {
+        "manifest": "benchmarks/manifests/real-split.json",
+        "rules": "examples/real/split/rules.yaml"
+      }
+    },
+    "pilot_limit_per_task": null
+  },
+  "datasets": {
+    "classify": [
+      {
+        "id": "r04",
+        "path": "examples/real/originals/r04.pdf",
+        "title": "BEA income & spending release",
+        "category": "press_release",
+        "page_count": 10,
+        "source_ids": [
+          "r04"
+        ],
+        "format": "pdf",
+        "scan": false,
+        "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+        "issuer": "U.S. Bureau of Economic Analysis",
+        "source_url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+        "source_title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)",
+        "source_note": "Complete ten-page news release including charts, technical notes, and statistical tables. Historical estimates may have been revised since publication.",
+        "provenance_kind": "original",
+        "split": "test",
+        "sample_purpose": "demonstration only; repeated timings on this same source, no held-out accuracy claim"
+      }
+    ],
+    "split": [
+      {
+        "id": "real-finance-packet",
+        "path": "examples/real/public-finance-packet.pdf",
+        "title": "Finance & policy packet",
+        "page_count": 15,
+        "format": "pdf",
+        "scan": false,
+        "source_ids": [
+          "r01",
+          "r02",
+          "r03",
+          "r04"
+        ],
+        "segments": [
+          {
+            "category": "tax_form",
+            "pages": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "category": "financial_report",
+            "pages": [
+              4
+            ]
+          },
+          {
+            "category": "financial_report",
+            "pages": [
+              5
+            ]
+          },
+          {
+            "category": "press_release",
+            "pages": [
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        ],
+        "provenance_kind": "assembled",
+        "source_note": "Independently assembled from four complete official publications. Original pages preserved without edits or added separators; this combined packet was not issued by a government agency.",
+        "sources": [
+          {
+            "url": "https://www.irs.gov/pub/irs-pdf/f941.pdf",
+            "title": "Employer\u2019s Quarterly Federal Tax Return, Form 941 (Rev. March 2026)"
+          },
+          {
+            "url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250812_1.pdf",
+            "title": "Treasury Auction Results, 42-Day Bill, CUSIP 912797PY7"
+          },
+          {
+            "url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250512_2.pdf",
+            "title": "Treasury Auction Results, 91-Day Bill, CUSIP 912797PN1"
+          },
+          {
+            "url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+            "title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)"
+          }
+        ],
+        "source_page_mapping": [
+          {
+            "source_id": "r01",
+            "source_pages": [
+              1,
+              2,
+              3
+            ],
+            "packet_pages": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "source_id": "r02",
+            "source_pages": [
+              1
+            ],
+            "packet_pages": [
+              4
+            ]
+          },
+          {
+            "source_id": "r03",
+            "source_pages": [
+              1
+            ],
+            "packet_pages": [
+              5
+            ]
+          },
+          {
+            "source_id": "r04",
+            "source_pages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "packet_pages": [
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        ],
+        "sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+        "split": "test",
+        "sample_purpose": "demonstration only; repeated timings on this same source, no held-out accuracy claim"
+      }
+    ]
+  },
+  "demo_set": "real",
+  "experiment_kind": "demonstration",
+  "system": {
+    "os": "Darwin",
+    "release": "25.0.0",
+    "machine": "arm64",
+    "python": "3.12.6"
+  },
+  "packages": {
+    "jev-docs": "0.1.0",
+    "liteparse": "2.14.6",
+    "llama-cloud": "2.16.0",
+    "typesafe-sdk": "0.7.0",
+    "openai": "2.54.0",
+    "pypdf": "6.19.0"
+  },
+  "source_hashes": {
+    "src/jev_docs/engines/jev.py": "de50b48af02bd38cbdb5ee68c37c07949aed863a540d1f062514c443f6d45472",
+    "src/jev_docs/engines/__init__.py": "01e8f669c85795a6cf225a140b927aba910d6c712575d7422a50d3afe862aab5",
+    "src/jev_docs/engines/openai.py": "61b3d80ec7eca93c566c12258ead3852b422f47145c4a2434987bee60592765a",
+    "src/jev_docs/engines/base.py": "5ec3c7cfeb4485aabfc6768e1d9f99f07e5aca36af3c23dd9bfa0974294e6876",
+    "src/jev_docs/windows.py": "3a3c7c1a5e16d58f747d73f2d9a69bb9da1d7b18b60a5fe957fa55282a5e207f",
+    "src/jev_docs/split.py": "6ce7e12c00c172ea757b623ab228cef8b8439e01b68b426b3b4fb959f6431183",
+    "src/jev_docs/classify.py": "9c25b72efe522f330af8128e4ec00cfd5f0e609b27d4fc887329c834c19fd523",
+    "benchmarks/pricing.json": "c206dde4f34199da88594c968f12244b0c9605731525425c4b28d3f175a59643"
+  },
+  "input_manifest_hashes": {
+    "classify": "5d593a8ffa91c5b33569cb1daf6b8c51bad643b79fce402588f9425f10345b5c",
+    "split": "534e456198ee5e564d311829a4d3972e9736de524de29e01b066deab4f84a28c"
+  },
+  "rules_hashes": {
+    "classify": "108660cb2d72fd711408d3c7b26934793bf9b9fc613bdc0993fb4aca75ccc250",
+    "split": "3a79d7664e327b25634db6a1ec99dbfbc06d376f19df048356ecf9c0e258f570"
+  },
+  "lock_sha256": "14f7bf958cdfeeb9d9d8fefbfb9d2e6730fe8b8dd543284783e6f31094fbeaad",
+  "parsed_artifacts": {
+    "r04": {
+      "pages_sha256": "2e4c174359a37fd637a220ce43e5eba18a11ca8c810e9e890190edfb9c1d6be0",
+      "canonical_sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "preparation_metrics": {
+        "conversion_ms": 4.344167187809944,
+        "ocr_ms": 0,
+        "decision_ms": 0,
+        "validation_ms": 0,
+        "export_ms": 0,
+        "total_ms": 7.343875244259834,
+        "ocr_cache_hit": true,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      }
+    },
+    "real-finance-packet": {
+      "pages_sha256": "c10896c5d4b081833bf59f4b56fddcce61d5c027b4e54b8cd07dd66d2f8c21a5",
+      "canonical_sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      },
+      "preparation_metrics": {
+        "conversion_ms": 7.149083074182272,
+        "ocr_ms": 5638.66583397612,
+        "decision_ms": 0,
+        "validation_ms": 0.033416785299777985,
+        "export_ms": 0,
+        "total_ms": 5649.238083977252,
+        "ocr_cache_hit": false,
+        "ocr_cost_usd": 0.0,
+        "ocr_cost_status": "not_applicable",
+        "decision_cost_usd": null,
+        "requests": []
+      }
+    }
+  },
+  "protocol": {
+    "provider_order": "seeded paired randomization",
+    "quality_pass": 0,
+    "provider_cache_control": "not controlled for decision engines",
+    "client_state": "reused after excluded dev warmups",
+    "comparison": "practical task implementations",
+    "geographic_region": "not inferred",
+    "process_cold_measured": false
+  },
+  "budget": {
+    "limit_usd": 2,
+    "known_cost_usd": 0.016941401999999998,
+    "unknown_cost_reservations_usd": 0.0,
+    "committed_usd": 0.016941402000000008,
+    "is_provider_billing_cap": false
+  },
+  "observations_written": 16,
+  "measured_elapsed_seconds": 9.077815667260438,
+  "finished_at": "2026-09-19T07:49:11.942964+00:00",
+  "elapsed_seconds": 19.974250541999936
+}

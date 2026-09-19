@@ -1,0 +1,144 @@
+{
+  "classify": [
+    {
+      "id": "d01",
+      "path": "examples/classify/inbox/d01.pdf",
+      "title": "Vendor invoice",
+      "category": "invoice",
+      "page_count": 2,
+      "source_ids": [
+        "demo-class-source-0"
+      ],
+      "format": "pdf",
+      "scan": false,
+      "sha256": "443b1fbcf040924f2ed60a4f46578e6d613afe0e8ccaf9f1cd2edc9e9f16ada7"
+    },
+    {
+      "id": "d02",
+      "path": "examples/classify/inbox/d02.pdf",
+      "title": "Scanned supply order",
+      "category": "purchase_order",
+      "page_count": 1,
+      "source_ids": [
+        "demo-class-source-1"
+      ],
+      "format": "pdf",
+      "scan": true,
+      "sha256": "fbaf7a7cd9a68500b126cf945e64e7b48b8b4326f369bbeb757cd6cb8c8aff8f"
+    },
+    {
+      "id": "d03",
+      "path": "examples/classify/inbox/d03.docx",
+      "title": "Service agreement",
+      "category": "contract",
+      "page_count": 2,
+      "source_ids": [
+        "demo-class-source-2"
+      ],
+      "format": "docx",
+      "scan": false,
+      "sha256": "435af15fee517a2a230e193019648cee7c1f9e5cf141ae8cec75bbdf2b72eb71"
+    },
+    {
+      "id": "d04",
+      "path": "examples/classify/inbox/d04.docx",
+      "title": "Candidate resume",
+      "category": "resume",
+      "page_count": 1,
+      "source_ids": [
+        "demo-class-source-3"
+      ],
+      "format": "docx",
+      "scan": false,
+      "sha256": "a1d45808e1bd41993e5290f12287ba916ad3d183d0446742bc2e6fae58b9866e"
+    },
+    {
+      "id": "d05",
+      "path": "examples/classify/inbox/d05.pptx",
+      "title": "Investor presentation",
+      "category": "pitch_deck",
+      "page_count": 3,
+      "source_ids": [
+        "demo-class-source-4"
+      ],
+      "format": "pptx",
+      "scan": false,
+      "sha256": "7c13b5938d2701d3880dec89ca9124ddf28ba846da845b8f8ae43ea2a384f14d"
+    },
+    {
+      "id": "d06",
+      "path": "examples/classify/inbox/d06.pdf",
+      "title": "Observatory field guide",
+      "category": "other",
+      "page_count": 1,
+      "source_ids": [
+        "demo-class-source-5"
+      ],
+      "format": "pdf",
+      "scan": false,
+      "sha256": "bfd5c5b59856390944ae298dce16e4a9c9fc18fd513685c01116106d80f288e6"
+    }
+  ],
+  "split": [
+    {
+      "id": "claim-packet",
+      "path": "examples/split/claim-packet.pdf",
+      "split": "demo",
+      "segments": [
+        {
+          "category": "claim_form",
+          "pages": [
+            1,
+            2
+          ]
+        },
+        {
+          "category": "incident_report",
+          "pages": [
+            3
+          ]
+        },
+        {
+          "category": "repair_estimate",
+          "pages": [
+            4,
+            5
+          ]
+        },
+        {
+          "category": "invoice",
+          "pages": [
+            6,
+            7
+          ]
+        },
+        {
+          "category": "invoice",
+          "pages": [
+            8
+          ]
+        },
+        {
+          "category": "correspondence",
+          "pages": [
+            9
+          ]
+        }
+      ],
+      "page_count": 9,
+      "source_ids": [
+        "demo-packet-099-source-00",
+        "demo-packet-099-source-01",
+        "demo-packet-099-source-02",
+        "demo-packet-099-source-03",
+        "demo-packet-099-source-04",
+        "demo-packet-099-source-05"
+      ],
+      "template_family": "split-demo-layout-3",
+      "format": "pdf",
+      "scan": false,
+      "sha256": "99df04d93066ae0ba31aa31adfdac26fd4a12ce891ccc4a4d694b6072043c083",
+      "title": "Property claim packet"
+    }
+  ]
+}

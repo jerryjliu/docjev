@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "source": "../../output/recordings/classification-raw.mp4",
+  "crop": [
+    4,
+    120,
+    1630,
+    936
+  ],
+  "notes": [
+    "Only actual continuous screen-recording footage is used between authored intro/outro cards.",
+    "All retained footage runs at speed 1. Both full processing intervals are retained.",
+    "The complete raw 65.5\u201390.5s interval is excluded; it contains a native downloads popover.",
+    "Independent demonstration using original public documents; no government endorsement.",
+    "Preset category rules were reviewed and applied; no meaningful wording edit was made during this recording."
+  ],
+  "intro": {
+    "duration": 3,
+    "eyebrow": "JEV DOCS / CLASSIFICATION",
+    "title": "Every document.\nThe right category.",
+    "subtitle": "Real public documents. LiteParse OCR. Jev classification."
+  },
+  "segments": [
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 3,
+      "end": 13,
+      "speed": 1,
+      "title": "01 / Start with the original document",
+      "caption": "An original 10-page BEA release: charts, notes, and statistical tables. Source linked in the app.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 17,
+      "end": 29.5,
+      "speed": 1,
+      "title": "02 / Define categories in plain language",
+      "caption": "Review editable category descriptions and document-level instructions. The whole document informs one decision.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 32.3,
+      "end": 40.2,
+      "speed": 1,
+      "title": "03 / Choose the OCR layer",
+      "caption": "LiteParse runs locally by default. LlamaParse offers Cost-effective, Agentic, and Agentic Plus modes.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 43.5,
+      "end": 49.9,
+      "speed": 1,
+      "title": "04 / Read, then classify",
+      "caption": "Actual processing, shown at normal speed: LiteParse reads all 10 pages, then Jev applies the rules.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 49.9,
+      "end": 56.6,
+      "speed": 1,
+      "title": "05 / Inspect the decision and timings",
+      "caption": "Press Release. Jev: 326 ms. Reading: 4.34 s. Full pipeline: 4.76 s for this run.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 56.6,
+      "end": 65.5,
+      "speed": 1,
+      "title": "06 / Inspect the source pages",
+      "caption": "Browse the original pages alongside the result and category probabilities. Structured JSON is available.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 90.5,
+      "end": 99,
+      "speed": 1,
+      "title": "07 / Compare measured decision speed",
+      "caption": "Saved pilot: Jev 182 ms vs. GPT-5.6 Luna 785 ms median. One source, three timed runs per model.",
+      "badge": "SAVED PILOT \u00b7 OCR EXCLUDED"
+    },
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 120.5,
+      "end": 125,
+      "speed": 1,
+      "title": "08 / Try another document",
+      "caption": "A Treasury auction report uses the same rules and OCR path. This second run is also shown at normal speed.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/classification-raw.mp4",
+      "start": 125,
+      "end": 129.5,
+      "speed": 1,
+      "title": "09 / Reuse the workflow",
+      "caption": "Financial Report. Jev: 312 ms. Full pipeline: 875 ms. Timings are measured for this one-page report.",
+      "badge": ""
+    }
+  ],
+  "outro": {
+    "duration": 3.5,
+    "eyebrow": "JEV DOCS / OPEN SOURCE",
+    "title": "Your rules.\nJev\u2019s decisions.",
+    "subtitle": "Python package + CLI + local app.\nIndependent demo; no government endorsement."
+  },
+  "source_visibility": "Local unpublished raw recording; retained for reproducibility, not included in the repository."
+}

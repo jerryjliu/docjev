@@ -1,0 +1,24 @@
+{
+  "capture_date": "2026-09-19",
+  "task": "classification",
+  "raw_video": "output/recordings/social/classification-complete-raw.mp4",
+  "raw_sha256": "76074944e79d74379246d74f13d273909e392de874ff3f5e10e7239caa546dc5",
+  "video_sha256": "0aed9084b52614e4e422fea74dfbad1912d3134f63d0ae0f45b06c99d1a7b704",
+  "run_file": "classification.run.json",
+  "run_sha256": "f150f079b7f80f5bacd116cba6a13d0ba7886eb8c6d21a76a078223ee9042d48",
+  "rules_file": "examples/real/classify/rules.yaml",
+  "rules_file_sha256": "108660cb2d72fd711408d3c7b26934793bf9b9fc613bdc0993fb4aca75ccc250",
+  "comparison_id": "q5O8lorUm3_md3lDdBWCLk8C",
+  "source_sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+  "ocr_text_sha256": "bb12dd361604d36dde1f883b02e0af5f3c068241b0dc0daa316fce2efa2e47c6",
+  "decision_ms": {
+    "jev": 382.988,
+    "openai": 1183.922
+  },
+  "ocr_conversion_ms": 4231.681333389133,
+  "scope": "One simultaneous comparison on shared LiteParse page text. Model decision intervals exclude OCR/export. Results are predictions validated against this demo manifest; no population accuracy claim.",
+  "recording_attempt": 2,
+  "capture_correction": "First recording started after Jev completed because of recorder countdown. The single corrected take is used in full for this clip; no timings or results from the earlier attempt are substituted.",
+  "earlier_attempt": "classification-incomplete-capture.run.json",
+  "provider_cache_note": "OpenAI reports 13113 cached input tokens of 13116 in this take. Jev cache usage is not reported. Fresh LiteParse OCR does not mean cold provider cache."
+}

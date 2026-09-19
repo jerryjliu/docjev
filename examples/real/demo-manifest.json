@@ -1,0 +1,228 @@
+{
+  "classify": [
+    {
+      "id": "r01",
+      "path": "examples/real/originals/r01.pdf",
+      "title": "IRS Form 941 \u2014 2026",
+      "category": "tax_form",
+      "page_count": 3,
+      "source_ids": [
+        "r01"
+      ],
+      "format": "pdf",
+      "scan": false,
+      "sha256": "38a3d8cf7a455101d52543c8c48e66202bc25c189ead878627e35c797c88e2ad",
+      "issuer": "Internal Revenue Service",
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f941.pdf",
+      "source_title": "Employer\u2019s Quarterly Federal Tax Return, Form 941 (Rev. March 2026)",
+      "source_note": "Official blank form, two return pages plus Form 941-V payment voucher. No taxpayer details have been entered.",
+      "provenance_kind": "original"
+    },
+    {
+      "id": "r02",
+      "path": "examples/real/originals/r02.pdf",
+      "title": "Treasury auction \u2014 42-day bill",
+      "category": "financial_report",
+      "page_count": 1,
+      "source_ids": [
+        "r02"
+      ],
+      "format": "pdf",
+      "scan": false,
+      "sha256": "b1e2a47e0d7c2d462f57f98d954b678a7686e91608489385fc12191d13e7a5f0",
+      "issuer": "U.S. Department of the Treasury, Bureau of the Fiscal Service",
+      "source_url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250812_1.pdf",
+      "source_title": "Treasury Auction Results, 42-Day Bill, CUSIP 912797PY7",
+      "source_note": "Complete official auction result sheet with actual published rates and accepted amounts.",
+      "provenance_kind": "original"
+    },
+    {
+      "id": "r03",
+      "path": "examples/real/originals/r03.pdf",
+      "title": "Treasury auction \u2014 91-day bill",
+      "category": "financial_report",
+      "page_count": 1,
+      "source_ids": [
+        "r03"
+      ],
+      "format": "pdf",
+      "scan": false,
+      "sha256": "6118be61512b0499d1a3653b77ee049b3880217a2de102730852df45a8410182",
+      "issuer": "U.S. Department of the Treasury, Bureau of the Fiscal Service",
+      "source_url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250512_2.pdf",
+      "source_title": "Treasury Auction Results, 91-Day Bill, CUSIP 912797PN1",
+      "source_note": "Complete official auction result sheet; a distinct source from the 42-day bill result.",
+      "provenance_kind": "original"
+    },
+    {
+      "id": "r04",
+      "path": "examples/real/originals/r04.pdf",
+      "title": "BEA income & spending release",
+      "category": "press_release",
+      "page_count": 10,
+      "source_ids": [
+        "r04"
+      ],
+      "format": "pdf",
+      "scan": false,
+      "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+      "issuer": "U.S. Bureau of Economic Analysis",
+      "source_url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+      "source_title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)",
+      "source_note": "Complete ten-page news release including charts, technical notes, and statistical tables. Historical estimates may have been revised since publication.",
+      "provenance_kind": "original"
+    },
+    {
+      "id": "r05",
+      "path": "examples/real/originals/r05.pdf",
+      "title": "SEC public-comment notice",
+      "category": "legal_notice",
+      "page_count": 2,
+      "source_ids": [
+        "r05"
+      ],
+      "format": "pdf",
+      "scan": false,
+      "sha256": "c0b710cdaf3f3aadc00ebcf4074257d770770da85c23561c973785df6c24dba6",
+      "issuer": "U.S. Securities and Exchange Commission / Office of the Federal Register",
+      "source_url": "https://public-inspection.federalregister.gov/2025-11513.pdf",
+      "source_title": "Submission for OMB Review; Comment Request; Extension: Form 18\u2014Registration Form (FR Doc. 2025-11513)",
+      "source_note": "Complete two-page official public-inspection PDF of the notice subsequently published June 24, 2025; not a re-typeset document.",
+      "provenance_kind": "original"
+    }
+  ],
+  "split": [
+    {
+      "id": "real-finance-packet",
+      "path": "examples/real/public-finance-packet.pdf",
+      "title": "Finance & policy packet",
+      "page_count": 15,
+      "format": "pdf",
+      "scan": false,
+      "source_ids": [
+        "r01",
+        "r02",
+        "r03",
+        "r04"
+      ],
+      "segments": [
+        {
+          "category": "tax_form",
+          "pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "category": "financial_report",
+          "pages": [
+            4
+          ]
+        },
+        {
+          "category": "financial_report",
+          "pages": [
+            5
+          ]
+        },
+        {
+          "category": "press_release",
+          "pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "provenance_kind": "assembled",
+      "source_note": "Independently assembled from four complete official publications. Original pages preserved without edits or added separators; this combined packet was not issued by a government agency.",
+      "sources": [
+        {
+          "url": "https://www.irs.gov/pub/irs-pdf/f941.pdf",
+          "title": "Employer\u2019s Quarterly Federal Tax Return, Form 941 (Rev. March 2026)"
+        },
+        {
+          "url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250812_1.pdf",
+          "title": "Treasury Auction Results, 42-Day Bill, CUSIP 912797PY7"
+        },
+        {
+          "url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250512_2.pdf",
+          "title": "Treasury Auction Results, 91-Day Bill, CUSIP 912797PN1"
+        },
+        {
+          "url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+          "title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)"
+        }
+      ],
+      "source_page_mapping": [
+        {
+          "source_id": "r01",
+          "source_pages": [
+            1,
+            2,
+            3
+          ],
+          "packet_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "r02",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            4
+          ]
+        },
+        {
+          "source_id": "r03",
+          "source_pages": [
+            1
+          ],
+          "packet_pages": [
+            5
+          ]
+        },
+        {
+          "source_id": "r04",
+          "source_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "packet_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835"
+    }
+  ]
+}

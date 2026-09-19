@@ -1,0 +1,19 @@
+name: checks
+on: [push, pull_request]
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ['3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: uv sync --all-extras --locked
+      - run: uv run ruff check .
+      - run: uv run mypy src/jev_docs
+      - run: uv run pytest -m 'not live'
+      - run: uv build

@@ -1,0 +1,5 @@
+task,engine,model,scope,concurrency,planned_unique,completed_unique,completion_rate,accuracy,packet_exact_match,page_accuracy,decision_p50_ms,decision_p95_ms,wall_p50_ms,wall_p95_ms,latency_samples,failed_calls,decision_cost_usd_known,unknown_cost_calls
+classify,jev,jev-1.13.0,decision,1,1,1,1.0,1.0,,,182.473,184.1299,182.57412500679493,184.2912504915148,3,0,0.0019208700000000003,0
+classify,openai,gpt-5.6-luna,decision,1,1,1,1.0,1.0,,,785.397,1338.0041999999999,785.5549589730799,1338.0898584611714,3,0,0.0008389800000000001,0
+split,jev,jev-1.13.0,decision,1,1,1,1.0,,1.0,1.0,293.791,336.6616,294.1149170510471,336.7948295548558,3,0,0.003430224,0
+split,openai,gpt-5.6-luna,decision,1,1,1,1.0,,1.0,1.0,1590.774,1604.4116999999999,1590.8915419131517,1604.5947160106152,3,0,0.00127008,0

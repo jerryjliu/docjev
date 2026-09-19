@@ -1,0 +1,37 @@
+# Real-document accuracy evaluation: dataset options and proposed scope
+
+Researched September 19, 2026. This complements the [current-codebase audit](2026-09-19-accuracy-run-scope.md). No external dataset was downloaded and no accuracy study was executed. Dataset facts below come from primary sources; the proposed experiment is our design judgment, not a published result.
+
+## Public dataset options
+
+| Source | What it actually tests | Fit for this project |
+|---|---|---|
+| [RVL-CDIP, author release](https://adamharley.com/rvl-cdip/) | 400,000 scanned page images, 16 categories; fixed 40,000-image test split. Categories include letters, invoices, forms, resumes, and reports. | Established classification reference. It is single-page image classification, so it does not establish whole-document PDF/DOCX/PPTX accuracy. Use a stratified subset of the published test split and describe that scope explicitly. The author page points to the upstream archive for rights information. |
+| [DocSplit, paper](https://arxiv.org/html/2602.15958v1) and [author dataset](https://huggingface.co/datasets/amazon/doc_split) | Constructed packets of real source documents; sequential same-category and mixed-category variants, plus shuffled/interleaved variants. The paper starts from 995 source documents across 13 categories. | `mono_seq` and `poly_seq` match the package's contiguous, ordered segmentation contract. Interleaving/reordering would require a different output model and scorer. The dataset card labels its release CC-BY-NC-4.0 and says referenced images/text are not included; upstream PDFs and an adapter are needed. It should not be silently bundled into this Apache-licensed launch repo. |
+| [TABME++, author dataset card](https://huggingface.co/datasets/bevaya/TABMEpp) | Real tobacco-archive source pages arranged into synthetic document streams, with Microsoft OCR and stream definitions. | Useful for English boundary detection. The card's “synthetic” refers to constructed streams, not fabricated page content. It does not supply this project's category-rule ground truth. Re-run LiteParse on the images for an OCR-plus-Jev comparison; using provided OCR measures a different condition. |
+| [WooIR, authors' paper](https://e.humanities.uva.nl/publications/2022/heus_wooi22.pdf) | Naturally aggregated Dutch government disclosure streams: 229 streams, 7,118 documents, 44,975 pages. | A useful natural-stream stress test, with a language/domain shift from the English demo. Boundary annotations alone do not establish our category labels. Treat Dutch OCR configuration and multilingual rules as a separate condition. |
+
+“Real pages,” “naturally assembled packets,” and “independent test samples” are different properties. Concatenating genuine PDFs is appropriate for a reproducible boundary test, but the report should call those packets constructed. Reusing the same underlying source documents across hundreds of packets does not produce hundreds of independent source samples.
+
+## Revised small pilot: 40 real source documents
+
+Scope reduced following the user's September 19 feedback about cost and elapsed time. This replaces the earlier 200-document / 50-packet proposal. The experiment remains unexecuted; the corpus and labels still need to be frozen.
+
+The pilot will test **classification and contiguous splitting of real English documents using shared LiteParse text and explicit rules**.
+
+1. **Classification:** 40 complete real documents across five categories, targeting eight per category including `other`. Cap the complete collection at 160 source pages; select a mix of issuers, layouts, and document lengths. Keep the five existing video-demo originals out of the scored set and avoid near-duplicate publication versions. Download selected documents only, not an entire large public corpus.
+2. **Splitting:** reuse those same 40 documents exactly once across eight constructed packets of five documents, with at most 25 pages per packet. At least four packets should contain adjacent distinct documents of the same category. Preserve every source page and original within-document order. Include long continuations and supporting tables when available. Clearly report the source overlap between classification and splitting: these are 40 unique original documents and 48 task inputs, not 80 independent source documents. Score the tasks separately.
+3. **Ground truth:** preserve original source identity, hashes, category labels, and exact packet assembly maps. Finalize category interpretations and review ambiguous labels and boundaries before inspecting model outputs; retain the review record without claiming a human review unless one actually occurs. Freeze rules before scoring. Include parser and inference failures in the intended denominator.
+4. **Execution:** LiteParse only, parsed once per task input and shared by both decision engines. One measured pass with Jev and GPT-5.6 Luna, no repeat sweep, zero retries, randomized provider order, concurrency 1. Use one existing development/demo input per task for excluded warmup; these originals must remain outside the new scored set. This is 96 measured task invocations plus four warmups. A splitting invocation can use more than one provider request when windowing is required.
+5. **Cost and speed controls:** set the runner's local estimated-spend guard to $2. Run a no-API preflight on the frozen manifest, then use actual OCR text for dispatch reservations. Do not increase the guard or start extra experiments automatically. Use bounded complete inputs rather than truncating documents. Defer all LlamaParse tier comparisons, broader public benchmarks, and repeated latency runs.
+6. **Report:** raw correct/total counts, classification accuracy and macro-F1, per-category errors, exact-packet match, segment F1, boundary F1, same-category boundary recall, coverage, failures, per-item latency and estimated cost. Show OCR time separately. Provider caching and source reuse must be disclosed. Any small-sample latency quantiles are descriptive; accuracy denominators count unique documents or packets rather than calls.
+
+This is a quick diagnostic pilot. With only eight packets, exact-packet accuracy changes by 12.5 percentage points per error, so raw counts are more useful than a precise-looking percentage. It can reveal failure cases and compare these two implementations on the selected sample; it cannot support broad production-accuracy claims.
+
+## Cost and execution boundary
+
+The $2 value is a **local estimated budget guard**, not a provider-enforced billing cap. The existing runner reserves cost before each task dispatch, records observed usage, and retains reservations for unknown charges. The final cost estimate must use the actual frozen documents and rules. No new API calls were made when revising this scope.
+
+The existing 48-classification / 18-packet synthetic test remains available as a separate regression fixture, but it is not part of this smaller real-document pilot. Its recorded $1.64 one-pass preflight estimate is not a quote for the proposed real corpus.
+
+Model execution should be measured in minutes at this scale if latency resembles the existing demo, rather than requiring a long benchmark sweep. Document sourcing and label review are separate preparation work. OCR can be substantially slower on scanned pages, and network latency is variable; no wall-clock completion guarantee is implied. Once the corpus is frozen, preflight and local parsing will provide a much tighter cost and runtime estimate.

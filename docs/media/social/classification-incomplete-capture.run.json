@@ -1,0 +1,275 @@
+{
+  "preparation": {
+    "id": "vC1130o2cskVfgZR9ARHxdrq",
+    "task": "classify",
+    "title": "BEA income & spending release",
+    "status": "ready",
+    "stage": "OCR ready",
+    "error": null,
+    "can_start": false,
+    "document": {
+      "name": "r04.pdf",
+      "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+      "canonical_sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+      "page_count": 10,
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      }
+    },
+    "ocr_metrics": {
+      "conversion_ms": 4.565458279103041,
+      "ocr_ms": 4452.714083250612,
+      "decision_ms": 0.0,
+      "validation_ms": 0.033208634704351425,
+      "export_ms": 0.0,
+      "total_ms": 4464.165833778679,
+      "ocr_cache_hit": false,
+      "ocr_cost_usd": 0.0,
+      "ocr_cost_status": "not_applicable",
+      "decision_cost_usd": null,
+      "requests": []
+    },
+    "ocr_text_sha256": "bb12dd361604d36dde1f883b02e0af5f3c068241b0dc0daa316fce2efa2e47c6",
+    "preview": {
+      "pdf": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/qe-kiis1D1M-dYmMEXPl8_5Z",
+      "pages": [
+        {
+          "number": 1,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/L-mECC1dWbUUD5_ufDnShAqh"
+        },
+        {
+          "number": 2,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/KcM8-GgnmCS9D23IvIE3FZaE"
+        },
+        {
+          "number": 3,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/cikqCkMEnUHLYjAnWeMJxAMP"
+        },
+        {
+          "number": 4,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/HWgy_dCov1qx2VCFb3I4aNtZ"
+        },
+        {
+          "number": 5,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/X7zeUXT7dSaSAZvlWM6ErWnv"
+        },
+        {
+          "number": 6,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/lqOMn--N92m8ns4gXxrKcsyX"
+        },
+        {
+          "number": 7,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/joYQMwW00BbwqN_kLJHDuuCY"
+        },
+        {
+          "number": 8,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/bZxXg6NiYp7dsnFThcuXTM9g"
+        },
+        {
+          "number": 9,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/ECHEDIjgfqovi0SeqNzAUB-C"
+        },
+        {
+          "number": 10,
+          "image": "/api/race/preparations/vC1130o2cskVfgZR9ARHxdrq/assets/3tsOxwmvM2kXxvk6DuZXpEUk"
+        }
+      ]
+    },
+    "provenance": {
+      "kind": "original",
+      "issuer": "U.S. Bureau of Economic Analysis",
+      "note": "Complete ten-page news release including charts, technical notes, and statistical tables. Historical estimates may have been revised since publication.",
+      "sources": [
+        {
+          "url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+          "title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)"
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "id": "V6l1mKl4jsPTJCwECSWGuGCQ",
+    "preparation_id": "vC1130o2cskVfgZR9ARHxdrq",
+    "task": "classify",
+    "status": "complete",
+    "engines": {
+      "jev": {
+        "engine": "jev",
+        "model": "jev-1.13.0",
+        "status": "complete",
+        "result": {
+          "schema_version": "1",
+          "task": "classify",
+          "category": "press_release",
+          "category_probability": 1.0,
+          "probabilities": {
+            "press_release": 1.0,
+            "financial_report": 0.0,
+            "other": 0.0,
+            "tax_form": 0.0,
+            "legal_notice": 0.0
+          },
+          "provider_confidence": 1.0,
+          "needs_review": false,
+          "warnings": [],
+          "document": {
+            "name": "r04.pdf",
+            "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+            "canonical_sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+            "page_count": 10,
+            "parser": {
+              "name": "liteparse",
+              "version": "2.14.6",
+              "tier": null,
+              "options": {
+                "ocr_enabled": true,
+                "ocr_language": "en",
+                "continue_on_page_error": false,
+                "ocr_failure_fatal": true,
+                "quiet": true,
+                "normalization": "unicode-nfc-lines-v1"
+              },
+              "conversion": {
+                "kind": "original-pdf",
+                "page_numbering": "one-based-original"
+              }
+            }
+          },
+          "engine": "jev",
+          "model": "jev-1.13.0",
+          "metrics": {
+            "conversion_ms": 0.0,
+            "ocr_ms": 0.0,
+            "decision_ms": 712.451,
+            "validation_ms": 0.039,
+            "export_ms": 0.0,
+            "total_ms": 712.499,
+            "ocr_cache_hit": false,
+            "ocr_cost_usd": null,
+            "ocr_cost_status": "unknown",
+            "decision_cost_usd": 0.0006402900000000001,
+            "requests": [
+              {
+                "provider": "jev",
+                "model": "jev-1.13.0",
+                "task": "classify",
+                "request_id": "req_01a0ba77ab7b716d8533073f67b2cd92",
+                "attempt": 1,
+                "status": "ok",
+                "elapsed_ms": 711.6087498143315,
+                "input_tokens": 15245,
+                "output_tokens": 57,
+                "cached_input_tokens": null,
+                "cache_write_tokens": null,
+                "reasoning_tokens": null,
+                "cost_usd": 0.0006402900000000001,
+                "cost_status": "estimated",
+                "error_code": null
+              }
+            ]
+          }
+        },
+        "error": null,
+        "elapsed_ms": 712.8141247667372,
+        "started_offset_ms": 0.9758332744240761,
+        "max_retries": 0,
+        "requests": []
+      },
+      "openai": {
+        "engine": "openai",
+        "model": "gpt-5.6-luna",
+        "status": "complete",
+        "result": {
+          "schema_version": "1",
+          "task": "classify",
+          "category": "press_release",
+          "category_probability": null,
+          "probabilities": null,
+          "provider_confidence": null,
+          "needs_review": false,
+          "warnings": [],
+          "document": {
+            "name": "r04.pdf",
+            "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+            "canonical_sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+            "page_count": 10,
+            "parser": {
+              "name": "liteparse",
+              "version": "2.14.6",
+              "tier": null,
+              "options": {
+                "ocr_enabled": true,
+                "ocr_language": "en",
+                "continue_on_page_error": false,
+                "ocr_failure_fatal": true,
+                "quiet": true,
+                "normalization": "unicode-nfc-lines-v1"
+              },
+              "conversion": {
+                "kind": "original-pdf",
+                "page_numbering": "one-based-original"
+              }
+            }
+          },
+          "engine": "openai",
+          "model": "gpt-5.6-luna",
+          "metrics": {
+            "conversion_ms": 0.0,
+            "ocr_ms": 0.0,
+            "decision_ms": 2378.521,
+            "validation_ms": 0.021,
+            "export_ms": 0.0,
+            "total_ms": 2378.529,
+            "ocr_cache_hit": false,
+            "ocr_cost_usd": null,
+            "ocr_cost_status": "unknown",
+            "decision_cost_usd": 0.0032956500000000002,
+            "requests": [
+              {
+                "provider": "openai",
+                "model": "gpt-5.6-luna",
+                "task": "classify",
+                "request_id": "req_9ef0112f50b741d8aabc293621cc21b6",
+                "attempt": 1,
+                "status": "ok",
+                "elapsed_ms": 2378.4284167923033,
+                "input_tokens": 13116,
+                "output_tokens": 14,
+                "cached_input_tokens": 0,
+                "cache_write_tokens": 13113,
+                "reasoning_tokens": 0,
+                "cost_usd": 0.0032956500000000002,
+                "cost_status": "estimated",
+                "error_code": null
+              }
+            ]
+          }
+        },
+        "error": null,
+        "elapsed_ms": 2378.62708279863,
+        "started_offset_ms": 5.115167237818241,
+        "max_retries": 0,
+        "requests": []
+      }
+    },
+    "rules_sha256": "1a17c111e1a159c2521ac7e4d34271b7159d90684481339ff5d7cc29e92eaf4e",
+    "ocr_text_sha256": "bb12dd361604d36dde1f883b02e0af5f3c068241b0dc0daa316fce2efa2e47c6",
+    "scope": "One live run; same OCR text and rules; decision times exclude OCR and export.",
+    "elapsed_ms": 2384.3112499453127,
+    "download": null
+  }
+}

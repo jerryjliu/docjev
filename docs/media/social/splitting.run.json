@@ -1,0 +1,753 @@
+{
+  "preparation": {
+    "id": "JRBsZiM0C4-sCq_7hgGKuHJq",
+    "task": "split",
+    "title": "Finance & policy packet",
+    "status": "ready",
+    "stage": "OCR ready",
+    "error": null,
+    "can_start": false,
+    "document": {
+      "name": "public-finance-packet.pdf",
+      "sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+      "canonical_sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+      "page_count": 15,
+      "parser": {
+        "name": "liteparse",
+        "version": "2.14.6",
+        "tier": null,
+        "options": {
+          "ocr_enabled": true,
+          "ocr_language": "en",
+          "continue_on_page_error": false,
+          "ocr_failure_fatal": true,
+          "quiet": true,
+          "normalization": "unicode-nfc-lines-v1"
+        },
+        "conversion": {
+          "kind": "original-pdf",
+          "page_numbering": "one-based-original"
+        }
+      }
+    },
+    "ocr_metrics": {
+      "conversion_ms": 9.556707926094532,
+      "ocr_ms": 5713.429584167898,
+      "decision_ms": 0.0,
+      "validation_ms": 0.03733299672603607,
+      "export_ms": 0.0,
+      "total_ms": 5731.846250128001,
+      "ocr_cache_hit": false,
+      "ocr_cost_usd": 0.0,
+      "ocr_cost_status": "not_applicable",
+      "decision_cost_usd": null,
+      "requests": []
+    },
+    "ocr_text_sha256": "08da09af4d46752c0c827a72fafe17bd1fd8888a9a8d8c96b5c6b6c1445886d9",
+    "preview": {
+      "pdf": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/NY7CWcXG2Dfa9WA4EjyGJf5g",
+      "pages": [
+        {
+          "number": 1,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/n_znrjNV2MWOpByXQqlNfrzi"
+        },
+        {
+          "number": 2,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/APFk4RQ7S8ZiL9J3VhtZTYOb"
+        },
+        {
+          "number": 3,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/DxV_3c0zRlh2RXBCwp9FmcZB"
+        },
+        {
+          "number": 4,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/SgEU2R-0ybFItU4VmikfD4_K"
+        },
+        {
+          "number": 5,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/dmtH3ItTtvjgKobxl5LaaPBj"
+        },
+        {
+          "number": 6,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/3H4j_x8-18x_NWhFN1zAWsWN"
+        },
+        {
+          "number": 7,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/aDtSasBDOS1OdrVLoWjmJ89r"
+        },
+        {
+          "number": 8,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/2jGPO_aMMYMQJTL1hEFKzgC3"
+        },
+        {
+          "number": 9,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/e6fsQm-kfyy7UfPyAJGGlxp6"
+        },
+        {
+          "number": 10,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/C24W17yqYikDa_hy1peT67Mz"
+        },
+        {
+          "number": 11,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/iW8yHlgrSbDYshp-TZGNF6zk"
+        },
+        {
+          "number": 12,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/mM8KydorX7wy46uJ2bE4_R_o"
+        },
+        {
+          "number": 13,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/FwWdCLrSaocQP1gSCzXJ9I_q"
+        },
+        {
+          "number": 14,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/ISgeGoynQLVHa8Wpii7odw8X"
+        },
+        {
+          "number": 15,
+          "image": "/api/race/preparations/JRBsZiM0C4-sCq_7hgGKuHJq/assets/xbQxtThVlY8VVCch_yA5En3S"
+        }
+      ]
+    },
+    "provenance": {
+      "kind": "assembled",
+      "issuer": "",
+      "note": "Independently assembled from four complete official publications. Original pages preserved without edits or added separators; this combined packet was not issued by a government agency.",
+      "sources": [
+        {
+          "url": "https://www.irs.gov/pub/irs-pdf/f941.pdf",
+          "title": "Employer\u2019s Quarterly Federal Tax Return, Form 941 (Rev. March 2026)"
+        },
+        {
+          "url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250812_1.pdf",
+          "title": "Treasury Auction Results, 42-Day Bill, CUSIP 912797PY7"
+        },
+        {
+          "url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250512_2.pdf",
+          "title": "Treasury Auction Results, 91-Day Bill, CUSIP 912797PN1"
+        },
+        {
+          "url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+          "title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)"
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "id": "qJUuyOI1x8pa5DCqODRL0pnE",
+    "preparation_id": "JRBsZiM0C4-sCq_7hgGKuHJq",
+    "task": "split",
+    "status": "complete",
+    "engines": {
+      "jev": {
+        "engine": "jev",
+        "model": "jev-1.13.0",
+        "status": "complete",
+        "result": {
+          "schema_version": "1",
+          "task": "split",
+          "segments": [
+            {
+              "id": "segment-001",
+              "category": "tax_form",
+              "pages": [
+                1,
+                2,
+                3
+              ],
+              "needs_review": false,
+              "mean_category_probability": 1.0
+            },
+            {
+              "id": "segment-002",
+              "category": "financial_report",
+              "pages": [
+                4
+              ],
+              "needs_review": false,
+              "mean_category_probability": 0.99
+            },
+            {
+              "id": "segment-003",
+              "category": "financial_report",
+              "pages": [
+                5
+              ],
+              "needs_review": false,
+              "mean_category_probability": 0.96
+            },
+            {
+              "id": "segment-004",
+              "category": "press_release",
+              "pages": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "needs_review": false,
+              "mean_category_probability": 0.977
+            }
+          ],
+          "page_decisions": [
+            {
+              "page": 1,
+              "category": "tax_form",
+              "category_probability": 1.0,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.0,
+                "press_release": 0.0,
+                "tax_form": 1.0
+              },
+              "provider_confidence": 1.0,
+              "starts_document": true,
+              "starts_document_probability": 1.0
+            },
+            {
+              "page": 2,
+              "category": "tax_form",
+              "category_probability": 1.0,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.0,
+                "press_release": 0.0,
+                "tax_form": 1.0
+              },
+              "provider_confidence": 1.0,
+              "starts_document": false,
+              "starts_document_probability": 0.09
+            },
+            {
+              "page": 3,
+              "category": "tax_form",
+              "category_probability": 1.0,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.0,
+                "press_release": 0.0,
+                "tax_form": 1.0
+              },
+              "provider_confidence": 1.0,
+              "starts_document": false,
+              "starts_document_probability": 0.35
+            },
+            {
+              "page": 4,
+              "category": "financial_report",
+              "category_probability": 0.99,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.99,
+                "press_release": 0.01,
+                "tax_form": 0.0
+              },
+              "provider_confidence": 0.99,
+              "starts_document": true,
+              "starts_document_probability": 0.97
+            },
+            {
+              "page": 5,
+              "category": "financial_report",
+              "category_probability": 0.96,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.96,
+                "press_release": 0.04,
+                "tax_form": 0.0
+              },
+              "provider_confidence": 0.95,
+              "starts_document": true,
+              "starts_document_probability": 0.97
+            },
+            {
+              "page": 6,
+              "category": "press_release",
+              "category_probability": 1.0,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.0,
+                "press_release": 1.0,
+                "tax_form": 0.0
+              },
+              "provider_confidence": 1.0,
+              "starts_document": true,
+              "starts_document_probability": 0.92
+            },
+            {
+              "page": 7,
+              "category": "press_release",
+              "category_probability": 1.0,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.0,
+                "press_release": 1.0,
+                "tax_form": 0.0
+              },
+              "provider_confidence": 0.99,
+              "starts_document": false,
+              "starts_document_probability": 0.03
+            },
+            {
+              "page": 8,
+              "category": "press_release",
+              "category_probability": 0.98,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.01,
+                "press_release": 0.98,
+                "tax_form": 0.01
+              },
+              "provider_confidence": 0.98,
+              "starts_document": false,
+              "starts_document_probability": 0.04
+            },
+            {
+              "page": 9,
+              "category": "press_release",
+              "category_probability": 0.98,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.01,
+                "press_release": 0.98,
+                "tax_form": 0.01
+              },
+              "provider_confidence": 0.97,
+              "starts_document": false,
+              "starts_document_probability": 0.04
+            },
+            {
+              "page": 10,
+              "category": "press_release",
+              "category_probability": 0.98,
+              "probabilities": {
+                "tax_form": 0.01,
+                "legal_notice": 0.0,
+                "financial_report": 0.01,
+                "press_release": 0.98,
+                "other": 0.0
+              },
+              "provider_confidence": 0.98,
+              "starts_document": false,
+              "starts_document_probability": 0.04
+            },
+            {
+              "page": 11,
+              "category": "press_release",
+              "category_probability": 0.99,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.01,
+                "press_release": 0.99,
+                "tax_form": 0.0
+              },
+              "provider_confidence": 0.98,
+              "starts_document": false,
+              "starts_document_probability": 0.04
+            },
+            {
+              "page": 12,
+              "category": "press_release",
+              "category_probability": 0.96,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.03,
+                "press_release": 0.96,
+                "tax_form": 0.01
+              },
+              "provider_confidence": 0.96,
+              "starts_document": false,
+              "starts_document_probability": 0.04
+            },
+            {
+              "page": 13,
+              "category": "press_release",
+              "category_probability": 0.93,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.06,
+                "press_release": 0.93,
+                "tax_form": 0.01
+              },
+              "provider_confidence": 0.92,
+              "starts_document": false,
+              "starts_document_probability": 0.04
+            },
+            {
+              "page": 14,
+              "category": "press_release",
+              "category_probability": 0.97,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.03,
+                "press_release": 0.97,
+                "tax_form": 0.0
+              },
+              "provider_confidence": 0.96,
+              "starts_document": false,
+              "starts_document_probability": 0.04
+            },
+            {
+              "page": 15,
+              "category": "press_release",
+              "category_probability": 0.98,
+              "probabilities": {
+                "other": 0.0,
+                "legal_notice": 0.0,
+                "financial_report": 0.02,
+                "press_release": 0.98,
+                "tax_form": 0.0
+              },
+              "provider_confidence": 0.97,
+              "starts_document": false,
+              "starts_document_probability": 0.03
+            }
+          ],
+          "warnings": [],
+          "document": {
+            "name": "public-finance-packet.pdf",
+            "sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+            "canonical_sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+            "page_count": 15,
+            "parser": {
+              "name": "liteparse",
+              "version": "2.14.6",
+              "tier": null,
+              "options": {
+                "ocr_enabled": true,
+                "ocr_language": "en",
+                "continue_on_page_error": false,
+                "ocr_failure_fatal": true,
+                "quiet": true,
+                "normalization": "unicode-nfc-lines-v1"
+              },
+              "conversion": {
+                "kind": "original-pdf",
+                "page_numbering": "one-based-original"
+              }
+            }
+          },
+          "engine": "jev",
+          "model": "jev-1.13.0",
+          "metrics": {
+            "conversion_ms": 0.0,
+            "ocr_ms": 0.0,
+            "decision_ms": 456.699,
+            "validation_ms": 0.219,
+            "export_ms": 0.0,
+            "total_ms": 456.963,
+            "ocr_cache_hit": false,
+            "ocr_cost_usd": null,
+            "ocr_cost_status": "unknown",
+            "decision_cost_usd": 0.001143408,
+            "requests": [
+              {
+                "provider": "jev",
+                "model": "jev-1.13.0",
+                "task": "split",
+                "request_id": "req_01a0ba799c4d7eba99d250ab4055758a",
+                "attempt": 1,
+                "status": "ok",
+                "elapsed_ms": 453.11150001361966,
+                "input_tokens": 27224,
+                "output_tokens": 1108,
+                "cached_input_tokens": null,
+                "cache_write_tokens": null,
+                "reasoning_tokens": null,
+                "cost_usd": 0.001143408,
+                "cost_status": "estimated",
+                "error_code": null
+              }
+            ]
+          }
+        },
+        "error": null,
+        "elapsed_ms": 457.2174157947302,
+        "started_offset_ms": 5.456542130559683,
+        "max_retries": 0,
+        "requests": []
+      },
+      "openai": {
+        "engine": "openai",
+        "model": "gpt-5.6-luna",
+        "status": "complete",
+        "result": {
+          "schema_version": "1",
+          "task": "split",
+          "segments": [
+            {
+              "id": "segment-001",
+              "category": "tax_form",
+              "pages": [
+                1,
+                2,
+                3
+              ],
+              "needs_review": false,
+              "mean_category_probability": null
+            },
+            {
+              "id": "segment-002",
+              "category": "financial_report",
+              "pages": [
+                4
+              ],
+              "needs_review": false,
+              "mean_category_probability": null
+            },
+            {
+              "id": "segment-003",
+              "category": "financial_report",
+              "pages": [
+                5
+              ],
+              "needs_review": false,
+              "mean_category_probability": null
+            },
+            {
+              "id": "segment-004",
+              "category": "press_release",
+              "pages": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "needs_review": false,
+              "mean_category_probability": null
+            }
+          ],
+          "page_decisions": [
+            {
+              "page": 1,
+              "category": "tax_form",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": true,
+              "starts_document_probability": null
+            },
+            {
+              "page": 2,
+              "category": "tax_form",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 3,
+              "category": "tax_form",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 4,
+              "category": "financial_report",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": true,
+              "starts_document_probability": null
+            },
+            {
+              "page": 5,
+              "category": "financial_report",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": true,
+              "starts_document_probability": null
+            },
+            {
+              "page": 6,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": true,
+              "starts_document_probability": null
+            },
+            {
+              "page": 7,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 8,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 9,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 10,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 11,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 12,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 13,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 14,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            },
+            {
+              "page": 15,
+              "category": "press_release",
+              "category_probability": null,
+              "probabilities": null,
+              "provider_confidence": null,
+              "starts_document": false,
+              "starts_document_probability": null
+            }
+          ],
+          "warnings": [],
+          "document": {
+            "name": "public-finance-packet.pdf",
+            "sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+            "canonical_sha256": "0f92679a826db3d08afcd4b536e5b2fd659e7bbfabc6245e34a729a138d90835",
+            "page_count": 15,
+            "parser": {
+              "name": "liteparse",
+              "version": "2.14.6",
+              "tier": null,
+              "options": {
+                "ocr_enabled": true,
+                "ocr_language": "en",
+                "continue_on_page_error": false,
+                "ocr_failure_fatal": true,
+                "quiet": true,
+                "normalization": "unicode-nfc-lines-v1"
+              },
+              "conversion": {
+                "kind": "original-pdf",
+                "page_numbering": "one-based-original"
+              }
+            }
+          },
+          "engine": "openai",
+          "model": "gpt-5.6-luna",
+          "metrics": {
+            "conversion_ms": 0.0,
+            "ocr_ms": 0.0,
+            "decision_ms": 2503.747,
+            "validation_ms": 0.094,
+            "export_ms": 0.0,
+            "total_ms": 2503.821,
+            "ocr_cache_hit": false,
+            "ocr_cost_usd": null,
+            "ocr_cost_status": "unknown",
+            "decision_cost_usd": 0.0044019,
+            "requests": [
+              {
+                "provider": "openai",
+                "model": "gpt-5.6-luna",
+                "task": "split",
+                "request_id": "req_d9318a036b6c4ed7b07ee1782f91127e",
+                "attempt": 1,
+                "status": "ok",
+                "elapsed_ms": 2503.566791769117,
+                "input_tokens": 17301,
+                "output_tokens": 64,
+                "cached_input_tokens": 0,
+                "cache_write_tokens": 17298,
+                "reasoning_tokens": 0,
+                "cost_usd": 0.0044019,
+                "cost_status": "estimated",
+                "error_code": null
+              }
+            ]
+          }
+        },
+        "error": null,
+        "elapsed_ms": 2504.018417093903,
+        "started_offset_ms": 11.334625072777271,
+        "max_retries": 0,
+        "requests": []
+      }
+    },
+    "rules_sha256": "a64b42f10edcdf6b34cb22cd4325aa51a02a4e06b0b639a54fe1ff96ee355438",
+    "ocr_text_sha256": "08da09af4d46752c0c827a72fafe17bd1fd8888a9a8d8c96b5c6b6c1445886d9",
+    "scope": "One live run; same OCR text and rules; decision times exclude OCR and export.",
+    "elapsed_ms": 2515.6952501274645,
+    "download": null
+  }
+}

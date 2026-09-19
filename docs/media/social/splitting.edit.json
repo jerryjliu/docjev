@@ -1,0 +1,9 @@
+{
+  "crop": [0, 118, 1670, 962],
+  "segments": [
+    {"start": 0, "end": 4.5, "title": "Run both models", "caption": "15 real pages. Jev finds four documents in 457 ms. OCR already complete."},
+    {"start": 28, "end": 36, "title": "Same category, separate documents", "caption": "Two Treasury auction reports. Same category. Separate documents."},
+    {"start": 45.9, "end": 50.9, "title": "Keep supporting pages together", "caption": "The ten-page BEA release stays together, including its statistical tables."},
+    {"start": 54.2, "end": 60.8, "title": "Review shared boundary rules", "caption": "Define categories and boundaries in plain language. Both models share the rules."}
+  ]
+}

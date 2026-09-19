@@ -1,0 +1,51 @@
+1
+00:00:03,000 --> 00:00:09,000
+Four complete public documents, combined into one 15-page packet. Original pages are unchanged.
+
+2
+00:00:09,000 --> 00:00:17,000
+The packet combines IRS Form 941, two Treasury auction reports, and a BEA release. Original sources are linked.
+
+3
+00:00:17,000 --> 00:00:25,000
+Category descriptions identify tax forms, financial reports, press releases, and legal notices.
+
+4
+00:00:25,000 --> 00:00:31,500
+Keep separate Treasury auctions apart. Keep each publication’s continuation pages together.
+
+5
+00:00:31,500 --> 00:00:40,600
+Actual processing at normal speed: LiteParse reads all 15 pages; Jev predicts categories and document starts.
+
+6
+00:00:40,600 --> 00:00:47,300
+Four documents. Jev: 557 ms. Reading: 5.55 s. Full pipeline, including export: 6.27 s.
+
+7
+00:00:47,300 --> 00:00:53,300
+Packet page 4: the 42-day Treasury bill auction. Its own Financial Report segment.
+
+8
+00:00:53,300 --> 00:01:00,300
+Packet page 5: a different Treasury auction. The same category, with a separate document boundary.
+
+9
+00:01:00,300 --> 00:01:08,300
+The BEA release remains one document across packet pages 6–15, including its tables and technical notes.
+
+10
+00:01:08,300 --> 00:01:13,800
+Packet page 11 is a statistical table inside the same Press Release segment.
+
+11
+00:01:13,800 --> 00:01:20,300
+Saved pilot: Jev 294 ms vs. GPT-5.6 Luna 1.59 s median. One packet, three timed runs per model.
+
+12
+00:01:20,300 --> 00:01:26,300
+The selected Treasury report exports as its own PDF. Four PDFs and result JSON are available.
+
+13
+00:01:26,300 --> 00:01:33,300
+One page, matching packet page 4. The exported PDFs and result JSON accompany this demo.

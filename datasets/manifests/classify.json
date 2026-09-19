@@ -1,0 +1,842 @@
+[
+  {
+    "id": "c001",
+    "path": "datasets/files/c001.pdf",
+    "split": "dev",
+    "category": "invoice",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-001"
+    ],
+    "template_family": "classify-dev-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "92cf50c2773d0a2c0b5345c16cc11321fe5ded1354467e678d1f2c26abd0abc0"
+  },
+  {
+    "id": "c002",
+    "path": "datasets/files/c002.pdf",
+    "split": "dev",
+    "category": "invoice",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-002"
+    ],
+    "template_family": "classify-dev-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "be17068e7d1a93ab0a496ce15c4673f350ca77f13138165f118ec0e7a4a7a1c8"
+  },
+  {
+    "id": "c003",
+    "path": "datasets/files/c003.pdf",
+    "split": "test",
+    "category": "invoice",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-003"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "1ead5117c712e87a151960d5b7dc27d3f6a66ed095d3001e6de7f7927ca96d52"
+  },
+  {
+    "id": "c004",
+    "path": "datasets/files/c004.pdf",
+    "split": "test",
+    "category": "invoice",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-004"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "69076bbcc4a0420968ce2cb918112e4dbea6c26c3789a32d4fb6c4c7cc52fc63"
+  },
+  {
+    "id": "c005",
+    "path": "datasets/files/c005.pdf",
+    "split": "test",
+    "category": "invoice",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-005"
+    ],
+    "template_family": "classify-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "03a3274d2c98eecf5215cc24d2d64153879a5d2ce72193e5379f4d364f644066"
+  },
+  {
+    "id": "c006",
+    "path": "datasets/files/c006.pdf",
+    "split": "test",
+    "category": "invoice",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-006"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "39a59d2cb8096722595ec88a9271c6efc788e3af2ae36d62c1840bdac8dddc56"
+  },
+  {
+    "id": "c007",
+    "path": "datasets/files/c007.pdf",
+    "split": "test",
+    "category": "invoice",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-007"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "dbfa7305cd0edae2428cffd197ac11621e1b50bb55d058310e686f7768e4a1da"
+  },
+  {
+    "id": "c008",
+    "path": "datasets/files/c008.pdf",
+    "split": "test",
+    "category": "invoice",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-008"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "070105bfddc122cefb7f826821c2f9538906dc5c685a80736a3c6df605b5a3bc"
+  },
+  {
+    "id": "c009",
+    "path": "datasets/files/c009.docx",
+    "split": "test",
+    "category": "invoice",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-009"
+    ],
+    "template_family": "classify-test-office-1",
+    "format": "docx",
+    "scan": false,
+    "sha256": "fe1bec111c403b39194a23d874653d6d6f9171868f270aac6e2d416de7e00c98"
+  },
+  {
+    "id": "c010",
+    "path": "datasets/files/c010.pdf",
+    "split": "test",
+    "category": "invoice",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-010"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "7e344363a940d1aa9cc38b0911230883a7a63802a6d56feda03fbf3b8cc7ec72"
+  },
+  {
+    "id": "c011",
+    "path": "datasets/files/c011.pdf",
+    "split": "dev",
+    "category": "purchase_order",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-011"
+    ],
+    "template_family": "classify-dev-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "1093b6325c77e5cf0720d35a9802f4761da699181cf0bb448a5bb16f2aa8a8a8"
+  },
+  {
+    "id": "c012",
+    "path": "datasets/files/c012.pdf",
+    "split": "dev",
+    "category": "purchase_order",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-012"
+    ],
+    "template_family": "classify-dev-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "a9e4bf434bfc9d7261055cab46602578bcee221f6bcc38a39d55cf435363442c"
+  },
+  {
+    "id": "c013",
+    "path": "datasets/files/c013.pdf",
+    "split": "test",
+    "category": "purchase_order",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-013"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "fe566a253d804b1f5e295dbd64efb7b91e2b5a64340fe4215ab660f6f2b67833"
+  },
+  {
+    "id": "c014",
+    "path": "datasets/files/c014.pdf",
+    "split": "test",
+    "category": "purchase_order",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-014"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "03cf2a9d7eb7aa96f8a4c7105a955dec8c06cbe10008b480d28c7b5f16828f3a"
+  },
+  {
+    "id": "c015",
+    "path": "datasets/files/c015.pdf",
+    "split": "test",
+    "category": "purchase_order",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-015"
+    ],
+    "template_family": "classify-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "ea9d318af229f601705ffaff5a40f5aa271bfa3c7d92a8e68ce38ad9a74a68a4"
+  },
+  {
+    "id": "c016",
+    "path": "datasets/files/c016.pdf",
+    "split": "test",
+    "category": "purchase_order",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-016"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "2fd84634b926dc7fbbe653c89a992d2e7c8a040db15a6d3d6e4ea2f096da2608"
+  },
+  {
+    "id": "c017",
+    "path": "datasets/files/c017.pdf",
+    "split": "test",
+    "category": "purchase_order",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-017"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "df05a0cdc99a94b003eda8aced47ea7c5971f362521a06c3821b6bf731e43c03"
+  },
+  {
+    "id": "c018",
+    "path": "datasets/files/c018.pdf",
+    "split": "test",
+    "category": "purchase_order",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-018"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "02f50f12b927aaf13e7e54948fff400994dd7bbda8f3fce6e2f9e2ebcefe835c"
+  },
+  {
+    "id": "c019",
+    "path": "datasets/files/c019.docx",
+    "split": "test",
+    "category": "purchase_order",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-019"
+    ],
+    "template_family": "classify-test-office-1",
+    "format": "docx",
+    "scan": false,
+    "sha256": "59dce667a7f8d05be5c4502f742efd63e66d528b97702842e1702de15caa4401"
+  },
+  {
+    "id": "c020",
+    "path": "datasets/files/c020.pdf",
+    "split": "test",
+    "category": "purchase_order",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-020"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "b050262fd1dc522b17f62a84443ac2fd62f623a6b20513f26d5b9d8e902ea5e5"
+  },
+  {
+    "id": "c021",
+    "path": "datasets/files/c021.pdf",
+    "split": "dev",
+    "category": "contract",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-021"
+    ],
+    "template_family": "classify-dev-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "ba4781bf6aa080e010f3c8b51bfbc40b05ab748802197a71cbae3fce67407950"
+  },
+  {
+    "id": "c022",
+    "path": "datasets/files/c022.pdf",
+    "split": "dev",
+    "category": "contract",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-022"
+    ],
+    "template_family": "classify-dev-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "378bff18ad62724012b9f1b5e17dd53a4bb287b5517f3ab8d228cec431f55744"
+  },
+  {
+    "id": "c023",
+    "path": "datasets/files/c023.pdf",
+    "split": "test",
+    "category": "contract",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-023"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "53a1533a8d8aebbc9f6d38b159992844552d2dd9adc280e1b2254b5328cdfa84"
+  },
+  {
+    "id": "c024",
+    "path": "datasets/files/c024.pdf",
+    "split": "test",
+    "category": "contract",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-024"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "424d324922d5351d716f247c8d567c34d9ec1e1718051e11fc2d9586c3f86415"
+  },
+  {
+    "id": "c025",
+    "path": "datasets/files/c025.pdf",
+    "split": "test",
+    "category": "contract",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-025"
+    ],
+    "template_family": "classify-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "6f11c79d3b670383aa15229c056b6e754d223c732e8f36dc5cbe769bf509f309"
+  },
+  {
+    "id": "c026",
+    "path": "datasets/files/c026.pdf",
+    "split": "test",
+    "category": "contract",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-026"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "ba7455d22d48a1cb3e4194e75c1171903c13b0ab2c9c55faaafbf8a2d397f924"
+  },
+  {
+    "id": "c027",
+    "path": "datasets/files/c027.pdf",
+    "split": "test",
+    "category": "contract",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-027"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "13c9e9aa515cef402773371273daf37717531f62a458c0cabc671cab5e6ecaba"
+  },
+  {
+    "id": "c028",
+    "path": "datasets/files/c028.pdf",
+    "split": "test",
+    "category": "contract",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-028"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "7441ce7601bc94c2378b0a89ef806cf04a298086b633919473e6b93ba1b96138"
+  },
+  {
+    "id": "c029",
+    "path": "datasets/files/c029.docx",
+    "split": "test",
+    "category": "contract",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-029"
+    ],
+    "template_family": "classify-test-office-1",
+    "format": "docx",
+    "scan": false,
+    "sha256": "ccf4d09f4cd1c7904d3f144979beda0ae84378029569aabe56d31150b0afdd7e"
+  },
+  {
+    "id": "c030",
+    "path": "datasets/files/c030.pdf",
+    "split": "test",
+    "category": "contract",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-030"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "bf0830dc0841938fd65bd4ba5064fda0889c9587f279c93d2413fb692a96ad99"
+  },
+  {
+    "id": "c031",
+    "path": "datasets/files/c031.pdf",
+    "split": "dev",
+    "category": "resume",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-031"
+    ],
+    "template_family": "classify-dev-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "c0c49c41f2c5777ad2affa262ea1d78b23fa53e30a445dcaf6a354143d6a283c"
+  },
+  {
+    "id": "c032",
+    "path": "datasets/files/c032.pdf",
+    "split": "dev",
+    "category": "resume",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-032"
+    ],
+    "template_family": "classify-dev-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "0a7a23216bfe686d575e5bccddfca03192450a91e4d9bff0b590f22cc2fc4fa0"
+  },
+  {
+    "id": "c033",
+    "path": "datasets/files/c033.pdf",
+    "split": "test",
+    "category": "resume",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-033"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "d08aac9eebc0dfbfc89539b4f94e5b38aca898ab3dc4377d2f7a86a9ee99a2a0"
+  },
+  {
+    "id": "c034",
+    "path": "datasets/files/c034.pdf",
+    "split": "test",
+    "category": "resume",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-034"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "146a1d89c1ece1da87760ee9aacfcb679c38b3e1c86e2dfc988272e78d815e90"
+  },
+  {
+    "id": "c035",
+    "path": "datasets/files/c035.pdf",
+    "split": "test",
+    "category": "resume",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-035"
+    ],
+    "template_family": "classify-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "ab7b1cdf8f4b9cd81a08de8414db87c2f0174a88216b50dc7b93c85ee6701979"
+  },
+  {
+    "id": "c036",
+    "path": "datasets/files/c036.pdf",
+    "split": "test",
+    "category": "resume",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-036"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "b4f0efe51e23c89c20fc85e1620cddd9fcfa11cee355406e7f5b58607c1dc580"
+  },
+  {
+    "id": "c037",
+    "path": "datasets/files/c037.pdf",
+    "split": "test",
+    "category": "resume",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-037"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "e28dafe76e431bd14d492c16460d7c03b66aaa58b6e8622611c8af3433870aa6"
+  },
+  {
+    "id": "c038",
+    "path": "datasets/files/c038.pdf",
+    "split": "test",
+    "category": "resume",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-038"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "c911833172c969f1cfdf097fa41a7de867dc6dbae1bfd7bd26e9ec370f8a34f6"
+  },
+  {
+    "id": "c039",
+    "path": "datasets/files/c039.docx",
+    "split": "test",
+    "category": "resume",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-039"
+    ],
+    "template_family": "classify-test-office-1",
+    "format": "docx",
+    "scan": false,
+    "sha256": "5978ab192018f6d1814e38bc87c3e8e2c3c93a561edd8b193356c4b7922f5191"
+  },
+  {
+    "id": "c040",
+    "path": "datasets/files/c040.pdf",
+    "split": "test",
+    "category": "resume",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-040"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "242bddbc4676534d8652a429e33374d7ba1a8d8048c3c8eae7cb6838d1a2e7c2"
+  },
+  {
+    "id": "c041",
+    "path": "datasets/files/c041.pdf",
+    "split": "dev",
+    "category": "pitch_deck",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-041"
+    ],
+    "template_family": "classify-dev-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "1941b0f499d38a10afd8f829559eac1a5b260fe7bd356bebb880bbd0bd7a562d"
+  },
+  {
+    "id": "c042",
+    "path": "datasets/files/c042.pdf",
+    "split": "dev",
+    "category": "pitch_deck",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-042"
+    ],
+    "template_family": "classify-dev-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "4cde97e2ca30a4c8c68e06e6b1c344e46babbd8f56a444b47976f104e417e153"
+  },
+  {
+    "id": "c043",
+    "path": "datasets/files/c043.pdf",
+    "split": "test",
+    "category": "pitch_deck",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-043"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "3c591d71ae841c395b4674603fa3d64e46ef01a07d5d8b00f548263d43f6b419"
+  },
+  {
+    "id": "c044",
+    "path": "datasets/files/c044.pdf",
+    "split": "test",
+    "category": "pitch_deck",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-044"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "2fe531140c8d4f57d56ed1c707b8c7d19c8b8e47f4805077aebfa892be0e65d6"
+  },
+  {
+    "id": "c045",
+    "path": "datasets/files/c045.pdf",
+    "split": "test",
+    "category": "pitch_deck",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-045"
+    ],
+    "template_family": "classify-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "e1d04152b7bce7565879b75721718f7d036798e6d9e8b531d9cab7b1c3b3e797"
+  },
+  {
+    "id": "c046",
+    "path": "datasets/files/c046.pdf",
+    "split": "test",
+    "category": "pitch_deck",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-046"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "406dda775c3a4c18270351092bc137ad08aa762aad9c0ca49a67a1787e74eccc"
+  },
+  {
+    "id": "c047",
+    "path": "datasets/files/c047.pdf",
+    "split": "test",
+    "category": "pitch_deck",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-047"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "59fa3f7f27e002b3d4eab55411cafca7eba7d120c73f97cb213e82ed8b90d10e"
+  },
+  {
+    "id": "c048",
+    "path": "datasets/files/c048.pdf",
+    "split": "test",
+    "category": "pitch_deck",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-048"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "cc31551bdcd2e0a17d1d4adbb0773e5722fa30bb81ec3a591189957f9a0e1525"
+  },
+  {
+    "id": "c049",
+    "path": "datasets/files/c049.docx",
+    "split": "test",
+    "category": "pitch_deck",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-049"
+    ],
+    "template_family": "classify-test-office-1",
+    "format": "docx",
+    "scan": false,
+    "sha256": "9998b65fad47002bff136dd2314f5d68f017952726858dfb9247aeaee3f2251c"
+  },
+  {
+    "id": "c050",
+    "path": "datasets/files/c050.pdf",
+    "split": "test",
+    "category": "pitch_deck",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-050"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "322f2bf83b9c49571d9acdb1cd50f058e02d86b1a9b4e7bad7dec6b507cd8ff6"
+  },
+  {
+    "id": "c051",
+    "path": "datasets/files/c051.pdf",
+    "split": "dev",
+    "category": "other",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-051"
+    ],
+    "template_family": "classify-dev-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "da8953804557c646ab5f520823d1fb19be40804a300f0a165af905acdb604b37"
+  },
+  {
+    "id": "c052",
+    "path": "datasets/files/c052.pdf",
+    "split": "dev",
+    "category": "other",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-052"
+    ],
+    "template_family": "classify-dev-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "684fadce79b027b97daf5fcab71e88725a42b0ad1a05517186d21ea9357f7971"
+  },
+  {
+    "id": "c053",
+    "path": "datasets/files/c053.pdf",
+    "split": "test",
+    "category": "other",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-053"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "b92cbfa7fa036d9bca68ae40d0b1214a1f6ce00c66a8eaa82cbb17e37c076805"
+  },
+  {
+    "id": "c054",
+    "path": "datasets/files/c054.pdf",
+    "split": "test",
+    "category": "other",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-054"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "7e15293e8107b177cea5f6e50e7edc82d2d3091575379821ac9899951bba6424"
+  },
+  {
+    "id": "c055",
+    "path": "datasets/files/c055.pdf",
+    "split": "test",
+    "category": "other",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-055"
+    ],
+    "template_family": "classify-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "2afce96c433f81a25bce2a4a9a9832c54a20b17b4170e24bf689680c32a3e6a4"
+  },
+  {
+    "id": "c056",
+    "path": "datasets/files/c056.pdf",
+    "split": "test",
+    "category": "other",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-056"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "b3224083170de293ebbeecc556f5ca49339900c338a9ca813478fd0657431482"
+  },
+  {
+    "id": "c057",
+    "path": "datasets/files/c057.pdf",
+    "split": "test",
+    "category": "other",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-057"
+    ],
+    "template_family": "classify-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "badc2f6394927b8454d46727b431b9192317c96f1e6e0ed6af8a5a61bbf3675d"
+  },
+  {
+    "id": "c058",
+    "path": "datasets/files/c058.pdf",
+    "split": "test",
+    "category": "other",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-058"
+    ],
+    "template_family": "classify-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "8575b3cb9f285b6a901d1bac821ac201d8c080348e18a7d3c59bbd73a168c3a6"
+  },
+  {
+    "id": "c059",
+    "path": "datasets/files/c059.docx",
+    "split": "test",
+    "category": "other",
+    "page_count": 1,
+    "source_ids": [
+      "class-source-059"
+    ],
+    "template_family": "classify-test-office-1",
+    "format": "docx",
+    "scan": false,
+    "sha256": "d00dc8168cc1d8f049f44faa60aa6442b2011d77bd4530e045d0871992af7206"
+  },
+  {
+    "id": "c060",
+    "path": "datasets/files/c060.pdf",
+    "split": "test",
+    "category": "other",
+    "page_count": 2,
+    "source_ids": [
+      "class-source-060"
+    ],
+    "template_family": "classify-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "3f10cbf1a8565c15581e538399cf873a3ce28e985b48c7d7910111a05a35b467"
+  }
+]

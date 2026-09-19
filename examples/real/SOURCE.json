@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "title": "Real public-finance demo sources",
+  "no_endorsement": "Independent software demonstration. The U.S. government and the named agencies do not endorse or sponsor this project.",
+  "sources": [
+    {
+      "id": "r01",
+      "path": "examples/real/originals/r01.pdf",
+      "title": "Employer\u2019s Quarterly Federal Tax Return, Form 941 (Rev. March 2026)",
+      "issuer": "Internal Revenue Service",
+      "publication_date": "2026-03",
+      "source_url": "https://www.irs.gov/pub/irs-pdf/f941.pdf",
+      "landing_url": "https://www.irs.gov/forms-pubs/about-form-941",
+      "retrieved_on": "2026-09-19",
+      "page_count": 3,
+      "source_pages": [
+        1,
+        2,
+        3
+      ],
+      "sha256": "38a3d8cf7a455101d52543c8c48e66202bc25c189ead878627e35c797c88e2ad",
+      "byte_count": 841648,
+      "rights": "public-domain-us-government",
+      "rights_basis": "Public-domain U.S. government work under 17 U.S.C. 105. Official marks remain the property of their respective agencies; reproduced only within original source documents for identification, with no endorsement implied.",
+      "rights_url": "https://www.irs.gov/about-irs/use-of-content-from-irsgov",
+      "content_review": "Original government-authored text, charts, tables, and official identifiers; no third-party photography or illustrations identified.",
+      "source_note": "Official blank form, two return pages plus Form 941-V payment voucher. No taxpayer details have been entered.",
+      "license": "Public domain in the United States (U.S. government work, 17 U.S.C. 105); official marks retain their legal protections.",
+      "page_content_sha256": [
+        "00eb11d666f11ad447ae02ed710da2aca6c240b115e97eb0450fdfb1e4a6fdcc",
+        "799341d0856c12844c8f3146d40329ca66b7bf79a21aee8999020fc0e755b3b2",
+        "32544250c05c42b1f77ab95670312e4d9d269e857ffb08ea9e05a9adcbc90a44"
+      ]
+    },
+    {
+      "id": "r02",
+      "path": "examples/real/originals/r02.pdf",
+      "title": "Treasury Auction Results, 42-Day Bill, CUSIP 912797PY7",
+      "issuer": "U.S. Department of the Treasury, Bureau of the Fiscal Service",
+      "publication_date": "2025-08-12",
+      "source_url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250812_1.pdf",
+      "landing_url": "https://www.treasurydirect.gov/auctions/",
+      "retrieved_on": "2026-09-19",
+      "page_count": 1,
+      "source_pages": [
+        1
+      ],
+      "sha256": "b1e2a47e0d7c2d462f57f98d954b678a7686e91608489385fc12191d13e7a5f0",
+      "byte_count": 56977,
+      "rights": "public-domain-us-government",
+      "rights_basis": "Public-domain U.S. government work under 17 U.S.C. 105. Official marks remain the property of their respective agencies; reproduced only within original source documents for identification, with no endorsement implied.",
+      "rights_url": "https://www.copyright.gov/title17/92chap1.html#105",
+      "content_review": "Original government-authored text, charts, tables, and official identifiers; no third-party photography or illustrations identified.",
+      "source_note": "Complete official auction result sheet with actual published rates and accepted amounts.",
+      "license": "Public domain in the United States (U.S. government work, 17 U.S.C. 105); official marks retain their legal protections.",
+      "page_content_sha256": [
+        "473a85a3c8138eb45e3a58be91483cb7b8db2c79e26053dd77bba27948bf9e56"
+      ]
+    },
+    {
+      "id": "r03",
+      "path": "examples/real/originals/r03.pdf",
+      "title": "Treasury Auction Results, 91-Day Bill, CUSIP 912797PN1",
+      "issuer": "U.S. Department of the Treasury, Bureau of the Fiscal Service",
+      "publication_date": "2025-05-12",
+      "source_url": "https://fiscaldata.treasury.gov/static-data/published-reports/auctions-query/results/R_20250512_2.pdf",
+      "landing_url": "https://www.treasurydirect.gov/auctions/",
+      "retrieved_on": "2026-09-19",
+      "page_count": 1,
+      "source_pages": [
+        1
+      ],
+      "sha256": "6118be61512b0499d1a3653b77ee049b3880217a2de102730852df45a8410182",
+      "byte_count": 57101,
+      "rights": "public-domain-us-government",
+      "rights_basis": "Public-domain U.S. government work under 17 U.S.C. 105. Official marks remain the property of their respective agencies; reproduced only within original source documents for identification, with no endorsement implied.",
+      "rights_url": "https://www.copyright.gov/title17/92chap1.html#105",
+      "content_review": "Original government-authored text, charts, tables, and official identifiers; no third-party photography or illustrations identified.",
+      "source_note": "Complete official auction result sheet; a distinct source from the 42-day bill result.",
+      "license": "Public domain in the United States (U.S. government work, 17 U.S.C. 105); official marks retain their legal protections.",
+      "page_content_sha256": [
+        "5b944d939bcd8fefc11bd63fd2e6f998baed5aa78e60e1a999953c9d9d513577"
+      ]
+    },
+    {
+      "id": "r04",
+      "path": "examples/real/originals/r04.pdf",
+      "title": "Personal Income and Outlays, July 2025 (BEA 25\u201336)",
+      "issuer": "U.S. Bureau of Economic Analysis",
+      "publication_date": "2025-08-29",
+      "source_url": "https://www.bea.gov/sites/default/files/2025-08/pi0725.pdf",
+      "landing_url": "https://www.bea.gov/news/2025/personal-income-and-outlays-july-2025",
+      "retrieved_on": "2026-09-19",
+      "page_count": 10,
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "sha256": "3066af531a68d9aefbac3d9b73e16715680e0b485d818420f33ce177293068e1",
+      "byte_count": 1196953,
+      "rights": "public-domain-us-government",
+      "rights_basis": "Public-domain U.S. government work under 17 U.S.C. 105. Official marks remain the property of their respective agencies; reproduced only within original source documents for identification, with no endorsement implied.",
+      "rights_url": "https://www.bea.gov/help/faq/147",
+      "content_review": "Original government-authored text, charts, tables, and official identifiers; no third-party photography or illustrations identified.",
+      "source_note": "Complete ten-page news release including charts, technical notes, and statistical tables. Historical estimates may have been revised since publication.",
+      "license": "Public domain in the United States (U.S. government work, 17 U.S.C. 105); official marks retain their legal protections.",
+      "page_content_sha256": [
+        "0fe9bdadcbb1f344f67c0eb90891a3ab4b4d3ee4618e1d25714a2fb5fcd849ff",
+        "0bd7bced07c057aca76dd9dd5b514339b5eaea69ba0725c56b5df858e879e9ef",
+        "adf840cf7369d52c12d4a16b6b4fea24044b849982643ed753403e110dc0c77a",
+        "1d4feee353288c9a87113bb5bd68144cc28a478e3c98f396272c6d19e87943c1",
+        "b149a758830afada9003a8d1ed1af1252dbaa9bb27b6715ef69ef6b6463986a4",
+        "0add009f3809c47165bc64242cde7e5bf8ae145a5e5e05bd202fa1dd18cac003",
+        "bed1d93405e8519ec4ba9ac6fab33570d21640afd93a4aa3be7de7b3ff62166d",
+        "befa770ffa1cba9c94a8a296384e06684a20abb4d58f2020d981c2de3801e099",
+        "6fa2f6fb8532889917ef3d964b82bd975416734c275195bb2060dc0e6537f1b4",
+        "e2ed904aba375eaf07b572fcc6d8cfa110df58af6e185f38fcb3ea0c9c9c6846"
+      ]
+    },
+    {
+      "id": "r05",
+      "path": "examples/real/originals/r05.pdf",
+      "title": "Submission for OMB Review; Comment Request; Extension: Form 18\u2014Registration Form (FR Doc. 2025-11513)",
+      "issuer": "U.S. Securities and Exchange Commission / Office of the Federal Register",
+      "publication_date": "2025-06-24",
+      "source_url": "https://public-inspection.federalregister.gov/2025-11513.pdf",
+      "landing_url": "https://www.govinfo.gov/app/details/FR-2025-06-24/2025-11513",
+      "retrieved_on": "2026-09-19",
+      "page_count": 2,
+      "source_pages": [
+        1,
+        2
+      ],
+      "sha256": "c0b710cdaf3f3aadc00ebcf4074257d770770da85c23561c973785df6c24dba6",
+      "byte_count": 244764,
+      "rights": "public-domain-us-government",
+      "rights_basis": "Public-domain U.S. government work under 17 U.S.C. 105. Official marks remain the property of their respective agencies; reproduced only within original source documents for identification, with no endorsement implied.",
+      "rights_url": "https://www.archives.gov/federal-register/the-federal-register/about.html",
+      "content_review": "Original government-authored text, charts, tables, and official identifiers; no third-party photography or illustrations identified.",
+      "source_note": "Complete two-page official public-inspection PDF of the notice subsequently published June 24, 2025; not a re-typeset document.",
+      "license": "Public domain in the United States (U.S. government work, 17 U.S.C. 105); official marks retain their legal protections.",
+      "page_content_sha256": [
+        "4f652607ab7b4cee1a4ee10a7f4f4fbe2d533af252a34579f329a09bada2ca24",
+        "24df8f7e116da639d2bebd1071a80b166dce77bae8c076db99042e33f540a550"
+      ]
+    }
+  ]
+}

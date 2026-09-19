@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "docjev"
+version = "0.1.0"
+description = "Document classification and splitting with Jev, LiteParse, and optional LlamaParse"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = ["liteparse>=2.14.6,<3", "typesafe-sdk>=0.7,<0.8", "pydantic>=2.10,<3", "typer>=0.15,<1", "PyYAML>=6,<7", "pypdf>=5,<7", "pypdfium2>=4,<6", "Pillow>=11,<13"]
+
+[project.optional-dependencies]
+llamaparse = ["llama-cloud>=2.16,<3"]
+baseline = ["openai>=2,<3"]
+demo = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "python-multipart>=0.0.20"]
+datasets = ["reportlab>=4,<5", "python-docx>=1.1,<2", "python-pptx>=1,<2"]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "hypothesis>=6,<7", "httpx>=0.28,<1", "ruff>=0.11", "mypy>=1.15", "types-PyYAML>=6"]
+
+[project.scripts]
+docjev = "jev_docs.cli:app"
+jev-docs = "jev_docs.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/jerryjliu/docjev"
+Repository = "https://github.com/jerryjliu/docjev"
+Issues = "https://github.com/jerryjliu/docjev/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jev_docs"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"examples" = "jev_docs/examples"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/datasets/.qa", "/datasets/.qa/**", "/PAUSED.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+markers = ["live: authenticated remote API test (opt in)"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true

@@ -1,0 +1,1528 @@
+[
+  {
+    "id": "s001",
+    "path": "datasets/files/s001.pdf",
+    "split": "dev",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          11
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          12
+        ]
+      }
+    ],
+    "page_count": 12,
+    "source_ids": [
+      "dev-packet-000-source-00",
+      "dev-packet-000-source-01",
+      "dev-packet-000-source-02",
+      "dev-packet-000-source-03",
+      "dev-packet-000-source-04",
+      "dev-packet-000-source-05",
+      "dev-packet-000-source-06",
+      "dev-packet-000-source-07"
+    ],
+    "template_family": "split-dev-layout-0",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "2fad91e0e0c82f190dd51b961f1d39e9db8064f7a1195210299e07572a100f46"
+  },
+  {
+    "id": "s002",
+    "path": "datasets/files/s002.pdf",
+    "split": "dev",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "page_count": 9,
+    "source_ids": [
+      "dev-packet-001-source-00",
+      "dev-packet-001-source-01",
+      "dev-packet-001-source-02",
+      "dev-packet-001-source-03",
+      "dev-packet-001-source-04",
+      "dev-packet-001-source-05"
+    ],
+    "template_family": "split-dev-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "9f2d178b34ed8916051c738ae1fff15f6bd8447ee92c8e2840c00eba143bab0e"
+  },
+  {
+    "id": "s003",
+    "path": "datasets/files/s003.pdf",
+    "split": "dev",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "page_count": 10,
+    "source_ids": [
+      "dev-packet-002-source-00",
+      "dev-packet-002-source-01",
+      "dev-packet-002-source-02",
+      "dev-packet-002-source-03",
+      "dev-packet-002-source-04",
+      "dev-packet-002-source-05"
+    ],
+    "template_family": "split-dev-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "2efa96b1c95f7ac9d1c052294342cc717c53b3921a89b0ccb7441770ae947f27"
+  },
+  {
+    "id": "s004",
+    "path": "datasets/files/s004.pdf",
+    "split": "dev",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "page_count": 10,
+    "source_ids": [
+      "dev-packet-003-source-00",
+      "dev-packet-003-source-01",
+      "dev-packet-003-source-02",
+      "dev-packet-003-source-03",
+      "dev-packet-003-source-04",
+      "dev-packet-003-source-05",
+      "dev-packet-003-source-06"
+    ],
+    "template_family": "split-dev-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "d5a20bda35a028f5cb6433022393a9c8a800132851af955d7be7ee01a4052aca"
+  },
+  {
+    "id": "s005",
+    "path": "datasets/files/s005.pdf",
+    "split": "dev",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "page_count": 11,
+    "source_ids": [
+      "dev-packet-004-source-00",
+      "dev-packet-004-source-01",
+      "dev-packet-004-source-02",
+      "dev-packet-004-source-03",
+      "dev-packet-004-source-04",
+      "dev-packet-004-source-05",
+      "dev-packet-004-source-06"
+    ],
+    "template_family": "split-dev-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "517fb517b21517fb24d177699c63bc9d4c2548cb510d283262b935aa6a0c9324"
+  },
+  {
+    "id": "s006",
+    "path": "datasets/files/s006.pdf",
+    "split": "dev",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "page_count": 9,
+    "source_ids": [
+      "dev-packet-005-source-00",
+      "dev-packet-005-source-01",
+      "dev-packet-005-source-02",
+      "dev-packet-005-source-03",
+      "dev-packet-005-source-04",
+      "dev-packet-005-source-05"
+    ],
+    "template_family": "split-dev-layout-1",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "ff8684689ea73daa59678382f3707f1661f496665f6b1c7734322eece3190ceb"
+  },
+  {
+    "id": "s007",
+    "path": "datasets/files/s007.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "page_count": 11,
+    "source_ids": [
+      "test-packet-006-source-00",
+      "test-packet-006-source-01",
+      "test-packet-006-source-02",
+      "test-packet-006-source-03",
+      "test-packet-006-source-04",
+      "test-packet-006-source-05",
+      "test-packet-006-source-06"
+    ],
+    "template_family": "split-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "6604f61a118650f9aed6a3d6b6145719c114de9c12c9673205fa7d241dff16f5"
+  },
+  {
+    "id": "s008",
+    "path": "datasets/files/s008.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "page_count": 9,
+    "source_ids": [
+      "test-packet-007-source-00",
+      "test-packet-007-source-01",
+      "test-packet-007-source-02",
+      "test-packet-007-source-03",
+      "test-packet-007-source-04",
+      "test-packet-007-source-05"
+    ],
+    "template_family": "split-test-layout-3",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "24651cc3a8cef109ac5648cfb719a5549d0a60ab3be285dbf06a858f0e09de3c"
+  },
+  {
+    "id": "s009",
+    "path": "datasets/files/s009.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "page_count": 11,
+    "source_ids": [
+      "test-packet-008-source-00",
+      "test-packet-008-source-01",
+      "test-packet-008-source-02",
+      "test-packet-008-source-03",
+      "test-packet-008-source-04",
+      "test-packet-008-source-05",
+      "test-packet-008-source-06"
+    ],
+    "template_family": "split-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "b39ffe9023ef06dadba2c3680db14b69d9b371166591c5736c2869256ee0f6ed"
+  },
+  {
+    "id": "s010",
+    "path": "datasets/files/s010.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "page_count": 10,
+    "source_ids": [
+      "test-packet-009-source-00",
+      "test-packet-009-source-01",
+      "test-packet-009-source-02",
+      "test-packet-009-source-03",
+      "test-packet-009-source-04",
+      "test-packet-009-source-05",
+      "test-packet-009-source-06"
+    ],
+    "template_family": "split-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "e88174111cef161c45816d063af82d0515577d7d7fc7f1127ba4de1769e4a16a"
+  },
+  {
+    "id": "s011",
+    "path": "datasets/files/s011.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "page_count": 10,
+    "source_ids": [
+      "test-packet-010-source-00",
+      "test-packet-010-source-01",
+      "test-packet-010-source-02",
+      "test-packet-010-source-03",
+      "test-packet-010-source-04",
+      "test-packet-010-source-05"
+    ],
+    "template_family": "split-test-layout-2",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "1ecac37f4e82e810618d7d87155b85bc2d10413510b120cb69dd50219df868ee"
+  },
+  {
+    "id": "s012",
+    "path": "datasets/files/s012.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "page_count": 9,
+    "source_ids": [
+      "test-packet-011-source-00",
+      "test-packet-011-source-01",
+      "test-packet-011-source-02",
+      "test-packet-011-source-03",
+      "test-packet-011-source-04",
+      "test-packet-011-source-05"
+    ],
+    "template_family": "split-test-layout-3",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "98c0832d6d717fdec7176d89088fb090f081da674459c5d95652324c0dcd6d9e"
+  },
+  {
+    "id": "s013",
+    "path": "datasets/files/s013.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          11
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          12
+        ]
+      }
+    ],
+    "page_count": 12,
+    "source_ids": [
+      "test-packet-012-source-00",
+      "test-packet-012-source-01",
+      "test-packet-012-source-02",
+      "test-packet-012-source-03",
+      "test-packet-012-source-04",
+      "test-packet-012-source-05",
+      "test-packet-012-source-06",
+      "test-packet-012-source-07"
+    ],
+    "template_family": "split-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "a2cdfe721917e32410e2b71220208f4fdba58c7cc89f252f2e426bee95e411ae"
+  },
+  {
+    "id": "s014",
+    "path": "datasets/files/s014.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "page_count": 9,
+    "source_ids": [
+      "test-packet-013-source-00",
+      "test-packet-013-source-01",
+      "test-packet-013-source-02",
+      "test-packet-013-source-03",
+      "test-packet-013-source-04",
+      "test-packet-013-source-05"
+    ],
+    "template_family": "split-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "998fdd138d99522ed121c04e3a7c1e079d4bb28293eec85ae50bb99b282a3a91"
+  },
+  {
+    "id": "s015",
+    "path": "datasets/files/s015.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "page_count": 10,
+    "source_ids": [
+      "test-packet-014-source-00",
+      "test-packet-014-source-01",
+      "test-packet-014-source-02",
+      "test-packet-014-source-03",
+      "test-packet-014-source-04",
+      "test-packet-014-source-05"
+    ],
+    "template_family": "split-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "840455f615e1883c9a4859e5204e7f994ab38299ea984d3f686b10f6048d5936"
+  },
+  {
+    "id": "s016",
+    "path": "datasets/files/s016.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "page_count": 10,
+    "source_ids": [
+      "test-packet-015-source-00",
+      "test-packet-015-source-01",
+      "test-packet-015-source-02",
+      "test-packet-015-source-03",
+      "test-packet-015-source-04",
+      "test-packet-015-source-05",
+      "test-packet-015-source-06"
+    ],
+    "template_family": "split-test-layout-3",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "030e684f8be2a6f799a9f6ec31a86cc93fad8ece41aefd1baf4d997fc801753f"
+  },
+  {
+    "id": "s017",
+    "path": "datasets/files/s017.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "page_count": 11,
+    "source_ids": [
+      "test-packet-016-source-00",
+      "test-packet-016-source-01",
+      "test-packet-016-source-02",
+      "test-packet-016-source-03",
+      "test-packet-016-source-04",
+      "test-packet-016-source-05",
+      "test-packet-016-source-06"
+    ],
+    "template_family": "split-test-layout-0",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "18f11b75ecf54e9415068e035ccecf5b288d29414190af87690799a2b3f3dff4"
+  },
+  {
+    "id": "s018",
+    "path": "datasets/files/s018.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "page_count": 9,
+    "source_ids": [
+      "test-packet-017-source-00",
+      "test-packet-017-source-01",
+      "test-packet-017-source-02",
+      "test-packet-017-source-03",
+      "test-packet-017-source-04",
+      "test-packet-017-source-05"
+    ],
+    "template_family": "split-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "a9c4d1eee666df5b68f1395022dea0700c875732eb64900c3e1b1ebb81349068"
+  },
+  {
+    "id": "s019",
+    "path": "datasets/files/s019.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "page_count": 11,
+    "source_ids": [
+      "test-packet-018-source-00",
+      "test-packet-018-source-01",
+      "test-packet-018-source-02",
+      "test-packet-018-source-03",
+      "test-packet-018-source-04",
+      "test-packet-018-source-05",
+      "test-packet-018-source-06"
+    ],
+    "template_family": "split-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "f38fb4b65f6e91e4536e69106cf38e682bd66bf1b8f8724e5c50dc9e0855c3ce"
+  },
+  {
+    "id": "s020",
+    "path": "datasets/files/s020.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "page_count": 9,
+    "source_ids": [
+      "test-packet-019-source-00",
+      "test-packet-019-source-01",
+      "test-packet-019-source-02",
+      "test-packet-019-source-03",
+      "test-packet-019-source-04",
+      "test-packet-019-source-05"
+    ],
+    "template_family": "split-test-layout-3",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "e7d9479d1cafcbc54ab7c741c69f377958372e218893162268218cd32051b97a"
+  },
+  {
+    "id": "s021",
+    "path": "datasets/files/s021.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "page_count": 11,
+    "source_ids": [
+      "test-packet-020-source-00",
+      "test-packet-020-source-01",
+      "test-packet-020-source-02",
+      "test-packet-020-source-03",
+      "test-packet-020-source-04",
+      "test-packet-020-source-05",
+      "test-packet-020-source-06"
+    ],
+    "template_family": "split-test-layout-0",
+    "format": "pdf",
+    "scan": true,
+    "sha256": "98167bf4b10c89f0b240f2eb5360ef686863e2d3b0d8fe496e0615138cb1ccd0"
+  },
+  {
+    "id": "s022",
+    "path": "datasets/files/s022.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "other",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "page_count": 10,
+    "source_ids": [
+      "test-packet-021-source-00",
+      "test-packet-021-source-01",
+      "test-packet-021-source-02",
+      "test-packet-021-source-03",
+      "test-packet-021-source-04",
+      "test-packet-021-source-05",
+      "test-packet-021-source-06"
+    ],
+    "template_family": "split-test-layout-1",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "6b7be6e3c86233d48ed64c8c6f7aac8f9799df4a6fae9e2570de738ad57daecb"
+  },
+  {
+    "id": "s023",
+    "path": "datasets/files/s023.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "page_count": 10,
+    "source_ids": [
+      "test-packet-022-source-00",
+      "test-packet-022-source-01",
+      "test-packet-022-source-02",
+      "test-packet-022-source-03",
+      "test-packet-022-source-04",
+      "test-packet-022-source-05"
+    ],
+    "template_family": "split-test-layout-2",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "06b49181489b9736ce147c0309043611513324a758f3724351e129558fb0f2f7"
+  },
+  {
+    "id": "s024",
+    "path": "datasets/files/s024.pdf",
+    "split": "test",
+    "segments": [
+      {
+        "category": "claim_form",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "category": "incident_report",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "category": "repair_estimate",
+        "pages": [
+          4,
+          5
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "category": "invoice",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "category": "correspondence",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "page_count": 9,
+    "source_ids": [
+      "test-packet-023-source-00",
+      "test-packet-023-source-01",
+      "test-packet-023-source-02",
+      "test-packet-023-source-03",
+      "test-packet-023-source-04",
+      "test-packet-023-source-05"
+    ],
+    "template_family": "split-test-layout-3",
+    "format": "pdf",
+    "scan": false,
+    "sha256": "ce787bbccbf391466d5d901132979fee805a0c1e578f6a94739072c34656762a"
+  }
+]

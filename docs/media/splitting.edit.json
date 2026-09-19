@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "source": "../../output/recordings/splitting-raw.mp4",
+  "source_visibility": "Local unpublished raw recording; retained for reproducibility, not included in the repository.",
+  "crop": [
+    4,
+    120,
+    1630,
+    936
+  ],
+  "notes": [
+    "Only actual continuous screen-recording footage is used between authored intro/outro cards.",
+    "All retained footage runs at speed 1. The complete OCR, model decision, and export sequence is retained.",
+    "Preset category and boundary rules were reviewed and applied; no meaningful wording edit was made during this recording.",
+    "Independent demonstration using original public documents; no government endorsement.",
+    "The export ending is a supplementary recording from the same successful split run, with no new inference.",
+    "The export supplement retains only 3\u20139s and 28\u201335s. Intervening browser navigation, the address bar, and local filesystem paths are excluded."
+  ],
+  "intro": {
+    "duration": 3,
+    "eyebrow": "JEV DOCS / DOCUMENT SPLITTING",
+    "title": "One packet.\nEvery document.",
+    "subtitle": "Real public documents. LiteParse OCR. Jev splitting."
+  },
+  "segments": [
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 2.2,
+      "end": 8.2,
+      "speed": 1,
+      "title": "01 / Start with a combined packet",
+      "caption": "Four complete public documents, combined into one 15-page packet. Original pages are unchanged.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 13.2,
+      "end": 21.2,
+      "speed": 1,
+      "title": "02 / Trace the source documents",
+      "caption": "The packet combines IRS Form 941, two Treasury auction reports, and a BEA release. Original sources are linked.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 30.5,
+      "end": 38.5,
+      "speed": 1,
+      "title": "03 / Review the category rules",
+      "caption": "Category descriptions identify tax forms, financial reports, press releases, and legal notices.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 43,
+      "end": 49.5,
+      "speed": 1,
+      "title": "04 / Review the boundary instructions",
+      "caption": "Keep separate Treasury auctions apart. Keep each publication\u2019s continuation pages together.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 53.7,
+      "end": 62.8,
+      "speed": 1,
+      "title": "05 / Read every page, then split",
+      "caption": "Actual processing at normal speed: LiteParse reads all 15 pages; Jev predicts categories and document starts.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 62.8,
+      "end": 69.5,
+      "speed": 1,
+      "title": "06 / Inspect the recovered documents",
+      "caption": "Four documents. Jev: 557 ms. Reading: 5.55 s. Full pipeline, including export: 6.27 s.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 69.5,
+      "end": 75.5,
+      "speed": 1,
+      "title": "07 / Inspect the first Treasury report",
+      "caption": "Packet page 4: the 42-day Treasury bill auction. Its own Financial Report segment.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 77.5,
+      "end": 84.5,
+      "speed": 1,
+      "title": "08 / Preserve the next document boundary",
+      "caption": "Packet page 5: a different Treasury auction. The same category, with a separate document boundary.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 88.5,
+      "end": 96.5,
+      "speed": 1,
+      "title": "09 / Keep the complete release together",
+      "caption": "The BEA release remains one document across packet pages 6\u201315, including its tables and technical notes.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 96.5,
+      "end": 102,
+      "speed": 1,
+      "title": "10 / Verify the source pages",
+      "caption": "Packet page 11 is a statistical table inside the same Press Release segment.",
+      "badge": ""
+    },
+    {
+      "input": "../../output/recordings/splitting-raw.mp4",
+      "start": 103,
+      "end": 109.5,
+      "speed": 1,
+      "title": "11 / Compare measured decision speed",
+      "caption": "Saved pilot: Jev 294 ms vs. GPT-5.6 Luna 1.59 s median. One packet, three timed runs per model.",
+      "badge": "SAVED PILOT \u00b7 OCR EXCLUDED"
+    },
+    {
+      "input": "../../output/recordings/splitting-export-raw.mp4",
+      "start": 3,
+      "end": 9,
+      "speed": 1,
+      "title": "12 / Download the selected document",
+      "caption": "The selected Treasury report exports as its own PDF. Four PDFs and result JSON are available."
+    },
+    {
+      "input": "../../output/recordings/splitting-export-raw.mp4",
+      "start": 28,
+      "end": 35,
+      "speed": 1,
+      "title": "13 / Open the exported PDF",
+      "caption": "One page, matching packet page 4. The exported PDFs and result JSON accompany this demo.",
+      "badge": "ACTUAL EXPORTED PDF"
+    }
+  ],
+  "outro": {
+    "duration": 3.5,
+    "eyebrow": "JEV DOCS / OPEN SOURCE",
+    "title": "Categories. Pages.\nComplete documents.",
+    "subtitle": "Python package + CLI + local app.\nIndependent demo; no government endorsement."
+  }
+}
