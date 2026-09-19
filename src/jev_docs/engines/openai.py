@@ -7,7 +7,7 @@ import os
 import time
 from typing import Any
 
-from ..errors import ContextLimitError, ProviderError
+from ..errors import ContextLimitError, DocumentError, ProviderError
 from ..schemas import PageDecision, ParsedDocument, RequestRecord, RuleSet
 from .base import (
     BOUNDARY_POLICY,
@@ -34,15 +34,30 @@ class OpenAIEngine:
     async def aclose(self) -> None:
         await self.client.close()
 
-    async def _request(
-        self, document: ParsedDocument, rules: RuleSet, task: str, schema: dict, instructions: str
-    ):
-        started = time.perf_counter()
+    @staticmethod
+    def checked_payload(document: ParsedDocument, rules: RuleSet) -> dict:
         payload = {"document": page_state(document.pages), "categories": rules.criteria}
         if len(json.dumps(payload).encode()) > 500_000:
             raise ContextLimitError(
                 "The baseline's supported request-size limit was exceeded; no content was truncated."
             )
+        return payload
+
+    @classmethod
+    def preflight(cls, document: ParsedDocument, rules: RuleSet, task: str) -> dict:
+        """Check the same payload as live inference, without keys or an SDK client."""
+        if task not in {"classify", "split"}:
+            raise ValueError("Task must be classify or split")
+        if task == "classify" and all(page.blank for page in document.pages):
+            raise DocumentError("The document is blank; no model classification was attempted.")
+        payload = cls.checked_payload(document, rules)
+        return {"request_count": 1, "payload_bytes": len(json.dumps(payload).encode())}
+
+    async def _request(
+        self, document: ParsedDocument, rules: RuleSet, task: str, schema: dict, instructions: str
+    ):
+        started = time.perf_counter()
+        payload = self.checked_payload(document, rules)
         kwargs: dict[str, Any] = (
             {"reasoning": {"effort": "none"}} if self.model.startswith(("gpt-5", "gpt-6")) else {}
         )

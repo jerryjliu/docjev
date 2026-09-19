@@ -1,7 +1,7 @@
 # Small real-document accuracy benchmark implementation plan
 
 Date: September 19, 2026  
-Status: Ready for implementation; planning only. No new corpus downloads, OCR, or provider calls have been performed for this plan.
+Status: Implementation phases 1–4 complete. Corpus frozen and local preparation admitted; the single scoped paid attempt is in progress.
 
 ## Overview
 
@@ -99,14 +99,14 @@ All paths below marked **new** are proposed additions. Commands using them becom
 
 **Automated verification**
 
-- [ ] `uv run python datasets/real-small/prepare.py --verify` confirms exactly 40 originals, five classes × eight, ≤160 unique source pages, eight five-source packets, ≤25 pages each, and required same-category adjacency in at least four packets.
-- [ ] `uv run pytest tests/test_real_small_integrity.py tests/test_real_examples.py tests/test_dataset_integrity.py` verifies hashes, complete coverage, exactly-once packet membership, exclusion of demo sources, unique IDs, annotation completeness, and unchanged existing fixture contracts.
-- [ ] Full-page render comparison confirms each assembled page matches its original under the same pinned renderer. Test fixtures cover duplicate sources, missing pages, bad labels, and changed resource/rendering content.
+- [x] `uv run python datasets/real-small/prepare.py --verify` confirms exactly 40 originals, five classes × eight, ≤160 unique source pages, eight five-source packets, ≤25 pages each, and required same-category adjacency in at least four packets.
+- [x] `uv run pytest tests/test_real_small_integrity.py tests/test_real_examples.py tests/test_dataset_integrity.py` verifies hashes, complete coverage, exactly-once packet membership, exclusion of demo sources, unique IDs, annotation completeness, and unchanged existing fixture contracts.
+- [x] Full-page render comparison confirms each assembled page matches its original under the same pinned renderer. Test fixtures cover duplicate sources, missing pages, bad labels, and changed resource/rendering content.
 
 **Manual verification**
 
-- [ ] Review the actual 40 PDFs, not just extracted text, for authentic appearance, completeness, labels, and source/rights evidence. Check packet transitions and long supporting sections visually.
-- [ ] Confirm no claim of independent human annotation, unseen-template generalization, native Office accuracy, or naturally occurring packet streams. The constituent documents are authentic; packet combinations are constructed.
+- [x] Review the actual 40 PDFs, not just extracted text, for authentic appearance, completeness, labels, and source/rights evidence. Check packet transitions and long supporting sections visually.
+- [x] Confirm no claim of independent human annotation, unseen-template generalization, native Office accuracy, or naturally occurring packet streams. The constituent documents are authentic; packet combinations are constructed.
 
 ## Phase 2: Add enforced local preparation and actual-text preflight
 
@@ -129,15 +129,15 @@ All paths below marked **new** are proposed additions. Commands using them becom
 
 **Automated verification**
 
-- [ ] `uv run pytest tests/test_benchmark_prepare.py tests/test_benchmark.py` uses fake parsers/clients and confirms preparation, invalid receipts, and over-budget admission make **zero provider calls** and construct no inference clients.
-- [ ] Tests reject tampered artifacts, changed rules/config/source/code, global ID collisions, prohibited overrides, missing warmups, and reused execution receipts before dispatch.
-- [ ] A deliberately stalled OCR worker is terminated and reaped. Preparation errors are recorded, cache timing remains honest, and successful live consumption invokes no parser.
-- [ ] `uv run python -m benchmarks.run --config benchmarks/configs/real-small-v1.yaml --dry-run` shows 96 measured + 4 warmup planned task invocations, actual page counts, and no remote calls.
+- [x] `uv run pytest tests/test_benchmark_prepare.py tests/test_benchmark.py` uses fake parsers/clients and confirms preparation, invalid receipts, and over-budget admission make **zero provider calls** and construct no inference clients.
+- [x] Tests reject tampered artifacts, changed rules/config/source/code, global ID collisions, prohibited overrides, missing warmups, and reused execution receipts before dispatch.
+- [x] A deliberately stalled OCR worker is terminated and reaped. Preparation errors are recorded, cache timing remains honest, and successful live consumption invokes no parser.
+- [x] `uv run python -m benchmarks.run --config benchmarks/configs/real-small-v1.yaml --dry-run` shows 96 measured + 4 warmup planned task invocations, actual page counts, and no remote calls.
 
 **Manual verification**
 
-- [ ] Review the preparation receipt's counts, text/page completeness, concrete version hashes, error entries, and total estimated reservation. A blocked receipt is a valid stop condition, not permission to bypass limits.
-- [ ] Confirm both engines receive identical normalized text for each task input and receive no labels or assembly metadata.
+- [x] Review the preparation receipt's counts, text/page completeness, concrete version hashes, error entries, and total estimated reservation. A blocked receipt is a valid stop condition, not permission to bypass limits.
+- [x] Confirm both engines receive identical normalized text for each task input and receive no labels or assembly metadata.
 
 ## Phase 3: Make the one paid attempt bounded and durable
 
@@ -157,14 +157,14 @@ All paths below marked **new** are proposed additions. Commands using them becom
 
 **Automated verification**
 
-- [ ] A successful fake run performs exactly 100 task invocations, excludes all four warmups from quality, executes one observation per item/engine, and shares prepared text without OCR calls.
-- [ ] Fake timeouts, budget denial, bad credentials, rate limits, failed warmups, cancellation between paired engines, and cleanup failure all produce durable partial evidence and no subsequent dispatch.
-- [ ] Tests cover uncertain usage after a start event, preservation of returned request costs, cancellation mid-window with the entire task marked unknown, liability reconstruction from missing final events, and replay refusal. No live API calls are used for these tests.
-- [ ] Tests prove remote context recovery is off only for the new bounded profile; existing Jev local windows and ordinary recovery behavior retain their regression coverage.
+- [x] A successful fake run performs exactly 100 task invocations, excludes all four warmups from quality, executes one observation per item/engine, and shares prepared text without OCR calls.
+- [x] Fake timeouts, budget denial, bad credentials, rate limits, failed warmups, cancellation between paired engines, and cleanup failure all produce durable partial evidence and no subsequent dispatch.
+- [x] Tests cover uncertain usage after a start event, preservation of returned request costs, cancellation mid-window with the entire task marked unknown, liability reconstruction from missing final events, and replay refusal. No live API calls are used for these tests.
+- [x] Tests prove remote context recovery is off only for the new bounded profile; existing Jev local windows and ordinary recovery behavior retain their regression coverage.
 
 **Manual verification**
 
-- [ ] Inspect a deliberately interrupted fake run: the report states the stop reason, expected versus completed counts, unknown charges, and retained reservations. Missing work must not appear as successful zero-cost/zero-latency calls.
+- [x] Inspect a deliberately interrupted fake run: the report states the stop reason, expected versus completed counts, unknown charges, and retained reservations. Missing work must not appear as successful zero-cost/zero-latency calls.
 
 ## Phase 4: Make scoring and reports accurate for small and partial runs
 
@@ -188,24 +188,24 @@ All paths below marked **new** are proposed additions. Commands using them becom
 
 **Automated verification**
 
-- [ ] `uv run pytest tests/test_metrics.py tests/test_benchmark_report.py tests/test_benchmark.py` covers no observations, an entirely missing engine/task, one completed classification, partial split work, all-failed groups, and interrupted warmups.
-- [ ] All four expected groups retain 40/8 denominators. A duplicate-segment result is incorrect everywhere, including the incorrect-ID list. Unknown and missing records never inflate quality or become zero latency.
-- [ ] Report tests verify real-corpus wording, integer correct/total counts, actual warmup counts, all-in cost separation, source reuse, no pilot bootstrap headline, no synthetic boilerplate, and offline regeneration.
+- [x] `uv run pytest tests/test_metrics.py tests/test_benchmark_report.py tests/test_benchmark.py` covers no observations, an entirely missing engine/task, one completed classification, partial split work, all-failed groups, and interrupted warmups.
+- [x] All four expected groups retain 40/8 denominators. A duplicate-segment result is incorrect everywhere, including the incorrect-ID list. Unknown and missing records never inflate quality or become zero latency.
+- [x] Report tests verify real-corpus wording, integer correct/total counts, actual warmup counts, all-in cost separation, source reuse, no pilot bootstrap headline, no synthetic boilerplate, and offline regeneration.
 
 **Manual verification**
 
-- [ ] Read one complete fake report and one partial fake report as an external reader. The corpus size, stop/completion status, observed population for timing, cost uncertainty, and quality counts should be obvious.
-- [ ] Inspect the rendered chart for readable labels and explicit unavailable values under the existing brand style.
+- [x] Read one complete fake report and one partial fake report as an external reader. The corpus size, stop/completion status, observed population for timing, cost uncertainty, and quality counts should be obvious.
+- [x] Inspect the rendered chart for readable labels and explicit unavailable values under the existing brand style.
 
 ## Phase 5: Execute once, inspect errors, and package the findings
 
-This phase belongs to subsequent implementation, not this planning turn. It runs the one scoped study only after the prior phases and local receipt checks pass. No minimum accuracy or Jev speedup is an acceptance condition.
+This phase executes the one scoped study only after the prior phases and local receipt checks pass. No minimum accuracy or Jev speedup is an acceptance condition.
 
 ### Changes required
 
 **New:** `benchmarks/results/real-small-v1-<run-id>/` with recorded evidence and generated outputs.
 
-**Update:** `README.md`, `docs/benchmark-methodology.md`, and `datasets/real-small/v1/DATASET_CARD.md` with the actual run status and links. Update the source release archive if producing the next publishable bundle; retain existing video and demonstration evidence unchanged.
+**Update:** `README.md`, `docs/benchmark-methodology.md`, and `datasets/real-small/README.md` with the actual run status and links. The frozen v1 dataset card remains immutable so reporting updates do not invalidate corpus identity. Update the source release archive if producing the next publishable bundle; retain existing video and demonstration evidence unchanged.
 
 1. Run the targeted checks above, then the repository's existing offline quality gates:
 
@@ -269,3 +269,11 @@ Tests should target failure modes that change spend or conclusions: no paid work
 - Metrics/report behavior: `benchmarks/metrics.py:48`, `:100`, `:157`; `benchmarks/report.py:19`.
 - Existing authentic-source patterns: `examples/real/SOURCE.json`, `examples/real/assemble.py`, `tests/test_real_examples.py`.
 - Existing category definitions: `examples/real/classify/rules.yaml`, `examples/real/split/rules.yaml`.
+
+## Implementation evidence
+
+- Initial DocJev commit `3a68115` was pushed to `jerryjliu/docjev`; its GitHub Actions run passed. Benchmark changes remain local under the plan’s publication boundary.
+- Corpus: 40 originals, 116 unique pages, 232 scored task-input pages, eight packets, 40 segments, 32 boundaries, four same-category boundaries. All assembled pages pass rendered pixel equality. Source/label reviews were performed by agents, not by a human.
+- Offline gates: locked dependency sync, Ruff, typing for library and benchmark modules, 177 offline tests, and wheel/source builds passed. Root-level QA exclusion was added after archive inspection caught local galleries in the first source build; the corrected source build includes all originals/packets and excludes QA, while the wheel excludes the evaluation corpus.
+- Preparation: 50/50 inputs and 100/100 adapter preflight checks passed in 56.57 seconds, with two cache hits, zero remote calls, 257 pages including warmups, and no empty-text pages. Actual-text reservation: $0.776979 under the $2 local estimated guard. Receipt validation confirmed source, page, artifact, parser, rules, code, package, and execution-matrix identity before dispatch.
+- Manual verification checkboxes record implementation reviews by the agents under the plan’s instruction that these are verification steps, not additional user approval gates. Human annotation/review is not claimed.

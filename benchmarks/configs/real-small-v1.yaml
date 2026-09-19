@@ -1,0 +1,33 @@
+seed: 20260919
+experiment_kind: real-document-accuracy-pilot
+demo_set: real
+dataset_version: real-small-v1
+repeats: 1
+warmups: 1
+warmup_policy: dev
+concurrency: 1
+scope: decision
+budget_usd: 2
+ocr: liteparse
+tier: agentic
+parser_version: latest
+jev_model: jev-1.13.0
+baseline_model: gpt-5.6-luna
+max_retries: 0
+context_recovery: false
+window_size: 8
+boundary_threshold: 0.5
+min_probability: 0.7
+ocr_timeout_s: 60
+preparation_timeout_s: 600
+request_timeout_s: 30
+task_timeout_s: 60
+paid_timeout_s: 300
+cleanup_timeout_s: 5
+tasks:
+  classify:
+    manifest: datasets/real-small/v1/manifests/classify.json
+    rules: datasets/real-small/v1/rules/classify.yaml
+  split:
+    manifest: datasets/real-small/v1/manifests/split.json
+    rules: datasets/real-small/v1/rules/split.yaml

@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
+import math
 import random
 from collections import Counter, defaultdict
 from statistics import mean
 from typing import Any
+
+REAL_ACCURACY_PILOT = "real-document-accuracy-pilot"
+GROUP_FIELDS = ("task", "engine", "model", "scope", "concurrency")
 
 
 def percentile(values: list[float], fraction: float) -> float | None:
@@ -35,14 +39,31 @@ def label_metrics(truth: list[str], prediction: list[str | None], labels: list[s
     per_class = {}
     for label in labels:
         tp = sum(actual == guessed == label for actual, guessed in zip(truth, prediction, strict=True))
-        per_class[label] = prf(tp, prediction.count(label), truth.count(label))
-    return {"accuracy": sum(a == p for a, p in zip(truth, prediction, strict=True)) / len(truth) if truth else None,
+        per_class[label] = {**prf(tp, prediction.count(label), truth.count(label)), "support": truth.count(label)}
+    correct = sum(a == p for a, p in zip(truth, prediction, strict=True))
+    return {"correct_count": correct, "total_count": len(truth),
+            "accuracy": correct / len(truth) if truth else None,
             "macro_f1": mean(float(value["f1"]) for value in per_class.values()) if per_class else None,
             "per_class": per_class, "confusion_matrix": confusion}
 
 
 def _segments_key(segments: list[dict]) -> set[tuple[str, tuple[int, ...]]]:
     return {(segment["category"], tuple(segment["pages"])) for segment in segments}
+
+
+def valid_segments(segments: Any, page_count: int) -> bool:
+    if not isinstance(segments, list) or not segments:
+        return False
+    if any(not isinstance(segment, dict) or not isinstance(segment.get("category"), str)
+           or not isinstance(segment.get("pages"), list) or not segment["pages"]
+           or any(type(page) is not int for page in segment["pages"]) for segment in segments):
+        return False
+    return [page for segment in segments for page in segment["pages"]] == list(range(1, page_count + 1))
+
+
+def packet_exact(actual: list[dict], predicted: Any, page_count: int) -> bool:
+    """The same coverage check governs point estimates, intervals, and error IDs."""
+    return valid_segments(predicted, page_count) and _segments_key(actual) == _segments_key(predicted)
 
 
 def split_metrics(truth: list[list[dict]], predictions: list[list[dict] | None],
@@ -55,11 +76,10 @@ def split_metrics(truth: list[list[dict]], predictions: list[list[dict] | None],
     all_truth: list[str] = []
     all_predictions: list[str | None] = []
     for actual, predicted, count in zip(truth, predictions, page_counts, strict=True):
-        covered = [page for segment in (predicted or []) for page in segment["pages"]]
-        valid = predicted is not None and covered == list(range(1, count + 1))
+        valid = valid_segments(predicted, count)
         coverage_valid += valid
+        exact += packet_exact(actual, predicted, count)
         predicted = predicted if valid else None
-        exact += predicted is not None and _segments_key(actual) == _segments_key(predicted)
         actual_boundaries = {segment["pages"][0] for segment in actual[1:]}
         predicted_boundaries = {segment["pages"][0] for segment in (predicted or [])[1:]}
         boundary_counts[0] += len(actual_boundaries & predicted_boundaries)
@@ -80,7 +100,9 @@ def split_metrics(truth: list[list[dict]], predictions: list[list[dict] | None],
         all_predictions.extend(predicted_labels.get(page) for page in range(1, count + 1))
     labels = label_metrics(all_truth, all_predictions, sorted(set(all_truth)))
     return {"packet_exact_match": exact / len(truth) if truth else None,
-            "exact_packets": exact, "coverage_validity": coverage_valid / len(truth) if truth else None,
+            "exact_packets": exact, "total_packets": len(truth), "coverage_valid_packets": coverage_valid,
+            "coverage_validity": coverage_valid / len(truth) if truth else None,
+            "page_correct_count": labels["correct_count"], "page_total_count": labels["total_count"],
             "page_accuracy": labels["accuracy"], "page_macro_f1": labels["macro_f1"],
             "page_per_class": labels["per_class"], "page_confusion_matrix": labels["confusion_matrix"],
             "boundary": prf(*boundary_counts), "segment": prf(*segment_counts),
@@ -97,78 +119,217 @@ def bootstrap_mean(values: list[float], *, seed: int = 712, samples: int = 2000)
     return [percentile(estimates, 0.025), percentile(estimates, 0.975)]
 
 
-def summarize(observations: list[dict], datasets: dict[str, list[dict]]) -> dict[str, Any]:
-    measured = [row for row in observations if row.get("phase") == "measured"]
+def _source(row: dict) -> str:
+    identity = row.get("source_id", row.get("id"))
+    if not isinstance(identity, str):
+        raise ValueError("Observation source ID must be a string")
+    return identity
+
+
+def _group(row: dict) -> tuple:
+    return tuple(row[field] for field in GROUP_FIELDS)
+
+
+def _identity(row: dict) -> tuple:
+    return (*_group(row), row["phase"], row["repeat"], _source(row))
+
+
+def _timing(value: Any) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) and value >= 0
+
+
+def _call_accounting(rows: list[dict], unclosed: list[dict]) -> dict:
+    requests = [request for row in rows for request in row.get("requests", []) if request.get("task") != "ocr"]
+    unknown_ids = set()
+    incomplete = bool(unclosed)
+    for index, row in enumerate(rows):
+        records = [record for record in row.get("requests", []) if record.get("task") != "ocr"]
+        missing_usage = row.get("usage_unknown", False) or any(record.get("cost_usd") is None for record in records)
+        missing_requests = row.get("dispatched", False) and row["status"] != "ok" and not records
+        if missing_usage or missing_requests or row.get("request_count_complete") is False:
+            unknown_ids.add(row.get("observation_id", ("row", index)))
+        incomplete |= missing_requests or row.get("request_count_complete") is False
+    unknown_ids.update(event.get("observation_id", ("start", index)) for index, event in enumerate(unclosed))
+    return {"decision_cost_usd_known": sum(record["cost_usd"] for record in requests if record.get("cost_usd") is not None),
+            "unknown_cost_calls": len(unknown_ids), "request_count": len(requests),
+            "request_count_complete": not incomplete,
+            "unclosed_dispatch_reservations_usd": sum(event.get("reserved_cost_usd", 0) for event in unclosed),
+            **{name + "_known": sum(record.get(name) or 0 for record in requests)
+               for name in ("input_tokens", "output_tokens", "cached_input_tokens", "cache_write_tokens")}}
+
+
+def preparation_accounting(preparation: dict | None) -> dict:
+    items = (preparation or {}).get("items", {})
+    known = 0.0
+    unknown = 0
+    conversion_ms = ocr_ms = wall_ms = 0.0
+    cache_hits = successful = 0
+    wall_samples = 0
+    for item in items.values():
+        metrics = item.get("preparation_metrics", {})
+        cache_hit = item.get("cache_hit", metrics.get("ocr_cache_hit", False))
+        cache_hits += bool(cache_hit)
+        successful += item.get("status", "ok") == "ok"
+        records = [record for record in metrics.get("requests", []) if record.get("task") == "ocr"]
+        if cache_hit:
+            pass  # Historical cached usage is never a charge for this preparation.
+        elif records:
+            known += sum(record["cost_usd"] for record in records if record.get("cost_usd") is not None)
+            unknown += any(record.get("cost_usd") is None for record in records)
+        elif metrics.get("ocr_cost_usd") is not None:
+            known += metrics["ocr_cost_usd"]
+        elif item.get("parser", {}).get("name") != "liteparse":
+            unknown += 1
+        conversion_ms += metrics.get("conversion_ms", 0)
+        ocr_ms += metrics.get("ocr_ms", 0)
+        wall = item.get("wall_ms", metrics.get("total_ms"))
+        if _timing(wall):
+            wall_ms += wall
+            wall_samples += 1
+    return {"items": len(items), "successful_items": successful, "failed_or_skipped_items": len(items) - successful,
+            "cache_hits": cache_hits, "conversion_ms_known": conversion_ms, "ocr_ms_known": ocr_ms,
+            "wall_ms_known": wall_ms, "wall_samples": wall_samples,
+            "cost_usd_known": known, "unknown_cost_items": unknown,
+            "local_compute_cost": "not_estimated", "elapsed_seconds": (preparation or {}).get("elapsed_seconds")}
+
+
+def summarize(observations: list[dict], datasets: dict[str, list[dict]], *,
+              execution_plan: list[dict] | None = None, events: list[dict] | None = None,
+              preparation: dict | None = None, experiment_kind: str | None = None) -> dict[str, Any]:
+    """Score the frozen first pass even if no terminal rows exist for a group."""
+    plans = {row["observation_id"]: row for row in (execution_plan or [])}
+    if len(plans) != len(execution_plan or []):
+        raise ValueError("Duplicate planned observation ID")
+    if len({_identity(row) for row in plans.values()}) != len(plans):
+        raise ValueError("Duplicate planned observation identity")
+    indexed = {task: {item["id"]: item for item in items} for task, items in datasets.items()}
+    if any(len(indexed[task]) != len(items) for task, items in datasets.items()):
+        raise ValueError("Duplicate dataset source ID")
+    seen = set()
+    terminal_ids = set()
+    for row in observations:
+        key = _identity(row)
+        if key in seen:
+            raise ValueError("Duplicate terminal observation")
+        seen.add(key)
+        if row["status"] not in ("ok", "error", "skipped"):
+            raise ValueError("Unknown terminal status")
+        if _source(row) not in indexed.get(row["task"], {}):
+            raise ValueError("Unexpected observation source ID")
+        if execution_plan is not None:
+            planned = plans.get(row.get("observation_id"))
+            if planned is None or _identity(planned) != key:
+                raise ValueError("Observation does not match frozen execution plan")
+            terminal_ids.add(row["observation_id"])
+    starts = {}
+    for event in events or []:
+        if event.get("event", event.get("type")) != "dispatch_started":
+            continue
+        identity = event.get("observation_id")
+        if execution_plan is not None and identity not in plans:
+            raise ValueError("Unexpected dispatch observation ID")
+        if identity in starts:
+            raise ValueError("Duplicate dispatch start")
+        starts[identity] = event
+    terminals = {row.get("observation_id"): row for row in observations}
+    # A start followed by a non-dispatched placeholder cannot erase a possible charge.
+    unclosed = {identity: event for identity, event in starts.items()
+                if identity not in terminal_ids or not terminals[identity].get("dispatched", False)
+                or terminals[identity]["status"] == "skipped"}
     groups: dict[tuple, list[dict]] = defaultdict(list)
-    for row in measured:
-        groups[(row["task"], row["engine"], row["model"], row["scope"], row["concurrency"])].append(row)
+    planned_groups: dict[tuple, list[dict]] = defaultdict(list)
+    for row in plans.values():
+        if row["phase"] == "measured":
+            planned_groups[_group(row)].append(row)
+            groups[_group(row)]
+    for row in observations:
+        if row["phase"] == "measured":
+            groups[_group(row)].append(row)
     summaries = []
-    for (task, engine, model, scope, concurrency), rows in sorted(groups.items()):
-        first = {row["id"]: row for row in rows if row["repeat"] == 0}
+    for key, rows in sorted(groups.items()):
+        task, engine, model, scope, concurrency = key
         expected = [item for item in datasets[task] if item["split"] == "test"]
-        # An interrupted/partial run never narrows the frozen quality denominator.
-        for item in expected:
-            first.setdefault(item["id"], {"status": "missing", "result": {}})
-        completed = [row for row in first.values() if row["status"] == "ok"]
-        success_rows = [row for row in rows if row["status"] == "ok"]
-        decision_latencies = [row["result"]["metrics"]["decision_ms"] for row in success_rows]
-        measured_latencies = [row["wall_ms"] for row in success_rows]
-        all_requests = [request for row in rows for request in row.get("requests", [])]
-        decision_requests = [request for request in all_requests if request.get("task") != "ocr"]
-        costs = [request.get("cost_usd") for request in decision_requests]
-        unknown = 0
-        for row in rows:
-            requests = [request for request in row.get("requests", []) if request.get("task") != "ocr"]
-            if any(request.get("cost_usd") is None for request in requests) or (
-                row.get("dispatched") and row["status"] != "ok" and not requests
-            ):
-                unknown += 1
+        expected_ids = {item["id"] for item in expected}
+        if any(_source(row) not in expected_ids for row in rows):
+            raise ValueError("Measured observation must belong to the frozen test split")
+        scheduled = planned_groups[key]
+        if execution_plan is not None:
+            first_planned = {_source(row) for row in scheduled if row["repeat"] == 0}
+            if first_planned != expected_ids:
+                raise ValueError("Execution plan does not cover the frozen first-pass denominator")
+        first = {_source(row): row for row in rows if row["repeat"] == 0}
+        def valid_result(row: dict, task: str = task) -> bool:
+            if row.get("status") != "ok":
+                return False
+            result = row.get("result", {})
+            if task == "classify":
+                return isinstance(result.get("category"), str)
+            return valid_segments(result.get("segments"), indexed[task][_source(row)]["page_count"])
+        success_rows = [row for row in rows if valid_result(row)]
+        completed = [row for row in first.values() if valid_result(row)]
+        invalid = [row for row in rows if row["status"] == "ok" and not valid_result(row)]
+        latencies = [row.get("result", {}).get("metrics", {}).get("decision_ms") for row in success_rows]
+        decision_latencies = [value for value in latencies if _timing(value)]
+        wall_latencies = [row["wall_ms"] for row in success_rows if _timing(row.get("wall_ms"))]
+        missing_starts = [event for identity, event in unclosed.items() if identity in plans and _group(plans[identity]) == key and plans[identity]["phase"] == "measured"]
+        repeats = max((row["repeat"] for row in scheduled or rows), default=0) + 1
+        planned_calls = len(scheduled) if execution_plan is not None else len(expected) * repeats
+        failed = [row for row in rows if row["status"] == "error"]
+        skipped = [row for row in rows if row["status"] == "skipped"]
+        errors = Counter(row.get("error", {}).get("type", "Unknown") for row in failed)
+        errors.update({"InvalidResult": len(invalid)} if invalid else {})
         payload = {"task": task, "engine": engine, "model": model, "scope": scope,
-                   "concurrency": concurrency, "planned_unique": len(first),
-                   "completed_unique": len(completed), "completion_rate": len(completed) / len(first),
-                   "measured_calls": len(rows), "latency_samples": len(success_rows),
-                   "decision_p50_ms": percentile(decision_latencies, 0.5),
-                   "decision_p95_ms": percentile(decision_latencies, 0.95),
-                   "wall_p50_ms": percentile(measured_latencies, 0.5),
-                   "wall_p95_ms": percentile(measured_latencies, 0.95),
-                   "decision_cost_usd_known": sum(cost for cost in costs if cost is not None),
-                   "unknown_cost_calls": unknown,
-                   "failed_calls": len(rows) - len(success_rows),
-                   "error_types": dict(Counter(row.get("error", {}).get("type", "Unknown")
-                                              for row in rows if row["status"] != "ok")),
-                   "request_count": len(decision_requests),
-                   "input_tokens_known": sum(request.get("input_tokens") or 0 for request in decision_requests),
-                   "cached_input_tokens_known": sum(request.get("cached_input_tokens") or 0 for request in decision_requests),
-                   "cache_write_tokens_known": sum(request.get("cache_write_tokens") or 0 for request in decision_requests),
-                   "output_tokens_known": sum(request.get("output_tokens") or 0 for request in decision_requests),
-                   "ocr_cost_usd_known": sum(request["cost_usd"] for request in all_requests
+                   "concurrency": concurrency, "planned_unique": len(expected),
+                   "completed_unique": len(completed), "completion_rate": len(completed) / len(expected) if expected else None,
+                   "planned_calls": planned_calls, "measured_calls": len(rows),
+                   "dispatched_calls": sum(bool(row.get("dispatched", row["status"] == "ok")) for row in rows) + len(missing_starts),
+                   "successful_calls": len(success_rows), "failed_calls": len(failed) + len(invalid),
+                   "skipped_calls": len(skipped), "missing_terminal_calls": planned_calls - len(rows),
+                   "unclosed_dispatches": len(missing_starts), "first_pass_missing": len(expected_ids - first.keys()),
+                   "skip_reasons": dict(Counter(str(row.get("skip_reason", "unspecified")) for row in skipped)),
+                   "error_types": dict(errors), "latency_samples": len(decision_latencies),
+                   "wall_latency_samples": len(wall_latencies),
+                   "decision_p50_ms": percentile(decision_latencies, .5), "decision_p95_ms": percentile(decision_latencies, .95),
+                   "wall_p50_ms": percentile(wall_latencies, .5), "wall_p95_ms": percentile(wall_latencies, .95),
+                   **_call_accounting(rows, missing_starts),
+                   "ocr_cost_usd_known": sum(request["cost_usd"] for row in rows for request in row.get("requests", [])
                                              if request.get("task") == "ocr" and request.get("cost_usd") is not None)}
+        results = [first.get(item["id"], {}) for item in expected]
         if task == "classify":
             actual = [item["category"] for item in expected]
-            guesses = [first[item["id"]].get("result", {}).get("category") for item in expected]
+            guesses = [row.get("result", {}).get("category") if valid_result(row) else None for row in results]
             payload.update(label_metrics(actual, guesses, sorted(set(actual))))
             correct = [float(a == p) for a, p in zip(actual, guesses, strict=True)]
-            payload["accuracy_95pct_bootstrap"] = bootstrap_mean(correct)
-            payload["needs_review_rate"] = sum(row["result"]["needs_review"] for row in completed) / len(first)
+            payload["accuracy_95pct_bootstrap"] = None if experiment_kind == REAL_ACCURACY_PILOT else bootstrap_mean(correct)
+            payload["needs_review_rate"] = sum(row["result"].get("needs_review", False) for row in completed) / len(expected) if expected else None
         else:
             actual = [item["segments"] for item in expected]
-            guesses = [first[item["id"]].get("result", {}).get("segments") for item in expected]
-            payload.update(split_metrics(actual, guesses, [item["page_count"] for item in expected]))
-            correct = [float(p is not None and _segments_key(a) == _segments_key(p))
-                       for a, p in zip(actual, guesses, strict=True)]
-            payload["packet_exact_match_95pct_bootstrap"] = bootstrap_mean(correct)
+            guesses = [row.get("result", {}).get("segments") if valid_result(row) else None for row in results]
+            counts = [item["page_count"] for item in expected]
+            payload.update(split_metrics(actual, guesses, counts))
+            correct = [float(packet_exact(a, p, count)) for a, p, count in zip(actual, guesses, counts, strict=True)]
+            payload["packet_exact_match_95pct_bootstrap"] = None if experiment_kind == REAL_ACCURACY_PILOT else bootstrap_mean(correct)
         disagreements = 0
         for item in expected:
-            item_rows = [row for row in rows if row["id"] == item["id"] and row["status"] == "ok"]
-            if task == "classify":
-                values = {row["result"]["category"] for row in item_rows}
-            else:
-                values = {tuple(sorted(_segments_key(row["result"]["segments"]))) for row in item_rows}
+            item_rows = [row for row in success_rows if _source(row) == item["id"]]
+            values = ({row["result"]["category"] for row in item_rows} if task == "classify" else
+                      {tuple(sorted(_segments_key(row["result"]["segments"]))) for row in item_rows})
             disagreements += len(values) > 1
-        payload["repeat_disagreement_documents"] = disagreements
-        payload["failures_or_incorrect_ids"] = [item["id"] for item, is_correct in zip(expected, correct, strict=True) if not is_correct]
+        payload["repeat_disagreement_documents"] = disagreements if repeats > 1 else None
+        payload["repeat_disagreement_status"] = "measured" if repeats > 1 else "not_measured"
+        payload["failures_or_incorrect_ids"] = [item["id"] for item, matched in zip(expected, correct, strict=True) if not matched]
         summaries.append(payload)
-    return {"schema_version": "1", "quality_pass": 0, "groups": summaries,
-            "cost_includes_warmups": False,
+    components = {"preparation": preparation_accounting(preparation)}
+    for phase in ("warmup", "measured"):
+        rows = [row for row in observations if row["phase"] == phase]
+        unmatched = [event for identity, event in unclosed.items() if identity in plans and plans[identity]["phase"] == phase]
+        components[phase] = {"planned_calls": sum(row["phase"] == phase for row in plans.values()) if execution_plan is not None else None,
+                             "recorded_calls": len(rows), "dispatched_calls": sum(bool(row.get("dispatched", row["status"] == "ok")) for row in rows) + len(unmatched),
+                             "successful_calls": sum(row["status"] == "ok" for row in rows),
+                             "wall_ms_known": sum(row["wall_ms"] for row in rows if _timing(row.get("wall_ms"))),
+                             **_call_accounting(rows, unmatched)}
+    return {"schema_version": "1", "quality_pass": 0, "groups": summaries, "components": components,
+            "unclosed_dispatches": len(unclosed), "missing_terminal_calls": len(plans) - len(terminal_ids) if execution_plan is not None else None,
+            "cost_includes_warmups": False, "uncertainty_method": "omitted_curated_pilot" if experiment_kind == REAL_ACCURACY_PILOT else "source_bootstrap",
             "accuracy_unit": "unique source document or packet, first measured pass",
-            "latency_unit": "completed full document or packet, all measured passes"}
+            "latency_unit": "successful complete document or packet, all measured passes"}

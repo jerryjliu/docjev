@@ -9,7 +9,7 @@ from typing import Any
 
 from typesafe_sdk import AsyncTypeSafeClient, Choice, Noul, RetryPolicy
 
-from ..errors import ContextLimitError, ProviderError
+from ..errors import ContextLimitError, DocumentError, ProviderError
 from ..schemas import PageDecision, ParsedDocument, RequestRecord, RuleSet
 from ..windows import PageWindow, check_budget, page_windows, window_for
 from .base import (
@@ -32,6 +32,7 @@ class JevEngine:
         timeout: float = 30,
         max_retries: int = 1,
         window_size: int = 8,
+        context_recovery: bool = True,
     ):
         if not (api_key or os.getenv("TYPESAFE_API_KEY")):
             raise ProviderError(
@@ -40,6 +41,7 @@ class JevEngine:
         self.model = model
         self.max_retries = max_retries
         self.window_size = window_size
+        self.context_recovery = context_recovery
         self.client = AsyncTypeSafeClient(
             api_key=api_key, model=model, timeout=timeout, retry=RetryPolicy(max_retries=0)
         )
@@ -114,15 +116,15 @@ class JevEngine:
             return response, records
         raise AssertionError("Unreachable retry state")
 
+    @staticmethod
+    def classification_questions(rules: RuleSet) -> dict:
+        return {"category": Choice(
+            instructions=classification_instructions(rules), criteria=rules.criteria
+        )}
+
     async def classify(self, document: ParsedDocument, rules: RuleSet):
         response, records = await self._request(
-            page_state(document.pages),
-            {
-                "category": Choice(
-                    instructions=classification_instructions(rules), criteria=rules.criteria
-                )
-            },
-            "classify",
+            page_state(document.pages), self.classification_questions(rules), "classify"
         )
         answer = response.choices.get("category")
         if (
@@ -160,6 +162,60 @@ class JevEngine:
                 )
         return questions
 
+    @classmethod
+    def planned_split_windows(
+        cls, document: ParsedDocument, rules: RuleSet, *, window_size: int = 8
+    ) -> list[PageWindow]:
+        """Resolve all local size checks before dispatch, without constructing a client."""
+        def fits(window: PageWindow) -> None:
+            check_budget(page_state(window.pages), {
+                key: question.model_dump()
+                for key, question in cls.split_questions(window, rules).items()
+            })
+
+        def refine(window: PageWindow) -> list[PageWindow]:
+            try:
+                fits(window)
+                return [window]
+            except ContextLimitError:
+                if len(window.targets) == 1:
+                    raise ContextLimitError(
+                        "A required page and its context cannot fit Jev's input limit."
+                    ) from None
+                start = window.targets[0].number - 1
+                end = window.targets[-1].number
+                middle = (start + end) // 2
+                return (refine(window_for(document.pages, start, middle))
+                        + refine(window_for(document.pages, middle, end)))
+
+        whole = window_for(document.pages, 0, document.page_count)
+        try:
+            fits(whole)
+            return [whole]
+        except ContextLimitError:
+            return [part for window in page_windows(document.pages, window_size)
+                    for part in refine(window)]
+
+    @classmethod
+    def preflight(
+        cls, document: ParsedDocument, rules: RuleSet, task: str, *, window_size: int = 8
+    ) -> dict:
+        """Validate the exact request construction with no API key or client."""
+        if task == "classify":
+            if all(page.blank for page in document.pages):
+                raise DocumentError("The document is blank; no model classification was attempted.")
+            check_budget(page_state(document.pages), {
+                key: question.model_dump()
+                for key, question in cls.classification_questions(rules).items()
+            })
+            return {"request_count": 1, "windows": [[p.number for p in document.pages]]}
+        if task != "split":
+            raise ValueError("Task must be classify or split")
+        windows = cls.planned_split_windows(document, rules, window_size=window_size)
+        active = [window for window in windows if cls.split_questions(window, rules)]
+        return {"request_count": len(active),
+                "windows": [[page.number for page in window.targets] for window in active]}
+
     async def split(
         self, document: ParsedDocument, rules: RuleSet, *, boundary_threshold: float = 0.5
     ):
@@ -179,6 +235,11 @@ class JevEngine:
                 records.extend(calls)
             except ContextLimitError as exc:
                 records.extend(exc.requests)
+                if not self.context_recovery:
+                    raise ContextLimitError(
+                        "Jev rejected the prepared input size; context recovery is disabled.",
+                        requests=records,
+                    ) from None
                 if len(window.targets) == 1:
                     raise ContextLimitError(
                         "A required page and its context cannot fit Jev's input limit.",
@@ -221,15 +282,7 @@ class JevEngine:
                     )
                 )
 
-        whole = window_for(document.pages, 0, document.page_count)
-        try:
-            check_budget(
-                page_state(whole.pages),
-                {k: q.model_dump() for k, q in self.split_questions(whole, rules).items()},
-            )
-            windows = [whole]
-        except ContextLimitError:
-            windows = page_windows(document.pages, self.window_size)
+        windows = self.planned_split_windows(document, rules, window_size=self.window_size)
         for window in windows:
             await evaluate(window)
         return sorted(decisions, key=lambda d: d.page), records
