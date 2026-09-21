@@ -10,7 +10,7 @@ The package name and primary CLI are `docjev`; availability on PyPI has not been
 
 ## Visual report
 
-The [visual benchmark report](report/README.md) includes a self-contained HTML explorer and a [shareable summary image](report/summary.png). Download the HTML to open it in a browser; GitHub renders HTML as source. The report makes no model calls. Keep its small-sample scope and exact-packet accuracy visible when sharing speed figures.
+The [live visual benchmark report](https://jerryjliu.github.io/docjev/) includes a page explorer and a [shareable summary image](report/summary.png). GitHub Pages deploys the committed public report from `main`. The [rebuild instructions](report/README.md) also produce an optional self-contained offline HTML export. The report makes no model calls. Keep its small-sample scope and exact-packet accuracy visible when sharing speed figures.
 
 ## Demo assets
 
@@ -34,4 +34,4 @@ uv run pytest
 uv build
 ```
 
-These checks passed locally on macOS with Python 3.12: 177 offline tests passed and three opt-in live OCR tests were excluded. The initial release passed GitHub Actions; subsequent benchmark changes have local verification. All corpus pages passed rendered equality checks; source archives include the evaluation corpus while the wheel excludes it. The optional full synthetic benchmark has not been executed.
+These checks passed locally on macOS with Python 3.12: 190 offline tests passed and three opt-in live OCR tests were excluded. The prior release and benchmark report passed GitHub Actions on Linux/macOS and Python 3.11/3.12; the workflow runs again on every push. All corpus pages passed rendered equality checks; source archives include the evaluation corpus while the wheel excludes it. The optional full synthetic benchmark has not been executed.

@@ -129,11 +129,22 @@ class PageDecision(Model):
     starts_document_probability: float | None = Field(default=None, ge=0, le=1)
 
 
+class ReviewReason(Model):
+    code: Literal[
+        "other_category", "category_uncertain", "category_boundary_conflict",
+        "boundary_near_threshold",
+    ]
+    page: int = Field(ge=1)
+    probability: float | None = Field(default=None, ge=0, le=1)
+    threshold: float | None = Field(default=None, ge=0, le=1)
+
+
 class Segment(Model):
     id: str
     category: str
     pages: list[int] = Field(min_length=1)
     needs_review: bool = False
+    review_reasons: list[ReviewReason] = Field(default_factory=list)
     mean_category_probability: float | None = None
 
     @model_validator(mode="after")

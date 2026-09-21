@@ -8,10 +8,12 @@ performs inference. Its inputs are the committed evidence and original PDFs.
 
 from __future__ import annotations
 
+import argparse
 import base64
 import hashlib
 import json
 import math
+import mimetypes
 import shutil
 from collections import Counter
 from pathlib import Path
@@ -290,25 +292,36 @@ def build_assets() -> dict[str, str]:
     directory.mkdir(parents=True, exist_ok=True)
     assets: dict[str, str] = {}
     asset_manifest = {}
-    for key, (source_id, page_number) in THUMBNAILS.items():
-        path = CORPUS / "originals" / f"{source_id}.pdf"
-        destination = directory / f"{source_id}-page-{page_number}.jpg"
-        document = pdfium.PdfDocument(path)
+    previews = dict(THUMBNAILS)
+    for source in read_json(CORPUS / "SOURCE.json")["sources"]:
+        document = pdfium.PdfDocument(ROOT / source["path"])
         try:
-            page = document[page_number - 1]
-            try:
-                width = 1000 if key.startswith("error_") else 760
-                bitmap = page.render(scale=width / page.get_width())
-                try:
-                    rendered = bitmap.to_pil().convert("RGB")
-                    rendered.save(destination, "JPEG", quality=90, optimize=True)
-                finally:
-                    bitmap.close()
-            finally:
-                page.close()
+            previews.update({f"page_{source['id']}_{number}": (source["id"], number)
+                             for number in range(1, len(document) + 1)})
         finally:
             document.close()
-        assets[key] = data_url(destination, "image/jpeg")
+    rendered_pages: dict[tuple[str, int], str] = {}
+    for key, (source_id, page_number) in previews.items():
+        path = CORPUS / "originals" / f"{source_id}.pdf"
+        destination = directory / f"{source_id}-page-{page_number}.jpg"
+        identity = (source_id, page_number)
+        if identity not in rendered_pages:
+            document = pdfium.PdfDocument(path)
+            try:
+                page = document[page_number - 1]
+                try:
+                    bitmap = page.render(scale=1000 / page.get_width())
+                    try:
+                        rendered = bitmap.to_pil().convert("RGB")
+                        rendered.save(destination, "JPEG", quality=85, optimize=True)
+                    finally:
+                        bitmap.close()
+                finally:
+                    page.close()
+            finally:
+                document.close()
+            rendered_pages[identity] = f"assets/{destination.name}"
+        assets[key] = rendered_pages[identity]
         asset_manifest[key] = {
             "source_id": source_id, "page": page_number,
             "file": destination.name, "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -320,12 +333,12 @@ def build_assets() -> dict[str, str]:
         ("font_mono", "IBMPlexMono-Regular.ttf"),
     ):
         shutil.copyfile(BRAND / "fonts" / name, directory / name)
-        assets[key] = data_url(directory / name, "font/ttf")
+        assets[key] = f"assets/{name}"
     for name in ("IBMPlexMono-OFL.txt", "OverusedGrotesk-LICENSE.txt"):
         shutil.copyfile(BRAND / "fonts" / name, directory / name)
         assets[name] = (BRAND / "fonts" / name).read_text()
     shutil.copyfile(BRAND / "llamaindex-wordmark-black.png", directory / "llamaindex-wordmark-black.png")
-    assets["logo"] = data_url(directory / "llamaindex-wordmark-black.png", "image/png")
+    assets["logo"] = "assets/llamaindex-wordmark-black.png"
     (directory / "manifest.json").write_text(json.dumps(asset_manifest, indent=2) + "\n")
     (directory / "NOTICE.md").write_text(
         "# Report assets\n\n"
@@ -347,6 +360,9 @@ def inline_json(value: Any) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--standalone", type=Path, help="Also export a self-contained offline HTML to this path")
+    args = parser.parse_args()
     OUTPUT.mkdir(parents=True, exist_ok=True)
     data = build_data()
     assets = build_assets()
@@ -360,6 +376,15 @@ def main() -> None:
         content = content.replace("__REPORT_DATA__", inline_json(data))
         content = content.replace("__REPORT_ASSETS__", inline_json(assets))
         (OUTPUT / "index.html").write_text(content)
+        if args.standalone:
+            embedded = {
+                key: data_url(OUTPUT / value, mimetypes.guess_type(value)[0] or "application/octet-stream")
+                if value.startswith("assets/") else value for key, value in assets.items()
+            }
+            standalone = template.read_text().replace("__REPORT_DATA__", inline_json(data))
+            standalone = standalone.replace("__REPORT_ASSETS__", inline_json(embedded))
+            args.standalone.parent.mkdir(parents=True, exist_ok=True)
+            args.standalone.write_text(standalone)
     print("Built offline report data and authentic page previews; no API calls.")
     print(json.dumps({
         "classify_ratio_of_medians": data["tasks"]["classify"]["ratio_of_medians"],

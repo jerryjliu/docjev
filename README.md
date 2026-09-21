@@ -12,9 +12,9 @@ The real-document demo uses original IRS, Treasury, BEA, and SEC publications. I
 
 This is an independent open-source implementation. It does not call LlamaIndex's hosted Classify or Split APIs or use their implementation. LlamaParse is used only for optional OCR. Jev is a hosted service; local OCR does not make inference offline.
 
-[![DocJev visual benchmark report: 40 real PDFs, eight packets, Jev and Luna accuracy and decision latency](docs/report/summary.png)](docs/report/README.md)
+[![DocJev visual benchmark report: 40 real PDFs, eight packets, Jev and Luna accuracy and decision latency](docs/report/summary.png)](https://jerryjliu.github.io/docjev/)
 
-**[Explore the visual report](docs/report/README.md)** — browse all 40 documents, compare packet boundaries, replay recorded median timings, and inspect the one extra split.
+**[Explore the visual report](https://jerryjliu.github.io/docjev/)** — browse all 40 documents, compare packet boundaries, replay recorded median timings, and inspect the one extra split.
 
 ## Quick start
 
@@ -69,6 +69,8 @@ Longer walkthroughs: [Publication inbox](docs/media/classification.mp4) · [15-p
 
 **Accuracy results:** The separate [40-document accuracy pilot](benchmarks/results/real-small-v1-run01/report.md) is complete. Both engines classified 40/40 originals correctly; Jev split 7/8 packets exactly and Luna split 8/8. The video demonstrations remain separate evidence.
 
+The [next 40-document challenge](datasets/real-challenge/README.md) targets scans, ambiguous categories, and attachment boundaries. It is a preparation protocol, not another measured result.
+
 ## Rules and results
 
 Rules use stable category IDs and descriptions of document purpose:
@@ -101,6 +103,8 @@ The measured packet produces these four segments, with one-based page numbers:
 ```
 
 This excerpt omits provenance, page decisions, review flags, and metrics from the full result. Every successful split covers every canonical page exactly once. Empty OCR is accepted as a blank page only after a conservative visual check; visibly nonblank pages with unreadable text fail explicitly. Exports verify the canonical PDF hash and preserve exact page membership.
+
+Segments include structured `review_reasons` with page numbers. By default, a Jev boundary score within 0.1 of the decision threshold triggers review of either a cut or a continuation; an uncertain cut flags both adjacent segments. Use `--boundary-review-margin 0` to disable this signal. It does not change page ranges, does not flag deterministic blank-page boundaries, and does not invent boundary scores for the baseline. Category uncertainty, `other`, and category/boundary conflicts remain separate reasons. See [boundary review](docs/boundary-review.md).
 
 Jev's selected-category probability and provider confidence are different values. Neither is claimed to be calibrated. A segment's mean category probability is an average of page scores, not a joint probability. Jev supplies decisions and distributions, so the package does not invent explanatory rationales.
 

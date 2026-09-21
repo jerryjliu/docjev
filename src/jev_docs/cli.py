@@ -147,6 +147,7 @@ def split_command(
     model: str | None = None,
     no_cache: bool = False,
     boundary_threshold: float = 0.5,
+    boundary_review_margin: Annotated[float, typer.Option(min=0, max=0.5, help="Flag boundary scores within this distance of the decision threshold; 0 disables.")] = 0.1,
     output: Path | None = None,
     export_dir: Path | None = None,
     overwrite: bool = False,
@@ -162,7 +163,8 @@ def split_command(
             document, ocr=ocr, tier=tier, parser_version=parser_version, use_cache=not no_cache
         )
         result = split_document(
-            parsed, config, engine=engine, model=model, boundary_threshold=boundary_threshold
+            parsed, config, engine=engine, model=model, boundary_threshold=boundary_threshold,
+            boundary_review_margin=boundary_review_margin,
         )
         if export_dir:
             export_segments(parsed, result, export_dir, overwrite=overwrite)

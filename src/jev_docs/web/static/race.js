@@ -312,6 +312,8 @@ function renderEngine(engine, engineState) {
       const copy = element('span', 'segment-copy');
       const pages = segment.pages.length === 1 ? `Page ${segment.pages[0]}` : `Pages ${segment.pages[0]}–${segment.pages.at(-1)}`;
       copy.append(element('strong', '', title(segment.category)), element('small', '', `${pages}${segment.needs_review ? ' · review suggested' : ''}`));
+      const boundaryPages = (segment.review_reasons || []).filter(r => r.code === 'boundary_near_threshold').map(r => r.page);
+      if (boundaryPages.length) copy.append(element('small', '', `Check boundary before page ${boundaryPages.join(', ')}: score near threshold.`));
       button.append(element('span', 'segment-number', String(index + 1).padStart(2, '0')), copy, element('span', 'segment-arrow', '↗'));
       button.setAttribute('aria-label', `${engine === 'jev' ? 'Jev' : 'GPT-5.6 Luna'} document ${index + 1}: ${title(segment.category)}, ${pages.toLowerCase()}`);
       button.addEventListener('click', () => {

@@ -175,7 +175,10 @@ function splitting(result) {
     card.append(node('span', 'segment-number', String(index + 1).padStart(2,'0')));
     const label = node('div'); label.append(node('strong', '', pretty(segment.category)));
     const pages = segment.pages.length === 1 ? `Page ${segment.pages[0]}` : `Pages ${segment.pages[0]}–${segment.pages.at(-1)}`;
-    label.append(node('small', '', `${pages}${segment.needs_review ? ' · review suggested' : ''}`)); card.append(label);
+    label.append(node('small', '', `${pages}${segment.needs_review ? ' · review suggested' : ''}`));
+    const boundaryPages = (segment.review_reasons || []).filter(r => r.code === 'boundary_near_threshold').map(r => r.page);
+    if (boundaryPages.length) label.append(node('small', '', `Check boundary before page ${boundaryPages.join(', ')}: score near threshold.`));
+    card.append(label);
     const download = state.run.downloads.find((d) => d.segment_id === segment.id);
     if (download) { const link = node('a', 'segment-download', '↓'); link.href = `${download.url}?download=true`; link.title = `Download ${pretty(segment.category)} PDF`; link.addEventListener('click',(event) => event.stopPropagation()); card.append(link); }
     card.addEventListener('click', () => showPage(segment.pages[0])); card.addEventListener('keydown', (event) => { if (event.target === card && ['Enter',' '].includes(event.key)) { event.preventDefault(); showPage(segment.pages[0]); } }); list.append(card);

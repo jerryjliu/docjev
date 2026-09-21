@@ -1,10 +1,18 @@
-# Paperwork, meet fast.
+# Classify in 139 ms. Split in 210 ms.
 
 A visual field report from DocJev’s **40-document / eight-packet** accuracy run, in LlamaIndex’s brand style.
 
 ![DocJev benchmark summary: Jev classified 40/40 documents and split 7/8 packets exactly, versus Luna’s 40/40 and 8/8. Jev median decision times were 139 ms and 210 ms.](summary.png)
 
-**[Download the interactive report](index.html?raw=1)** and open the downloaded HTML in your browser. It is a single self-contained file: fonts, original-page previews, and recorded results are embedded. It works offline and makes no API calls. GitHub displays HTML as source, so download it to use the interactive views.
+**[Open the live report](https://jerryjliu.github.io/docjev/)** — no download or local server needed.
+
+The hosted report loads original-page previews as needed. To create a single self-contained file that works offline, run:
+
+```sh
+uv run python scripts/build_visual_report.py --standalone output/docjev-report-offline.html
+```
+
+The offline export embeds the fonts, all 116 original-page previews, and recorded results. Neither version makes inference calls.
 
 - Explore every classification, filter by category, and inspect timings and review flags.
 - Compare the original boundaries with both engines’ segments across all eight packets.
@@ -25,7 +33,7 @@ From the repository root:
 uv run python scripts/build_visual_report.py
 ```
 
-This validates source PDF hashes and reconciles accuracy, medians, costs, and paired OCR hashes against the saved observations before generating `data.json`, authentic previews, and `index.html` from `template.html`. It does not read credentials, private OCR text, or call either model. Embedded fonts include their license text; copies and asset provenance are in [assets](assets/NOTICE.md).
+This validates source PDF hashes and reconciles accuracy, medians, costs, and paired OCR hashes against the saved observations before generating `data.json`, authentic previews, and `index.html` from `template.html`. It does not read credentials, private OCR text, or call either model. Bundled fonts include their license text; copies and asset provenance are in [assets](assets/NOTICE.md).
 
 To regenerate the PNG, install the optional browser renderer once:
 
@@ -35,3 +43,9 @@ uv run --with playwright python scripts/capture_visual_report.py
 ```
 
 The capture uses the report’s `?share=1` layout at 1200 pixels wide. `REPORT_CHROMIUM_PATH` can point to an already installed Chromium executable. The HTML and PNG do not require Playwright to view.
+
+## Publishing
+
+The `visual report` GitHub Actions workflow publishes the committed report to [GitHub Pages](https://jerryjliu.github.io/docjev/). It stages only the HTML, summary image, public data, and attributed report assets. Rebuild and commit these artifacts when editing the template; pushing `main` deploys them. No API keys or inference calls are involved. The workflow follows [GitHub’s custom Pages workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+The explorer includes all 116 original pages, with clickable segment ranges, page navigation, and zoom. The headline cards use the same visual scale and font size for both engines, with accuracy next to latency. The CLI examples require a local checkout and a TypeSafe key; the report itself is read-only.

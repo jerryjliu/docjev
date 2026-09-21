@@ -184,3 +184,56 @@ def test_baseline_preflight_uses_live_payload_limit(document, rules):
         OpenAIEngine.preflight(document, rules, "split")
     with pytest.raises(ContextLimitError):
         OpenAIEngine.checked_payload(document, rules)
+
+
+@pytest.mark.parametrize('probability,flagged', [(.39, False), (.4, True), (.49, True), (.5, True), (.6, True), (.61, False)])
+def test_boundary_review_covers_cuts_and_continuations(document, rules, probability, flagged):
+    decisions = [PageDecision(page=i, category="invoice", category_probability=.99,
+                              starts_document=i == 1 or (i == 3 and probability >= .5),
+                              starts_document_probability=probability if i == 3 else .01)
+                 for i in range(1, 5)]
+    segments, _ = assemble_segments(decisions, document, rules)
+    assert [s.pages for s in segments] == ([[1, 2], [3, 4]] if probability >= .5 else [[1, 2, 3, 4]])
+    assert all(s.needs_review == flagged for s in segments)
+    for segment in segments:
+        assert [r.page for r in segment.review_reasons] == ([3] if flagged else [])
+        if flagged:
+            reason = segment.review_reasons[0]
+            assert reason.code == "boundary_near_threshold"
+            assert reason.probability == probability and reason.threshold == .5
+
+
+def test_boundary_review_respects_custom_threshold_and_can_be_disabled(document, rules):
+    decisions = [PageDecision(page=i, category="invoice", starts_document=i == 1,
+                              starts_document_probability=.72 if i == 2 else .01)
+                 for i in range(1, 5)]
+    default, _ = assemble_segments(decisions, document, rules)
+    custom, _ = assemble_segments(decisions, document, rules, boundary_threshold=.8)
+    disabled, _ = assemble_segments(decisions, document, rules, boundary_threshold=.8,
+                                    boundary_review_margin=0)
+    assert not default[0].needs_review and not disabled[0].needs_review
+    assert custom[0].needs_review and custom[0].review_reasons[0].threshold == .8
+    assert custom[0].pages == default[0].pages == disabled[0].pages
+
+
+def test_boundary_review_does_not_invent_missing_scores(document, rules):
+    decisions = [PageDecision(page=i, category="invoice", starts_document=i in {1, 3})
+                 for i in range(1, 5)]
+    segments, _ = assemble_segments(decisions, document, rules)
+    assert not any(s.needs_review or s.review_reasons for s in segments)
+
+
+def test_blank_policy_and_first_page_do_not_create_boundary_review(document, rules):
+    document.pages[1] = Page(number=2, text="", blank=True)
+    decisions = [PageDecision(page=i, category="invoice", starts_document=i == 1,
+                              starts_document_probability=.5 if i <= 3 else 0)
+                 for i in range(1, 5)]
+    segments, _ = assemble_segments(decisions, document, rules)
+    assert not any(r.code == "boundary_near_threshold" for s in segments for r in s.review_reasons)
+    assert decisions[1].starts_document_probability is None
+
+
+@pytest.mark.parametrize('margin', [-.01, .51, float('nan'), float('inf')])
+async def test_invalid_review_margin_fails_before_parsing(margin, rules):
+    with pytest.raises(ValueError, match="review margin"):
+        await asplit_document('does-not-exist.pdf', rules, boundary_review_margin=margin)
