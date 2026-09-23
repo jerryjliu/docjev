@@ -90,10 +90,14 @@ class JevEngine:
                     if delay <= 10:
                         await asyncio.sleep(delay)
                         continue
-                raise ProviderError(
-                    f"Jev request failed ({status or type(exc).__name__}). Check access, limits, or connectivity.",
-                    requests=records,
-                ) from None
+                if isinstance(status, int) and 200 <= status < 300:
+                    message = "Jev returned an unreadable response."
+                else:
+                    message = (
+                        f"Jev request failed ({status or type(exc).__name__}). "
+                        "Check access, limits, or connectivity."
+                    )
+                raise ProviderError(message, requests=records) from None
             elapsed = (time.perf_counter() - started) * 1000
             tokens = response.usage.input_tokens
             request_id = response.raw_http_response.headers.get("x-typesafe-request-id")

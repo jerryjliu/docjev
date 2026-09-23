@@ -128,6 +128,34 @@ async def test_live_split_uses_the_pure_window_plan(document, rules):
     assert [page.page for page in decisions] == [1, 2, 3, 4]
 
 
+async def test_success_status_with_unreadable_response_has_accurate_error():
+    class UnreadableResponseError(Exception):
+        status = 200
+        request_id = "fixture-request"
+        body = "private response body"
+
+    class Client:
+        async def system_one(self, **_kwargs):
+            raise UnreadableResponseError("response was not JSON")
+
+    class Question:
+        def model_dump(self):
+            return {}
+
+    engine = object.__new__(JevEngine)
+    engine.client = Client()
+    engine.max_retries = 0
+    engine.model = "fixture"
+
+    with pytest.raises(ProviderError) as raised:
+        await engine._request({"pages": []}, {"category": Question()}, "classify")
+
+    assert str(raised.value) == "Jev returned an unreadable response."
+    assert "private response body" not in str(raised.value)
+    assert raised.value.requests[0].status == "error"
+    assert raised.value.requests[0].error_code == "200"
+
+
 @pytest.mark.parametrize("recovery", [False, True])
 async def test_remote_context_recovery_is_opt_in_for_bounded_profile(document, rules, recovery):
     from types import SimpleNamespace
