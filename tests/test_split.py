@@ -162,6 +162,25 @@ async def test_remote_context_recovery_is_opt_in_for_bounded_profile(document, r
         assert len(seen) == 1 and raised.value.requests == [rejection]
 
 
+async def test_split_rejects_a_choice_without_its_probability(document, rules):
+    from types import SimpleNamespace
+
+    engine = object.__new__(JevEngine)
+    engine.context_recovery = False
+    engine.window_size = 8
+
+    async def request(state, questions, task):
+        return SimpleNamespace(
+            choices={key: SimpleNamespace(choice="invoice", probabilities={"purchase_order": 1}, confidence=1)
+                     for key in questions if key.startswith("category_")},
+            nouls={key: SimpleNamespace(noul=0) for key in questions if key.startswith("boundary_")},
+        ), []
+
+    engine._request = request
+    with pytest.raises(ProviderError, match="invalid page decisions"):
+        await engine.split(document, rules)
+
+
 def test_both_adapters_preflight_reject_blank_classification(document, rules):
     from jev_docs.engines.openai import OpenAIEngine
     from jev_docs.errors import DocumentError

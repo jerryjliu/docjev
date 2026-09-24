@@ -266,6 +266,7 @@ class JevEngine:
                 if (
                     answer is None
                     or answer.choice not in rules.criteria
+                    or answer.choice not in answer.probabilities
                     or (page.number > 1 and boundary is None)
                 ):
                     raise ProviderError("Jev returned invalid page decisions.", requests=records)
