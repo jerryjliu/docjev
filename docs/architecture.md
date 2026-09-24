@@ -7,6 +7,7 @@ The Python library is the single implementation used by the CLI, benchmark harne
 3. `classify` maps a whole-document decision to the public classification schema. `split` creates a segment on a category change or source-document boundary, including adjacent same-category documents.
 4. `export` copies the exact source pages into per-segment PDFs. Office inputs export their retained canonical PDF pages.
 5. `engines.openai` provides a direct, terse structured-output baseline. Its practical splitter returns all segments in one request when supported.
+6. `engines.openrouter` sends the same Jev questions through OpenRouter's Decisions API and reuses the `engines.jev` windowing, retries, and answer checks.
 
 No LlamaIndex Classify or Split API is called. The optional LlamaParse adapter only calls file upload and Parse.
 

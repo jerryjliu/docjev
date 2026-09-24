@@ -326,11 +326,15 @@ dev = [
 llamaparse = [
     { name = "llama-cloud" },
 ]
+openrouter = [
+    { name = "httpx" },
+]
 
 [package.metadata]
 requires-dist = [
     { name = "fastapi", marker = "extra == 'demo'", specifier = ">=0.115,<1" },
     { name = "httpx", marker = "extra == 'dev'", specifier = ">=0.28,<1" },
+    { name = "httpx", marker = "extra == 'openrouter'", specifier = ">=0.28,<1" },
     { name = "hypothesis", marker = "extra == 'dev'", specifier = ">=6,<7" },
     { name = "liteparse", specifier = ">=2.14.6,<3" },
     { name = "llama-cloud", marker = "extra == 'llamaparse'", specifier = ">=2.16,<3" },
@@ -353,7 +357,7 @@ requires-dist = [
     { name = "typesafe-sdk", specifier = ">=0.7,<0.8" },
     { name = "uvicorn", marker = "extra == 'demo'", specifier = ">=0.34,<1" },
 ]
-provides-extras = ["llamaparse", "baseline", "demo", "datasets", "dev"]
+provides-extras = ["llamaparse", "baseline", "openrouter", "demo", "datasets", "dev"]
 
 [[package]]
 name = "fastapi"

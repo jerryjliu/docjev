@@ -23,6 +23,8 @@ from .base import (
 
 class JevEngine:
     name = "jev"
+    retryable_statuses: frozenset[int] = frozenset({408, 429, 500, 502, 503, 504})
+    context_limit_statuses: frozenset[int] = frozenset()
 
     def __init__(
         self,
@@ -57,9 +59,7 @@ class JevEngine:
         for attempt in range(1, self.max_retries + 2):
             started = time.perf_counter()
             try:
-                response = await self.client.system_one(
-                    state=state, questions=questions, model=self.model
-                )
+                response = await self._decide(state, questions)
             except Exception as exc:
                 status = getattr(exc, "status", None)
                 records.append(
@@ -76,13 +76,16 @@ class JevEngine:
                 )
                 # Read only to recognize a context error; never expose provider bodies in logs.
                 message = str(getattr(exc, "body", "")).lower()
-                if status in {400, 413, 422} and any(
-                    word in message for word in ("context", "token", "too long", "too large")
+                if status in self.context_limit_statuses or (
+                    status in {400, 413, 422}
+                    and any(
+                        word in message for word in ("context", "token", "too long", "too large")
+                    )
                 ):
                     raise ContextLimitError(
                         "Jev rejected the input size; no text was truncated.", requests=records
                     ) from None
-                retryable = status in {408, 429, 500, 502, 503, 504} or isinstance(
+                retryable = status in self.retryable_statuses or isinstance(
                     exc, (ConnectionError, TimeoutError)
                 )
                 if retryable and attempt <= self.max_retries:
@@ -95,26 +98,31 @@ class JevEngine:
                     requests=records,
                 ) from None
             elapsed = (time.perf_counter() - started) * 1000
-            tokens = response.usage.input_tokens
-            request_id = response.raw_http_response.headers.get("x-typesafe-request-id")
-            records.append(
-                RequestRecord(
-                    provider=self.name,
-                    model=response.model,
-                    task=task,
-                    attempt=attempt,
-                    elapsed_ms=elapsed,
-                    request_id=request_id,
-                    input_tokens=tokens,
-                    output_tokens=response.usage.output_tokens,
-                    cost_usd=None if tokens is None else tokens * 0.042 / 1_000_000,
-                    cost_status="unknown" if tokens is None else "estimated",
-                )
-            )
+            records.append(self._success_record(response, task, attempt, elapsed))
             if set(response.answers) != set(questions):
                 raise ProviderError("Jev returned an incomplete answer set.", requests=records)
             return response, records
         raise AssertionError("Unreachable retry state")
+
+    async def _decide(self, state: dict, questions: dict) -> Any:
+        return await self.client.system_one(state=state, questions=questions, model=self.model)
+
+    def _success_record(
+        self, response: Any, task: str, attempt: int, elapsed_ms: float
+    ) -> RequestRecord:
+        tokens = response.usage.input_tokens
+        return RequestRecord(
+            provider=self.name,
+            model=response.model,
+            task=task,
+            attempt=attempt,
+            elapsed_ms=elapsed_ms,
+            request_id=response.raw_http_response.headers.get("x-typesafe-request-id"),
+            input_tokens=tokens,
+            output_tokens=response.usage.output_tokens,
+            cost_usd=None if tokens is None else tokens * 0.042 / 1_000_000,
+            cost_status="unknown" if tokens is None else "estimated",
+        )
 
     @staticmethod
     def classification_questions(rules: RuleSet) -> dict:

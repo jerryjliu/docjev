@@ -29,7 +29,7 @@ uv run docjev doctor --smoke
 
 The package and primary CLI are named `docjev`; `jev-docs` remains a compatibility alias. Python imports (`jev_docs`), environment variables (`JEV_DOCS_*`), and the `.jev-docs/` cache retain their existing names.
 
-Export `TYPESAFE_API_KEY` in your shell before running a Jev decision. [`.env.example`](.env.example) lists the supported environment variables with deliberately empty values; the CLI does not automatically load `.env` files. `LLAMA_CLOUD_API_KEY` and `OPENAI_API_KEY` are optional, for cloud OCR and the baseline respectively. Keep actual values outside version control and recordings.
+Export `TYPESAFE_API_KEY` in your shell before running a Jev decision. [`.env.example`](.env.example) lists the supported environment variables with deliberately empty values; the CLI does not automatically load `.env` files. `LLAMA_CLOUD_API_KEY`, `OPENAI_API_KEY`, and `OPENROUTER_API_KEY` are optional, for cloud OCR, the baseline, and [running Jev through OpenRouter](#jev-through-openrouter) respectively. Keep actual values outside version control and recordings.
 
 ```sh
 # Classify an original ten-page BEA release.
@@ -151,7 +151,27 @@ uv run docjev parse examples/real/originals/r04.pdf --output output/pages.json
 
 Use `--parser-version` to pin a valid tier-specific published LlamaParse version. The default is `latest`; unresolved versions are reported explicitly and local `latest` cache entries expire after 24 hours. `--no-cache` bypasses local OCR reuse and disables LlamaParse server cache. Canonical PDFs remain available for previews and export. The local `.jev-docs/` cache contains extracted text and document bytes and is ignored by Git.
 
-PDF bytes are uploaded only when LlamaParse is selected. Normalized page text is sent to the selected decision engine—TypeSafe by default, or OpenAI for the optional baseline. LiteParse has no OCR API fee; compute resources and hosted decision calls still have costs.
+PDF bytes are uploaded only when LlamaParse is selected. Normalized page text is sent to the selected decision engine—TypeSafe by default, OpenRouter when `--engine openrouter` is selected, or OpenAI for the optional baseline. LiteParse has no OCR API fee; compute resources and hosted decision calls still have costs.
+
+## Jev through OpenRouter
+
+[OpenRouter](https://openrouter.ai/~typesafe/jev-latest) serves Jev through its [Decisions API](https://openrouter.ai/docs/api/api-reference/alphadecisions/submit-a-decisions-request). The `openrouter` engine sends the same page state and questions as the direct engine, with the same windowing, retry, and context-recovery behavior.
+
+```sh
+uv sync --extra openrouter
+
+# Requires OPENROUTER_API_KEY instead of TYPESAFE_API_KEY.
+uv run docjev classify examples/real/originals/r04.pdf \
+  --rules examples/real/classify/rules.yaml \
+  --engine openrouter
+
+# Track the newest Jev release instead of the pinned default.
+uv run docjev split examples/real/public-finance-packet.pdf \
+  --rules examples/real/split/rules.yaml \
+  --engine openrouter --model '~typesafe/jev-latest'
+```
+
+The default model is `typesafe/jev-1.13`. Request records report OpenRouter's billed `usage.cost` as `cost_status: reported`, rather than a list-price estimate. Published benchmark results were measured against TypeSafe directly and are not re-run for this engine.
 
 ## Small real-document accuracy benchmark
 

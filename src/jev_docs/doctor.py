@@ -16,7 +16,7 @@ from .conversion import converter_version, find_soffice
 def doctor(*, smoke: bool = False) -> dict[str, Any]:
     packages: dict[str, str | None] = {}
     for package in ("docjev", "liteparse", "typesafe-sdk", "llama-cloud", "openai",
-                    "pypdf", "pypdfium2", "Pillow", "fastapi"):
+                    "httpx", "pypdf", "pypdfium2", "Pillow", "fastapi"):
         try:
             packages[package] = importlib.metadata.version(package)
         except importlib.metadata.PackageNotFoundError:
@@ -31,7 +31,8 @@ def doctor(*, smoke: bool = False) -> dict[str, Any]:
     diagnostics: dict[str, Any] = {
         "python": platform.python_version(), "platform": platform.system(), "packages": packages,
         "credentials": {name: bool(os.environ.get(name)) for name in
-                        ("TYPESAFE_API_KEY", "LLAMA_CLOUD_API_KEY", "OPENAI_API_KEY")},
+                        ("TYPESAFE_API_KEY", "LLAMA_CLOUD_API_KEY", "OPENAI_API_KEY",
+                         "OPENROUTER_API_KEY")},
         "tools": {"libreoffice": {"available": bool(office), "version": office_version},
                   "fontconfig": {"available": bool(shutil.which("fc-list"))}},
         "formats": {"pdf": bool(packages["liteparse"]), "docx": bool(office), "pptx": bool(office)},

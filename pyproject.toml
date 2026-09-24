@@ -14,6 +14,7 @@ dependencies = ["liteparse>=2.14.6,<3", "typesafe-sdk>=0.7,<0.8", "pydantic>=2.1
 [project.optional-dependencies]
 llamaparse = ["llama-cloud>=2.16,<3"]
 baseline = ["openai>=2,<3"]
+openrouter = ["httpx>=0.28,<1"]
 demo = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "python-multipart>=0.0.20"]
 datasets = ["reportlab>=4,<5", "python-docx>=1.1,<2", "python-pptx>=1,<2"]
 dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "hypothesis>=6,<7", "httpx>=0.28,<1", "ruff>=0.11", "mypy>=1.15", "types-PyYAML>=6"]
