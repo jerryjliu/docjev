@@ -2,6 +2,8 @@
 
 **Document classification and splitting with Jev, LiteParse, and optional LlamaParse.**
 
+**Maintenance:** This project is maintained entirely by Codex, including issue triage, pull request reviews, and merges. Maintenance prioritizes correctness, backward compatibility, and keeping the codebase small.
+
 Give the Python library, CLI, or local app a PDF, DOCX, or PPTX and natural-language category rules. LiteParse extracts complete page text locally; Jev predicts the document category or the boundaries between its component documents. Optional LlamaParse tiers provide cloud OCR for difficult inputs.
 
 The real-document demo uses original IRS, Treasury, BEA, and SEC publications. Its 15-page packet contains two adjacent Treasury auction results with the same category. The splitter identifies them as separate documents and keeps a ten-page BEA release—including its dense statistical tables—together.
