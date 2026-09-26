@@ -117,7 +117,11 @@ async def test_live_split_uses_the_pure_window_plan(document, rules):
     async def request(state, questions, task):
         seen.append(sorted(int(key.split("_")[1]) for key in questions if key.startswith("category_")))
         return SimpleNamespace(
-            choices={key: SimpleNamespace(choice="invoice", probabilities={"invoice": 1}, confidence=1)
+            choices={key: SimpleNamespace(
+                choice="invoice",
+                probabilities={name: 1 if name == "invoice" else 0 for name in rules.criteria},
+                confidence=1,
+            )
                      for key in questions if key.startswith("category_")},
             nouls={key: SimpleNamespace(noul=0) for key in questions if key.startswith("boundary_")},
         ), []
@@ -126,6 +130,43 @@ async def test_live_split_uses_the_pure_window_plan(document, rules):
     decisions, _ = await engine.split(document, rules)
     assert seen == JevEngine.preflight(document, rules, "split")["windows"]
     assert [page.page for page in decisions] == [1, 2, 3, 4]
+
+
+@pytest.mark.parametrize(
+    "probabilities",
+    [
+        {"purchase_order": 0.5, "other": 0.5},
+        {"invoice": 1.0},
+    ],
+)
+async def test_jev_split_rejects_incomplete_choice_probabilities(
+    document, rules, probabilities
+):
+    from types import SimpleNamespace
+
+    engine = object.__new__(JevEngine)
+    engine.context_recovery = False
+    engine.window_size = 8
+
+    async def request(state, questions, task):
+        return SimpleNamespace(
+            choices={
+                key: SimpleNamespace(
+                    choice="invoice", probabilities=probabilities, confidence=1
+                )
+                for key in questions
+                if key.startswith("category_")
+            },
+            nouls={
+                key: SimpleNamespace(noul=0)
+                for key in questions
+                if key.startswith("boundary_")
+            },
+        ), []
+
+    engine._request = request
+    with pytest.raises(ProviderError, match="invalid page decisions"):
+        await engine.split(document, rules)
 
 
 @pytest.mark.parametrize("recovery", [False, True])
@@ -146,7 +187,11 @@ async def test_remote_context_recovery_is_opt_in_for_bounded_profile(document, r
         if len(seen) == 1:
             raise ContextLimitError("Provider rejected context", requests=[rejection])
         return SimpleNamespace(
-            choices={key: SimpleNamespace(choice="invoice", probabilities={"invoice": 1}, confidence=1)
+            choices={key: SimpleNamespace(
+                choice="invoice",
+                probabilities={name: 1 if name == "invoice" else 0 for name in rules.criteria},
+                confidence=1,
+            )
                      for key in questions if key.startswith("category_")},
             nouls={key: SimpleNamespace(noul=0) for key in questions if key.startswith("boundary_")},
         ), []
